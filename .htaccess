@@ -1,0 +1,12 @@
+Options -MultiViews
+RewriteEngine On
+
+# Clean URLs: /kontakt → kontakt.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^.]+)$ $1.html [L]
+
+# Force HTTPS (activate once SSL cert is in place)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

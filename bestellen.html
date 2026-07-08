@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Online bestellen – Ruay Thai Noodle Dietikon</title>
+  <meta name="description" content="Abholbestellung bei Ruay Thai Noodle in Dietikon. Gerichte auswählen, Abholzeit buchen und frisch abholen." />
+  <link rel="canonical" href="https://ruay-thai-noodle.ch/bestellen" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://ruay-thai-noodle.ch/bestellen" />
+  <meta property="og:title"       content="Online bestellen – Ruay Thai Noodle" />
+  <meta property="og:description" content="Abholbestellung aufgeben – Gerichte auswählen und Abholzeit wählen." />
+  <meta property="og:image"       content="https://ruay-thai-noodle.ch/Bilder/thai_streetfood.jpg" />
+
+  <link rel="icon"             href="Bilder/Logo.avif" type="image/avif" />
+  <link rel="apple-touch-icon" href="Bilder/Logo.avif" />
+  <meta name="theme-color" content="#2C5018" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://ruay-thai-noodle.ch" },
+      { "@type": "ListItem", "position": 2, "name": "Bestellen", "item": "https://ruay-thai-noodle.ch/bestellen" }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <header id="navbar" class="scrolled visible" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="/" class="nav-brand" aria-label="Ruay Thai Noodle – Startseite">
+          <div class="nav-logo">
+            <img src="Bilder/Logo.avif" alt="Ruay Thai Noodle Logo" width="42" height="42" />
+          </div>
+          <span class="nav-brand-name">Ruay Thai Noodle</span>
+        </a>
+
+        <nav aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="/#menu">Menü</a></li>
+            <li><a href="/#cafe">Café &amp; Bubble Tea</a></li>
+            <li><a href="/#ueber-uns">Über uns</a></li>
+            <li><a href="/#besuch">Besuch</a></li>
+          </ul>
+        </nav>
+
+        <a href="/bestellen" class="btn btn-chili nav-cta active">Bestellen</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobilnavigation">
+    <ul>
+      <li><a href="/#menu">Menü</a></li>
+      <li><a href="/#cafe">Café &amp; Bubble Tea</a></li>
+      <li><a href="/#ueber-uns">Über uns</a></li>
+      <li><a href="/#besuch">Besuch</a></li>
+    </ul>
+    <a href="/bestellen" class="btn btn-chili mobile-cta">Bestellen</a>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       PAGE HERO
+  ══════════════════════════════════════════════ -->
+  <div class="page-hero grain">
+    <div class="container">
+      <span class="section-label">Online bestellen</span>
+      <h1>Wie möchtest du <em>bestellen</em>?</h1>
+
+      <div class="order-choice">
+
+        <!-- Abholung -->
+        <a href="#abholung" class="order-choice-card order-choice-card--featured">
+          <span class="choice-badge">✓ Günstiger</span>
+          <div class="order-choice-icon">🛍️</div>
+          <h2>Abholen</h2>
+          <p>Warenkorb füllen, Abholzeit wählen — wir bereiten alles frisch für dich vor.</p>
+          <span class="order-choice-cta">Zum Warenkorb →</span>
+        </a>
+
+        <!-- Lieferung -->
+        <div class="order-choice-card">
+          <div class="order-choice-icon">🛵</div>
+          <h2>Liefern lassen</h2>
+          <p>Bestelle direkt über deinen Lieferdienst und wir bringen es zu dir.</p>
+          <div class="delivery-links">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="delivery-link delivery-link-uber">Uber Eats</a>
+            <a href="#" target="_blank" rel="noopener noreferrer" class="delivery-link delivery-link-justeat">Just Eat</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       SHOP
+  ══════════════════════════════════════════════ -->
+  <main id="abholung">
+    <div class="container">
+      <div class="shop-layout">
+
+        <!-- ── Linke Spalte: Menü ── -->
+        <div class="shop-menu">
+
+          <!-- Chips -->
+          <div class="menu-chips" style="justify-content:flex-start;margin-bottom:28px" role="tablist">
+            <button class="chip active" role="tab" aria-selected="true"  data-panel="sp-suppen">🍜 Suppen</button>
+            <button class="chip"        role="tab" aria-selected="false" data-panel="sp-haupt">🍛 Hauptgerichte</button>
+            <button class="chip"        role="tab" aria-selected="false" data-panel="sp-cafe">☕ Kaffee &amp; Tee</button>
+            <button class="chip"        role="tab" aria-selected="false" data-panel="sp-bubble">🧋 Bubble Tea</button>
+          </div>
+
+          <!-- SUPPEN -->
+          <div class="menu-panel active" id="sp-suppen" role="tabpanel">
+            <div class="broth-banner" style="margin-bottom:16px">
+              <strong>Brühe:</strong>
+              <span class="broth-chip">🍗 Pouletbrühe</span>
+              <span class="broth-chip">🌶️ Tom-Yam</span>
+              <span class="broth-chip">🌿 Vegetarisch</span>
+              <span style="margin-left:auto;font-size:.82rem;color:var(--text-light)">Brühe im Bestellformular wählen</span>
+            </div>
+            <div class="dish-list">
+              <div class="dish-row" data-id="s1" data-name="Suppe mit Eiernudeln" data-price="21.90" data-type="soup">
+                <div class="dish-num">1</div>
+                <div class="dish-body">
+                  <h3>Suppe mit Eiernudeln</h3>
+                  <p>Schweinen Wan-Tan, Schweinefleisch, Choi Sum Gemüse, Rosa Schweinefleisch</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="Suppe mit Eiernudeln in den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="s2" data-name="Suppe mit Pandan Nudeln" data-price="21.90" data-type="soup">
+                <div class="dish-num">2</div>
+                <div class="dish-body">
+                  <h3>Suppe mit Pandan Nudeln</h3>
+                  <p>Shrimps Wan-Tan, Choi Sum Gemüse, Sojasprossen, Pouletstreifen</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="s3" data-name="Suppe mit Reisnudeln 3mm" data-price="21.90" data-type="soup">
+                <div class="dish-num">3</div>
+                <div class="dish-body">
+                  <h3>Suppe mit Reisnudeln 3mm</h3>
+                  <p>Poulet Teriyaki, Fischballs, Sojasprossen</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="s4" data-name="Suppe mit Wan-Tan (8 Stück)" data-price="21.90" data-type="soup">
+                <div class="dish-num">4</div>
+                <div class="dish-body">
+                  <h3>Suppe mit Wan-Tan (8 Stück)</h3>
+                  <p>Choi-Sum Gemüse, Frühlingszwiebeln, Koriander – Shrimps oder Schweinefleisch</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="s5" data-name="Suppe mit Reisnudeln" data-price="21.90" data-type="soup">
+                <div class="dish-num">5</div>
+                <div class="dish-body">
+                  <h3>Suppe mit Reisnudeln</h3>
+                  <p>Rosa Schweinefleisch, Schweinefleisch Balls, Sojasprossen, Frühlingszwiebeln, Koriander</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="s6" data-name="Tom Yam Suppe mit Pandan Nudeln" data-price="21.90" data-type="soup">
+                <div class="dish-num">6</div>
+                <div class="dish-body">
+                  <h3>Tom Yam Suppe mit Pandan Nudeln</h3>
+                  <p>Poulet Hackfleisch, Choy Sum Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="s7" data-name="Tom Yam Suppe mit Wai Wai Nudeln" data-price="21.90" data-type="soup">
+                <div class="dish-num">7</div>
+                <div class="dish-body">
+                  <h3>Tom Yam Suppe mit Wai Wai Nudeln</h3>
+                  <p>Krevetten, Fischballs, Choy Sum Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="s8" data-name="Reisnudeln mit gebratenem Tofu" data-price="21.90" data-type="soup">
+                <div class="dish-num">8</div>
+                <div class="dish-body">
+                  <h3>Reisnudeln mit gebratenem Tofu</h3>
+                  <p>Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p>
+                </div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- HAUPTGERICHTE -->
+          <div class="menu-panel" id="sp-haupt" role="tabpanel">
+            <div class="dish-list">
+              <div class="dish-row" data-id="h9" data-name="Gelbes Curry mit Tofu" data-price="20.90">
+                <div class="dish-num">9</div>
+                <div class="dish-body"><h3>Gelbes Curry mit Tofu</h3><p>Gemüse und Jasmin Reis</p></div>
+                <div class="price-tag">CHF 20.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="h10" data-name="Poulet Teriyaki (CH)" data-price="21.90">
+                <div class="dish-num">10</div>
+                <div class="dish-body"><h3>Poulet Teriyaki (CH)</h3><p>Mit Jasmin Reis</p></div>
+                <div class="price-tag">CHF 21.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="h11" data-name="Knusprige Ente (CN)" data-price="26.90">
+                <div class="dish-num">11</div>
+                <div class="dish-body"><h3>Knusprige Ente (CN)</h3><p>Mit Rote Curry Sauce und Jasmin Reis</p></div>
+                <div class="price-tag">CHF 26.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="h12" data-name="Rotes Curry mit Pouletstreifen (CH)" data-price="20.90">
+                <div class="dish-num">12</div>
+                <div class="dish-body"><h3>Rotes Curry mit Pouletstreifen (CH)</h3><p>Mit Jasmin Reis</p></div>
+                <div class="price-tag">CHF 20.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="h13" data-name="Tom Kha Gai" data-price="22.90">
+                <div class="dish-num">13</div>
+                <div class="dish-body"><h3>Tom Kha Gai</h3><p>Mit Pouletfleisch (CH) und Jasmin Reis</p></div>
+                <div class="price-tag">CHF 22.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <!-- Pad Thai – Varianten -->
+              <div class="dish-row"
+                data-id="h14"
+                data-name="Pad Thai"
+                data-variants='[{"label":"Mit Pouletfleisch (CH)","price":22.50},{"label":"Mit Shrimps (VT)","price":24.50},{"label":"Mit Tofu","price":22.50}]'>
+                <div class="dish-num">14</div>
+                <div class="dish-body">
+                  <h3>Pad Thai</h3>
+                  <p>Gebratene Reisnudeln, Sojasprossen, Schnittlauch, Erdnüsse, Tamarinde Sauce</p>
+                  <div class="dish-variants">
+                    <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
+                    <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
+                    <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
+                  </div>
+                </div>
+                <div class="price-tag">ab CHF 22.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <!-- Gebratener Reis – Varianten -->
+              <div class="dish-row"
+                data-id="h15"
+                data-name="Gebratener Reis"
+                data-variants='[{"label":"Mit Gemüse","price":19.50},{"label":"Mit Pouletstreifen (CH)","price":22.50},{"label":"Mit Shrimps (VT)","price":24.50}]'>
+                <div class="dish-num">15</div>
+                <div class="dish-body">
+                  <h3>Gebratener Reis</h3>
+                  <p>Jasminreis, gebraten mit Ei und Gemüse</p>
+                  <div class="dish-variants">
+                    <div class="dish-variant"><span>Mit Gemüse</span><span class="v-price">CHF 19.50</span></div>
+                    <div class="dish-variant"><span>Mit Pouletstreifen (CH)</span><span class="v-price">CHF 22.50</span></div>
+                    <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
+                  </div>
+                </div>
+                <div class="price-tag">ab CHF 19.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="h16" data-name="Poulet Teriyaki mit Pandan Nudeln (CH)" data-price="22.90">
+                <div class="dish-num">16</div>
+                <div class="dish-body"><h3>Poulet Teriyaki mit Pandan Nudeln (CH)</h3><p>Choi Sum Gemüse und Zucchini</p></div>
+                <div class="price-tag">CHF 22.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <!-- Grünes Curry – Varianten -->
+              <div class="dish-row"
+                data-id="h17"
+                data-name="Grünes Curry"
+                data-variants='[{"label":"Mit Tofu","price":22.50},{"label":"Mit Pouletfleisch (CH)","price":22.50},{"label":"Mit Shrimps (VT)","price":24.50},{"label":"Mit Rindsfleisch (CH)","price":26.00}]'>
+                <div class="dish-num">17</div>
+                <div class="dish-body">
+                  <h3>Grünes Curry</h3>
+                  <p>Mit Kokosnussmilch, Thai-Auberginen, Fleisch nach Wahl</p>
+                  <div class="dish-variants">
+                    <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
+                    <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
+                    <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
+                    <div class="dish-variant"><span>Mit Rindsfleisch (CH)</span><span class="v-price">CHF 26.00</span></div>
+                  </div>
+                </div>
+                <div class="price-tag">ab CHF 22.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="h18" data-name="Gelbes Curry mit Kokosnussmilch" data-price="20.90">
+                <div class="dish-num">18</div>
+                <div class="dish-body"><h3>Gelbes Curry mit Kokosnussmilch</h3><p>Gemüse und Pouletfleisch (CH)</p></div>
+                <div class="price-tag">CHF 20.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row" data-id="h19" data-name="Knusprige Pouletstreifen (CH)" data-price="22.90">
+                <div class="dish-num">19</div>
+                <div class="dish-body"><h3>Knusprige Pouletstreifen (CH)</h3><p>Mit Süss-Saure Sauce, Jasmin Reis und Gurken</p></div>
+                <div class="price-tag">CHF 22.90</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- KAFFEE & TEE -->
+          <div class="menu-panel" id="sp-cafe" role="tabpanel">
+            <div class="cafe-grid">
+              <div class="price-card">
+                <div class="price-card-title">☕ Kaffee</div>
+                <div class="dish-list" style="gap:2px">
+                  <div class="dish-row" data-id="c1" data-name="Espresso" data-price="4.00" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Espresso</h3></div>
+                    <div class="price-tag">CHF 4.00</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="c2" data-name="Americano" data-price="4.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Americano</h3></div>
+                    <div class="price-tag">CHF 4.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="c3" data-name="Latte" data-price="5.00" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Latte</h3></div>
+                    <div class="price-tag">CHF 5.00</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="c4" data-name="Cappuccino" data-price="5.00" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Cappuccino</h3></div>
+                    <div class="price-tag">CHF 5.00</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="c5" data-name="Macchiato" data-price="5.00" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Macchiato</h3></div>
+                    <div class="price-tag">CHF 5.00</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="c6" data-name="Caffè Crème" data-price="4.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Caffè Crème</h3></div>
+                    <div class="price-tag">CHF 4.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="price-card">
+                <div class="price-card-title">🧊 Iced Caffè</div>
+                <div class="dish-list" style="gap:2px">
+                  <div class="dish-row" data-id="ic1" data-name="Iced Espresso" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Iced Espresso</h3></div>
+                    <div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="ic2" data-name="Iced Caffè Latte" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Iced Caffè Latte</h3></div>
+                    <div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="ic3" data-name="Iced Cappuccino" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Iced Cappuccino</h3></div>
+                    <div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="ic4" data-name="Iced Latte Macchiato" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Iced Latte Macchiato</h3></div>
+                    <div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="ic5" data-name="Iced Caramel Macchiato" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Iced Caramel Macchiato</h3></div>
+                    <div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="ic6" data-name="Iced Mocca" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Iced Mocca</h3></div>
+                    <div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="price-card">
+                <div class="price-card-title">🍵 Iced Tea</div>
+                <div class="dish-list" style="gap:2px">
+                  <div class="dish-row" data-id="it1" data-name="Thai Tea Latte" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Thai Tea Latte</h3></div><div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="it2" data-name="Green Tea Latte" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Green Tea Latte</h3></div><div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="it3" data-name="Milk Fresh Pink" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Milk Fresh Pink</h3></div><div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="it4" data-name="Cacao Latte" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Cacao Latte</h3></div><div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="it5" data-name="Honey Lemon Tea" data-price="7.50" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Honey Lemon Tea</h3></div><div class="price-tag">CHF 7.50</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                  <div class="dish-row" data-id="it6" data-name="Lemon Tea" data-price="7.00" style="grid-template-columns:1fr auto auto">
+                    <div class="dish-body"><h3>Lemon Tea</h3></div><div class="price-tag">CHF 7.00</div>
+                    <button class="add-btn" aria-label="In den Warenkorb">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BUBBLE TEA -->
+          <div class="menu-panel" id="sp-bubble" role="tabpanel">
+            <div class="dish-list">
+              <div class="dish-row"
+                data-id="bt1" data-name="Taiwan Milk Tea"
+                data-variants='[{"label":"Small","price":6.50},{"label":"Large","price":8.50}]'>
+                <div class="dish-num" style="font-size:.8rem;color:var(--ocher)">S/L</div>
+                <div class="dish-body"><h3>Taiwan Milk Tea</h3></div>
+                <div class="price-tag">CHF 6.50 / 8.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row"
+                data-id="bt2" data-name="Brown Sugar Milk Tea"
+                data-variants='[{"label":"Small","price":6.50},{"label":"Large","price":8.50}]'>
+                <div class="dish-num" style="font-size:.8rem;color:var(--ocher)">S/L</div>
+                <div class="dish-body"><h3>Brown Sugar Milk Tea</h3></div>
+                <div class="price-tag">CHF 6.50 / 8.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row"
+                data-id="bt3" data-name="Thai Green Tea Milk"
+                data-variants='[{"label":"Small","price":6.50},{"label":"Large","price":8.50}]'>
+                <div class="dish-num" style="font-size:.8rem;color:var(--ocher)">S/L</div>
+                <div class="dish-body"><h3>Thai Green Tea Milk</h3></div>
+                <div class="price-tag">CHF 6.50 / 8.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row"
+                data-id="bt4" data-name="Thai Milk Tea"
+                data-variants='[{"label":"Small","price":6.50},{"label":"Large","price":8.50}]'>
+                <div class="dish-num" style="font-size:.8rem;color:var(--ocher)">S/L</div>
+                <div class="dish-body"><h3>Thai Milk Tea</h3></div>
+                <div class="price-tag">CHF 6.50 / 8.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row"
+                data-id="bt5" data-name="Taro Milk"
+                data-variants='[{"label":"Small","price":6.50},{"label":"Large","price":8.50}]'>
+                <div class="dish-num" style="font-size:.8rem;color:var(--ocher)">S/L</div>
+                <div class="dish-body"><h3>Taro Milk</h3></div>
+                <div class="price-tag">CHF 6.50 / 8.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row"
+                data-id="bt6" data-name="Pink Fresh Milk"
+                data-variants='[{"label":"Small","price":6.50},{"label":"Large","price":8.50}]'>
+                <div class="dish-num" style="font-size:.8rem;color:var(--ocher)">S/L</div>
+                <div class="dish-body"><h3>Pink Fresh Milk</h3></div>
+                <div class="price-tag">CHF 6.50 / 8.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+              <div class="dish-row"
+                data-id="bt7" data-name="Strawberry Milk"
+                data-variants='[{"label":"Small","price":6.50},{"label":"Large","price":8.50}]'>
+                <div class="dish-num" style="font-size:.8rem;color:var(--ocher)">S/L</div>
+                <div class="dish-body"><h3>Strawberry Milk</h3></div>
+                <div class="price-tag">CHF 6.50 / 8.50</div>
+                <button class="add-btn" aria-label="In den Warenkorb">+</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /shop-menu -->
+
+
+        <!-- ── Rechte Spalte: Warenkorb (Desktop) ── -->
+        <aside class="cart-sidebar" aria-label="Warenkorb">
+
+          <div class="cart-header">
+            <h2>Warenkorb</h2>
+            <span class="cart-count" id="cartCount">0</span>
+          </div>
+
+          <div class="cart-body" id="cartBody">
+            <p class="cart-empty" id="cartEmpty">Noch nichts im Warenkorb.</p>
+          </div>
+
+          <div class="cart-total" id="cartTotalRow" style="display:none">
+            <span>Gesamt</span>
+            <span class="cart-total-amount" id="cartTotal">CHF 0.00</span>
+          </div>
+
+          <div class="cart-checkout" id="cartCheckout" style="display:none">
+            <button class="btn btn-chili" id="btnCheckout" style="width:100%;justify-content:center">
+              Zur Bestellung →
+            </button>
+          </div>
+
+          <!-- Checkout form (hidden until cart has items) -->
+          <form class="checkout-form hidden" id="checkoutForm"
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            novalidate>
+
+            <!-- Web3Forms access key – replace with your key -->
+            <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+            <input type="hidden" name="subject" value="Neue Abholbestellung – Ruay Thai Noodle" />
+            <input type="hidden" name="from_name" value="Ruay Thai Noodle Bestellsystem" />
+            <input type="hidden" name="redirect" value="false" />
+            <input type="hidden" name="botcheck" value="" style="display:none" />
+            <input type="hidden" name="bestellung" id="hiddenOrder" />
+            <input type="hidden" name="gesamtbetrag" id="hiddenTotal" />
+
+            <div style="padding:16px 22px;border-top:1px solid rgba(30,74,40,.08)">
+              <p style="font-size:.82rem;font-weight:600;color:var(--text-mid);margin-bottom:14px">Deine Angaben</p>
+
+              <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required placeholder="Max Mustermann" autocomplete="name" />
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Telefon *</label>
+                <input type="tel" id="phone" name="telefon" required placeholder="079 123 45 67" autocomplete="tel" />
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="max@beispiel.ch" autocomplete="email" />
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="pickupDate">Abholtag *</label>
+                  <input type="date" id="pickupDate" name="abholtag" required />
+                </div>
+                <div class="form-group">
+                  <label for="pickupTime">Abholzeit *</label>
+                  <select id="pickupTime" name="abholzeit" required>
+                    <option value="">Bitte Datum wählen</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="soupBroth">Brühe (für Suppen)</label>
+                <select id="soupBroth" name="bruethe">
+                  <option value="keine Suppe">Keine Suppe bestellt</option>
+                  <option value="Pouletbrühe">Pouletbrühe</option>
+                  <option value="Tom-Yam">Tom-Yam</option>
+                  <option value="Vegetarisch">Vegetarisch</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="schaerfe">Schärfegrad</label>
+                <select id="schaerfe" name="schaerfegrad">
+                  <option value="mittel">Mittel</option>
+                  <option value="mild">Mild</option>
+                  <option value="scharf">Scharf</option>
+                  <option value="sehr scharf">Sehr scharf (🌶️🌶️🌶️)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="notes">Anmerkungen</label>
+                <textarea id="notes" name="anmerkungen" placeholder="z.B. ohne Koriander, Allergien..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-chili" style="width:100%;justify-content:center;margin-top:4px" id="submitBtn">
+                Bestellung absenden
+              </button>
+              <p class="form-hint" style="text-align:center;margin-top:8px">
+                Wir melden uns bei Rückfragen per Telefon.
+              </p>
+            </div>
+          </form>
+
+          <!-- Erfolg -->
+          <div class="form-success" id="formSuccess" style="margin:16px 22px 22px">
+            <div style="font-size:2rem;margin-bottom:8px">✅</div>
+            <h3>Bestellung erhalten!</h3>
+            <p>Wir bereiten deine Bestellung frisch vor. Bei Rückfragen melden wir uns telefonisch.</p>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+
+  <!-- ── Varianten Modal ── -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="Variante wählen">
+    <div class="modal">
+      <h3 id="modalTitle">Variante wählen</h3>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-options" id="modalOptions"></div>
+      <div class="modal-actions">
+        <button class="btn btn-outline" id="modalCancel">Abbrechen</button>
+        <button class="btn btn-chili" id="modalConfirm">In den Warenkorb</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ── Mobile Cart Bar ── -->
+  <div class="cart-bar-mobile" id="cartBarMobile" role="button" tabindex="0" aria-label="Warenkorb öffnen">
+    <div class="cart-bar-info">
+      <span class="cart-count" id="cartCountMobile">0</span>
+      <span>Warenkorb</span>
+    </div>
+    <span class="cart-bar-total" id="cartBarTotal">CHF 0.00</span>
+  </div>
+
+  <!-- ── Mobile Drawer ── -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer" aria-label="Warenkorb">
+    <div class="drawer-handle"></div>
+    <div class="cart-header">
+      <h2>Warenkorb</h2>
+      <span class="cart-count" id="cartCountDrawer">0</span>
+    </div>
+    <div class="cart-body" id="cartBodyDrawer">
+      <p class="cart-empty">Noch nichts im Warenkorb.</p>
+    </div>
+    <div class="cart-total" id="cartTotalDrawer" style="display:none">
+      <span>Gesamt</span>
+      <span class="cart-total-amount" id="cartTotalAmountDrawer">CHF 0.00</span>
+    </div>
+    <div class="cart-checkout" id="cartCheckoutDrawer" style="display:none;padding:0 22px 16px">
+      <a href="#checkoutForm" class="btn btn-chili" style="width:100%;justify-content:center" id="drawerCheckoutBtn">
+        Zur Bestellung →
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="Bilder/Logo.avif" alt="Ruay Thai Noodle Logo" width="44" height="44" />
+          </div>
+          <span class="footer-name">Ruay Thai Noodle</span>
+        </div>
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="/">Startseite</a>
+          <a href="/#menu">Menü</a>
+          <a href="/#besuch">Besuch</a>
+        </nav>
+        <div class="footer-right">
+          <a href="tel:+41798481522" class="footer-social-link">📞 079 848 15 22</a>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; <span id="year"></span> Ruay Thai Noodle &ndash; Heimstrasse 10, 8953 Dietikon</p>
+        <nav class="footer-legal" aria-label="Rechtliche Links">
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/cart.js" defer></script>
+</body>
+</html>

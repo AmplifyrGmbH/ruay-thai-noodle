@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruay Thai Noodle – Authentisches Thai Streetfood in Dietikon</title>
+  <meta name="description" content="Ruay Thai Noodle – Authentisches Thai Streetfood, Nudelsuppen, Curries und Bubble Tea in Dietikon, Schweiz. Jetzt online vorbestellen. Heimstrasse 10, 8953 Dietikon." />
+  <link rel="canonical" href="https://ruay-thai-noodle.ch" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://ruay-thai-noodle.ch" />
+  <meta property="og:title"       content="Ruay Thai Noodle – Authentisches Thai Streetfood in Dietikon" />
+  <meta property="og:description" content="Frische Nudelsuppen, Curries, Pad Thai und Bubble Tea in Dietikon. Jetzt Abholbestellung aufgeben." />
+  <meta property="og:image"       content="https://ruay-thai-noodle.ch/Bilder/thai_streetfood.jpg" />
+  <meta name="twitter:card"       content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon"             href="Bilder/Logo.avif" type="image/avif" />
+  <link rel="apple-touch-icon" href="Bilder/Logo.avif" />
+  <meta name="theme-color" content="#2C5018" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Ruay Thai Noodle",
+    "description": "Authentisches Thai Streetfood – Nudelsuppen, Curries, Pad Thai und Bubble Tea in Dietikon, Schweiz. Familiär geführt, täglich frisch zubereitet.",
+    "url": "https://ruay-thai-noodle.ch",
+    "telephone": "+41798481522",
+    "image": "https://ruay-thai-noodle.ch/Bilder/thai_streetfood.jpg",
+    "priceRange": "CHF 20–27",
+    "servesCuisine": "Thai",
+    "currenciesAccepted": "CHF",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Heimstrasse 10",
+      "addressLocality": "Dietikon",
+      "postalCode": "8953",
+      "addressCountry": "CH"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "14:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "17:30", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "12:00", "closes": "20:30" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Gibt es bei Ruay Thai Noodle vegane oder glutenfreie Gerichte?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja, viele Wok-Gerichte, Nudelsuppen und Currys können auf Wunsch vegan zubereitet werden – mit pflanzlichen Alternativen statt Fisch- oder Austernsauce und frischem Tofu. Für glutenfreie Ernährung bitte bei der Bestellung Bescheid geben. Viele Gerichte lassen sich mit glutenfreier Sojasauce zubereiten. Reis und Reisnudeln sind von Natur aus glutenfrei. Bitte beachten: In unserer Küche werden auch weizenhaltige Zutaten verarbeitet." }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Zahlungsarten sind bei Ruay Thai Noodle möglich?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bar, mit Debit- und Kreditkarten (Visa, Mastercard) sowie kontaktlos per Apple Pay oder Google Pay. Essen kann auch vorab online oder telefonisch zur Abholung bestellt werden." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wie scharf sind die Gerichte? Kann man den Schärfegrad wählen?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Bei fast allen Gerichten ist der Schärfegrad wählbar: Stufe 1 (Mild) – voller Geschmack, auch für Kinder. Stufe 2 (Medium) – angenehme asiatische Schärfe. Stufe 3 (Thai-scharf) – originale thailändische Chilis für echte Schärfe-Liebhaber." }
+      },
+      {
+        "@type": "Question",
+        "name": "Gibt es Parkplätze oder eine ÖV-Haltestelle in der Nähe?",
+        "acceptedAnswer": { "@type": "Answer", "text": "In der Umgebung stehen Kurzzeitparkplätze und blaue Zonen zur Verfügung. Mit öffentlichen Verkehrsmitteln ist Ruay Thai Noodle gut erreichbar – die nächste Haltestelle liegt nur wenige Gehminuten entfernt." }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ─── Design Tokens ─── */
+    :root {
+      --green-pastel:  #B4CDAC;
+      --green-light:   #D5E9CF;
+      --green-dark:    #2C5018;
+      --green-mid:     #4A7C3F;
+      --beige:         #EDE5CF;
+      --beige-light:   #F7F2E7;
+      --cream:         #FAF8F1;
+      --warm-white:    #FEFDF8;
+      --text-dark:     #1C2E14;
+      --text-mid:      #445238;
+      --text-light:    #7A876E;
+      --nav-h:         72px;
+      --radius-sm:     10px;
+      --radius-md:     18px;
+      --radius-lg:     28px;
+      --shadow-card:   0 4px 24px rgba(44,80,24,.10);
+      --shadow-hover:  0 8px 40px rgba(44,80,24,.18);
+      --transition:    .35s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--warm-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── Utility ─── */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--green-mid);
+      margin-bottom: 12px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--green-mid);
+      border-radius: 2px;
+    }
+    h2.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    /* ─── Navigation ─── */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      background: rgba(250,248,241,.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 24px rgba(44,80,24,.10);
+      transition: box-shadow var(--transition);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 16px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .nav-logo {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: var(--beige);
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(44,80,24,.12);
+    }
+    .nav-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .nav-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      white-space: nowrap;
+    }
+    #navbar .nav-brand-name { color: var(--green-dark); }
+    #navbar .nav-logo { box-shadow: 0 2px 12px rgba(0,0,0,.12); }
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+    nav a {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-size: .92rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: background var(--transition), color var(--transition);
+    }
+    nav a { color: var(--text-dark); }
+    nav a:hover, nav a.active {
+      background: var(--green-pastel);
+      color: var(--green-dark) !important;
+    }
+    .nav-cta {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-size: .88rem;
+      font-weight: 600;
+      background: var(--green-dark);
+      color: #fff;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      background: var(--green-mid) !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(44,80,24,.25);
+      border-color: transparent !important;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px; height: 40px;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 4px;
+      border-radius: var(--radius-sm);
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      border-radius: 2px;
+      background: var(--text-dark);
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile Nav */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-h); left: 0; right: 0;
+      background: rgba(250,248,241,.97);
+      backdrop-filter: blur(20px);
+      padding: 20px 24px 28px;
+      box-shadow: 0 8px 32px rgba(44,80,24,.12);
+      z-index: 999;
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile ul { flex-direction: column; gap: 4px; align-items: flex-start; list-style: none; }
+    .nav-mobile a {
+      font-size: 1.1rem;
+      padding: 12px 16px;
+      display: block;
+      width: 100%;
+      border-radius: var(--radius-sm);
+      color: var(--text-dark) !important;
+      font-weight: 500;
+    }
+    .nav-mobile a:hover { background: var(--green-light); }
+    .nav-mobile .mobile-cta {
+      display: block;
+      margin-top: 16px;
+      text-align: center;
+      padding: 12px 20px;
+      background: var(--green-dark);
+      color: #fff;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    /* ─── Hero ─── */
+    #hero {
+      height: 100svh;
+      min-height: 560px;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero .ticker {
+      position: absolute;
+      bottom: 40px;
+      left: 0; right: 0;
+    }
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+    }
+    .hero-left {
+      background: var(--green-dark);
+      display: flex;
+      align-items: center;
+      padding: calc(var(--nav-h) + clamp(32px,6vh,80px)) clamp(32px,5vw,72px) clamp(32px,6vh,80px);
+    }
+    .hero-right-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right-img img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 3.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: clamp(14px, 2vh, 24px);
+    }
+    .hero-text p {
+      font-size: clamp(.9rem, 1.1vw, 1rem);
+      color: rgba(255,255,255,.82);
+      line-height: 1.7;
+      margin-bottom: clamp(24px, 3.5vh, 40px);
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      min-height: 44px;
+      border-radius: 50px;
+      font-size: .9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .btn-outline-white {
+      background: rgba(255,255,255,.12);
+      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(255,255,255,.5);
+      color: #fff;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.25); border-color: #fff; }
+    .btn-green { background: var(--green-dark); color: #fff; }
+    .btn-green:hover { background: var(--green-mid); transform: translateY(-1px); }
+    .btn-beige { background: var(--beige); color: var(--green-dark); }
+    .btn-beige:hover { background: var(--beige-light); transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+
+    /* Hero right: scroll hint */
+    .hero-right { display: flex; flex-direction: column; align-items: flex-end; gap: 16px; padding-bottom: 4px; }
+    .scroll-hint { display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,.6); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
+    .scroll-hint-line { width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(255,255,255,.6), transparent); }
+
+    /* ─── Ticker / Laufband ─── */
+    .ticker {
+      background: var(--green-dark);
+      padding: 13px 0;
+      overflow: hidden;
+    }
+    .ticker-track {
+      display: flex;
+      animation: ticker-run 28s linear infinite;
+      width: max-content;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      font-size: .85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.8);
+      white-space: nowrap;
+      padding: 0 28px;
+    }
+    .ticker-name { color: #E8A87C; }
+    .ticker-sep { color: rgba(255,255,255,.25); padding: 0 4px; }
+    @keyframes ticker-run {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ─── Sections common ─── */
+    section { padding: 96px 0; }
+    section:nth-child(even) { background: var(--cream); }
+
+    /* ─── Thai Gerichte ─── */
+    #thai-gerichte { background: var(--warm-white); }
+    .section-header { margin-bottom: 48px; }
+    .menu-note {
+      background: var(--beige-light);
+      border-left: 3px solid var(--green-pastel);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 14px 20px;
+      font-size: .88rem;
+      color: var(--text-mid);
+      margin-top: 32px;
+      line-height: 1.6;
+    }
+    .menu-tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 36px;
+      border-bottom: 2px solid var(--green-light);
+    }
+    .menu-tab-btn {
+      padding: 11px 26px;
+      border: none;
+      background: none;
+      font-family: 'Inter', sans-serif;
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--text-light);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: var(--transition);
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    }
+    .menu-tab-btn:hover { color: var(--green-dark); background: var(--green-light); }
+    .menu-tab-btn.active { color: var(--green-dark); border-bottom-color: var(--green-dark); background: none; }
+    .menu-tab-panel { display: none; }
+    .menu-tab-panel.active { display: block; }
+
+    /* Broth Banner */
+    .broth-banner {
+      background: var(--beige);
+      border-radius: var(--radius-md);
+      padding: 18px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .broth-banner-left { display: flex; flex-direction: column; gap: 8px; }
+    .broth-banner-left strong { font-size: .85rem; font-weight: 600; color: var(--text-dark); text-transform: uppercase; letter-spacing: .06em; }
+    .broth-options { display: flex; gap: 8px; flex-wrap: wrap; }
+    .broth-chip {
+      background: var(--warm-white);
+      border: 1.5px solid var(--green-pastel);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: .83rem;
+      font-weight: 500;
+      color: var(--green-dark);
+    }
+    .broth-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      white-space: nowrap;
+    }
+    .broth-price small { font-family: 'Inter', sans-serif; font-size: .75rem; font-weight: 400; color: var(--text-light); display: block; text-align: right; }
+
+    /* Dish List */
+    .dish-list { display: flex; flex-direction: column; gap: 10px; }
+    .dish-item {
+      display: grid;
+      grid-template-columns: 38px 1fr auto auto;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 18px;
+      background: var(--cream);
+      border-radius: var(--radius-md);
+      border: 1px solid transparent;
+      transition: var(--transition);
+    }
+    .dish-item:hover {
+      border-color: var(--green-light);
+      box-shadow: var(--shadow-card);
+      transform: translateX(3px);
+    }
+    .dish-num {
+      width: 38px; height: 38px;
+      background: var(--green-dark);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .78rem; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .dish-body h3 { font-size: .98rem; font-weight: 600; color: var(--text-dark); margin-bottom: 4px; line-height: 1.35; }
+    .dish-body p { font-size: .82rem; color: var(--text-light); line-height: 1.5; margin: 0; }
+    .dish-badges { display: flex; gap: 5px; margin-top: 7px; flex-wrap: wrap; }
+    .diet-badge { padding: 2px 8px; border-radius: 20px; font-size: .68rem; font-weight: 700; letter-spacing: .04em; }
+    .diet-badge-v  { background: #e6f4e0; color: #2e6b1a; }
+    .diet-badge-ve { background: #2e6b1a; color: #fff; }
+    .diet-badge-gf { background: #fdf0d5; color: #8a5a00; }
+    .dish-price-col { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding-top: 2px; }
+    .dish-price { font-size: .98rem; font-weight: 700; color: var(--green-dark); white-space: nowrap; }
+    .dish-variants { display: flex; flex-direction: column; gap: 3px; }
+    .dish-variant { display: flex; justify-content: space-between; gap: 16px; font-size: .82rem; color: var(--text-mid); padding: 3px 0; border-bottom: 1px dashed var(--green-light); }
+    .dish-variant:last-child { border-bottom: none; }
+    .dish-variant .dv-price { font-weight: 600; color: var(--green-dark); white-space: nowrap; }
+    .dish-order-btn {
+      align-self: start;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 600;
+      background: var(--green-dark);
+      color: #fff;
+      transition: var(--transition);
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+    .dish-order-btn:hover { background: var(--green-mid); transform: scale(1.04); }
+
+    /* Thai header */
+    .thai-header { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; margin-bottom: 48px; }
+    .thai-header-img { width: 280px; height: 200px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); flex-shrink: 0; }
+    .thai-header-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ─── Café & Bubble Tea ─── */
+    #cafe { background: var(--cream); }
+    .cafe-header-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 56px; }
+    .cafe-header-img { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); aspect-ratio: 16/10; }
+    .cafe-header-img img { width: 100%; height: 100%; object-fit: cover; }
+    .cafe-price-groups { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .price-group { background: var(--warm-white); border-radius: var(--radius-md); padding: 22px; border: 1px solid var(--green-light); }
+    .price-group-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 2px solid var(--green-light); display: flex; align-items: center; gap: 7px; }
+    .price-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,.05); font-size: .86rem; gap: 8px; }
+    .price-row:last-child { border-bottom: none; }
+    .price-row span:first-child { color: var(--text-mid); }
+    .price-row span:last-child { font-weight: 600; color: var(--green-dark); white-space: nowrap; }
+    .bubble-note { display: inline-flex; gap: 10px; background: var(--beige); border-radius: 50px; padding: 5px 14px; font-size: .8rem; font-weight: 600; color: var(--green-dark); margin-bottom: 12px; }
+    .bubble-list { display: flex; flex-direction: column; gap: 2px; }
+    .bubble-item { padding: 6px 0; border-bottom: 1px solid rgba(0,0,0,.05); font-size: .86rem; color: var(--text-mid); display: flex; align-items: center; gap: 8px; }
+    .bubble-item:last-child { border-bottom: none; }
+    .bubble-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-pastel); flex-shrink: 0; }
+
+    /* ─── Über Uns ─── */
+    #ueber-uns { background: var(--warm-white); }
+    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .about-text { margin-top: 24px; }
+    .about-text p { font-size: 1.02rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-image-wrap { display: flex; flex-direction: column; }
+    .about-img-main { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-card); }
+    .about-img-main img { width: 100%; height: auto; display: block; }
+
+    /* ─── Besuch ─── */
+    #besuch { background: var(--cream); }
+    .visit-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .info-block { background: #fff; border-radius: var(--radius-md); padding: 28px 28px 24px; box-shadow: var(--shadow-card); }
+    .info-block h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 14px; }
+    .hours-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .hours-table tr td { padding: 7px 0; border-bottom: 1px solid var(--green-light); color: var(--text-mid); }
+    .hours-table tr:last-child td { border-bottom: none; }
+    .hours-table td:first-child { font-weight: 500; color: var(--text-dark); width: 52%; }
+    .hours-table .closed { color: var(--text-light); font-style: italic; }
+    .hours-note { font-size: .75rem; color: var(--text-light); margin-top: 8px; }
+    .info-text { font-size: .9rem; color: var(--text-mid); line-height: 1.7; margin-bottom: 12px; }
+    .info-text strong { color: var(--text-dark); }
+    .info-text a { font-weight: 600; color: var(--green-mid); }
+    .map-link { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; font-weight: 600; color: var(--green-mid); transition: color var(--transition); }
+    .map-link:hover { color: var(--green-dark); }
+    .info-block .btn { margin-top: 18px; }
+
+    /* ─── FAQ ─── */
+    #faq { background: var(--warm-white); }
+    #faq .section-header { text-align: center; }
+    #faq .section-label::before { display: none; }
+    #besuch .section-header { text-align: center; }
+    #besuch .section-label::before { display: none; }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+    .faq-item { background: #fff; border: 1px solid var(--green-light); border-radius: var(--radius-md); overflow: hidden; }
+    .faq-item summary { padding: 18px 22px; font-size: .97rem; font-weight: 600; color: var(--text-dark); cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; user-select: none; }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after { content: '+'; font-size: 1.4rem; line-height: 1; color: var(--green-mid); flex-shrink: 0; transition: transform .2s; }
+    .faq-item[open] > summary { border-bottom: 1px solid var(--green-light); }
+    .faq-item[open] summary::after { transform: rotate(45deg); }
+    .faq-answer { padding: 16px 22px 18px; }
+    .faq-answer p { font-size: .92rem; color: var(--text-mid); line-height: 1.75; }
+    .faq-answer p + p { margin-top: 10px; }
+    .faq-answer ul { margin: 10px 0 0 18px; display: flex; flex-direction: column; gap: 4px; }
+    .faq-answer li { font-size: .92rem; color: var(--text-mid); line-height: 1.6; }
+
+    /* ─── Footer ─── */
+    footer { background: var(--green-dark); color: rgba(255,255,255,.75); padding: 48px 0 36px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .footer-brand { display: flex; align-items: center; gap: 12px; }
+    .footer-logo { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: rgba(255,255,255,.12); }
+    .footer-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .footer-brand-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #fff; font-weight: 700; }
+    .footer-center { text-align: center; font-size: .82rem; line-height: 1.7; }
+    .footer-links { display: flex; gap: 20px; font-size: .85rem; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,.65); transition: color var(--transition); }
+    .footer-links a:hover { color: #fff; }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.10); margin: 32px 0 20px; }
+    .footer-copy { text-align: center; font-size: .78rem; color: rgba(255,255,255,.4); }
+
+    /* ─── Decoration ─── */
+    .leaf-divider { display: flex; align-items: center; gap: 16px; margin-bottom: 56px; }
+    .leaf-divider::before, .leaf-divider::after { content: ''; flex: 1; height: 1px; background: var(--green-light); border-radius: 1px; }
+    .leaf-divider span { font-size: 1.2rem; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1024px) {
+      .cafe-price-groups { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      :root { --nav-h: 64px; }
+
+      /* Global */
+      section { padding: 56px 0; }
+      .section-header { margin-bottom: 32px; }
+
+      /* Nav */
+      nav ul { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      /* Hero */
+      .hero-split { grid-template-columns: 1fr; }
+      .hero-right-img { display: none; }
+      .hero-right-img { display: none; }
+      .hero-left { padding: calc(var(--nav-h) + 32px) 24px 48px; }
+      .hero-text h1 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
+      .hero-ctas { gap: 10px; }
+
+      /* Menü */
+      .thai-header { grid-template-columns: 1fr; }
+      .thai-header-img { width: 100%; height: 180px; }
+      .menu-tab-btn { padding: 10px 14px; font-size: .85rem; min-height: 44px; }
+      .dish-item { grid-template-columns: 32px 1fr; }
+      .dish-price-col { display: none; }
+      .dish-order-btn { display: none; }
+      .dish-variant .dv-price { display: block; }
+
+      /* Café */
+      .cafe-header-layout { grid-template-columns: 1fr; gap: 32px; }
+      .cafe-price-groups { grid-template-columns: 1fr; }
+
+      /* Über uns */
+      .about-layout { grid-template-columns: 1fr; gap: 36px; }
+
+      /* Besuch */
+      .visit-cards { grid-template-columns: 1fr; }
+      .info-block { padding: 20px 18px; }
+
+      /* FAQ */
+      .faq-item summary { padding: 16px 18px; }
+      .faq-answer { padding: 14px 18px 16px; }
+
+      /* Footer */
+      footer { padding-bottom: calc(36px + env(safe-area-inset-bottom, 0px)); }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .broth-banner { flex-direction: column; align-items: flex-start; }
+      .menu-tabs { gap: 6px; }
+      .hours-table tr td { padding: 6px 0; }
+    }
+
+    /* ─── Scroll reveal ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: .1s; }
+    .reveal-delay-2 { transition-delay: .2s; }
+    .reveal-delay-3 { transition-delay: .3s; }
+    .reveal-delay-4 { transition-delay: .4s; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════
+       NAVIGATION
+  ══════════════════════════════════════════════ -->
+  <header id="navbar" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="/" class="nav-brand" aria-label="Ruay Thai Noodle – Startseite">
+          <div class="nav-logo">
+            <img src="Bilder/Logo.avif" alt="Ruay Thai Noodle Logo" width="48" height="48" />
+          </div>
+          <span class="nav-brand-name">Ruay Thai Noodle</span>
+        </a>
+
+        <nav aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="#thai-gerichte">Thai Gerichte</a></li>
+            <li><a href="#cafe">Café &amp; Bubble Tea</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
+            <li><a href="#besuch">Besuch</a></li>
+          </ul>
+        </nav>
+
+        <a href="/bestellen" class="nav-cta">Jetzt bestellen</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobilnavigation">
+    <ul>
+      <li><a href="#thai-gerichte">Thai Gerichte</a></li>
+      <li><a href="#cafe">Café &amp; Bubble Tea</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
+      <li><a href="#besuch">Besuch</a></li>
+    </ul>
+    <a href="/bestellen" class="mobile-cta">Jetzt bestellen</a>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+  <section id="hero" aria-labelledby="hero-heading">
+
+    <div class="hero-split">
+    <div class="hero-left">
+      <div class="hero-text">
+        <h1 id="hero-heading">
+          Ein kleines Stück<br />Thailand in Dietikon
+        </h1>
+        <p>
+          Authentisches Thai Streetfood mitten in Dietikon. Nudelsuppen,
+          Curries, Bubble Tea und mehr – mit Liebe und frischen Zutaten
+          täglich zubereitet.
+        </p>
+        <div class="hero-ctas">
+          <a href="#thai-gerichte" class="btn btn-outline-white">Menü ansehen</a>
+          <a href="/bestellen" class="btn btn-green">Jetzt bestellen</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right-img" aria-hidden="true">
+      <img src="Bilder/Laden.webp" alt="" loading="eager" fetchpriority="high" />
+    </div>
+    </div><!-- /.hero-split -->
+
+    <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span class="ticker-item"><span class="ticker-name">Pad Thai</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Tom Yam Suppe</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Grünes Curry</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Bubble Tea</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Tom Kha Gai</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Knusprige Ente</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Poulet Teriyaki</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Wan-Tan Suppe</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Rotes Curry</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Thai Milk Tea</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <!-- Duplicate for seamless loop -->
+      <span class="ticker-item"><span class="ticker-name">Pad Thai</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Tom Yam Suppe</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Grünes Curry</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Bubble Tea</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Tom Kha Gai</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Knusprige Ente</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Poulet Teriyaki</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Wan-Tan Suppe</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Rotes Curry</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+      <span class="ticker-item"><span class="ticker-name">Thai Milk Tea</span><span class="ticker-sep">&nbsp;·&nbsp;</span></span>
+    </div>
+  </div><!-- /.ticker -->
+
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       THAI GERICHTE
+  ══════════════════════════════════════════════ -->
+  <section id="thai-gerichte" aria-labelledby="thai-heading">
+    <div class="container">
+
+      <div class="thai-header reveal">
+        <div>
+          <span class="section-label">Unsere Küche</span>
+          <h2 class="section-title" id="thai-heading">Thai Gerichte</h2>
+          <p class="section-sub">
+            Von herzhaften Nudelsuppen bis zu aromatischen Curries –
+            alle Gerichte werden frisch mit echten thailändischen Zutaten zubereitet.
+          </p>
+        </div>
+        <div class="thai-header-img">
+          <img src="Bilder/Thai.webp" alt="Authentische Thai-Gerichte bei Ruay Thai Noodle" loading="lazy" width="280" height="200" />
+        </div>
+      </div>
+
+      <div class="menu-tabs reveal" role="tablist">
+        <button class="menu-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-suppen" id="btn-suppen">🍜 Suppen (1–8)</button>
+        <button class="menu-tab-btn" role="tab" aria-selected="false" aria-controls="tab-hauptgerichte" id="btn-hauptgerichte">🍛 Hauptgerichte (9–19)</button>
+      </div>
+
+      <!-- Suppen -->
+      <div class="menu-tab-panel active" id="tab-suppen" role="tabpanel" aria-labelledby="btn-suppen">
+        <div class="broth-banner reveal">
+          <div class="broth-banner-left">
+            <strong>Wähle deine Brühe</strong>
+            <div class="broth-options">
+              <span class="broth-chip">🍗 Pouletbrühe</span>
+              <span class="broth-chip">🌶️ Tom-Yam</span>
+              <span class="broth-chip">🌿 Vegetarische Brühe</span>
+            </div>
+          </div>
+          <div class="broth-price">CHF 21.90<small>pro Suppe</small></div>
+        </div>
+        <div class="dish-list">
+          <div class="dish-item reveal">
+            <div class="dish-num">1</div>
+            <div class="dish-body"><h3>Suppe mit Eiernudeln</h3><p>Schweinen Wan-Tan, Schweinefleisch, Choi Sum Gemüse, Rosa Schweinefleisch</p></div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">2</div>
+            <div class="dish-body"><h3>Suppe mit Pandan Nudeln</h3><p>Shrimps Wan-Tan, Choi Sum Gemüse, Sojasprossen, Pouletstreifen</p></div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">3</div>
+            <div class="dish-body">
+              <h3>Suppe mit Reisnudeln 3mm</h3><p>Poulet Teriyaki, Fischballs, Sojasprossen</p>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">4</div>
+            <div class="dish-body"><h3>Suppe mit Wan-Tan (8 Stück)</h3><p>Choi-Sum Gemüse, Frühlingszwiebeln, Koriander – Shrimps oder Schweinefleisch</p></div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">5</div>
+            <div class="dish-body">
+              <h3>Suppe mit Reisnudeln</h3><p>Rosa Schweinefleisch, Schweinefleisch Balls, Sojasprossen, Frühlingszwiebeln, Koriander</p>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">6</div>
+            <div class="dish-body"><h3>Tom Yam Suppe mit Pandan Nudeln</h3><p>Poulet Hackfleisch, Choy Sum Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p></div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">7</div>
+            <div class="dish-body">
+              <h3>Tom Yam Suppe mit Wai Wai Nudeln</h3><p>Krevetten, Fischballs, Choy Sum Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">8</div>
+            <div class="dish-body">
+              <h3>Reisnudeln mit gebratenem Tofu</h3><p>Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p>
+              <div class="dish-badges">
+                <span class="diet-badge diet-badge-v"  title="Vegetarisch">V</span>
+                <span class="diet-badge diet-badge-ve" title="Vegan">Ve</span>
+                <span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span>
+              </div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hauptgerichte -->
+      <div class="menu-tab-panel" id="tab-hauptgerichte" role="tabpanel" aria-labelledby="btn-hauptgerichte">
+        <div class="dish-list">
+          <div class="dish-item reveal">
+            <div class="dish-num">9</div>
+            <div class="dish-body">
+              <h3>Gelbes Curry mit Tofu</h3><p>Gemüse und Jasmin Reis</p>
+              <div class="dish-badges">
+                <span class="diet-badge diet-badge-v"  title="Vegetarisch">V</span>
+                <span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span>
+              </div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 20.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">10</div>
+            <div class="dish-body">
+              <h3>Poulet Teriyaki (CH)</h3><p>Mit Jasmin Reis</p>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 21.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">11</div>
+            <div class="dish-body"><h3>Knusprige Ente (CN)</h3><p>Mit Rote Curry Sauce und Jasmin Reis</p></div>
+            <div class="dish-price-col"><span class="dish-price">CHF 26.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">12</div>
+            <div class="dish-body">
+              <h3>Rotes Curry mit Pouletstreifen (CH)</h3><p>Mit Jasmin Reis</p>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 20.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">13</div>
+            <div class="dish-body">
+              <h3>Tom Kha Gai</h3><p>Mit Pouletfleisch (CH) und Jasmin Reis</p>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 22.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">14</div>
+            <div class="dish-body">
+              <h3>Pad Thai</h3>
+              <p>Gebratene Reisnudeln, Sojasprossen, Schnittlauch, Erdnüsse, Tamarinde Sauce</p>
+              <div class="dish-variants">
+                <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="dv-price">CHF 22.50</span></div>
+                <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="dv-price">CHF 24.50</span></div>
+                <div class="dish-variant"><span>Mit Tofu</span><span class="dv-price">CHF 22.50</span></div>
+              </div>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">ab CHF 22.50</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">15</div>
+            <div class="dish-body">
+              <h3>Gebratener Reis</h3>
+              <p>Jasminreis, gebraten mit Ei und Gemüse</p>
+              <div class="dish-variants">
+                <div class="dish-variant"><span>Mit Gemüse</span><span class="dv-price">CHF 19.50</span></div>
+                <div class="dish-variant"><span>Mit Pouletstreifen (CH)</span><span class="dv-price">CHF 22.50</span></div>
+                <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="dv-price">CHF 24.50</span></div>
+              </div>
+              <div class="dish-badges">
+                <span class="diet-badge diet-badge-v"  title="Vegetarisch">V</span>
+                <span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span>
+              </div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">ab CHF 19.50</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">16</div>
+            <div class="dish-body"><h3>Poulet Teriyaki mit Pandan Nudeln (CH)</h3><p>Choi Sum Gemüse und Zucchini</p></div>
+            <div class="dish-price-col"><span class="dish-price">CHF 22.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">17</div>
+            <div class="dish-body">
+              <h3>Grünes Curry</h3>
+              <p>Mit Kokosnussmilch, Thai-Auberginen, Fleisch nach Wahl</p>
+              <div class="dish-variants">
+                <div class="dish-variant"><span>Mit Tofu</span><span class="dv-price">CHF 22.50</span></div>
+                <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="dv-price">CHF 22.50</span></div>
+                <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="dv-price">CHF 24.50</span></div>
+                <div class="dish-variant"><span>Mit Rindsfleisch (CH)</span><span class="dv-price">CHF 26.00</span></div>
+              </div>
+              <div class="dish-badges"><span class="diet-badge diet-badge-v" title="Vegetarisch">V</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">ab CHF 22.50</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">18</div>
+            <div class="dish-body">
+              <h3>Gelbes Curry mit Kokosnussmilch</h3><p>Gemüse und Pouletfleisch (CH)</p>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf" title="Glutenfrei">GF</span></div>
+            </div>
+            <div class="dish-price-col"><span class="dish-price">CHF 20.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+          <div class="dish-item reveal">
+            <div class="dish-num">19</div>
+            <div class="dish-body"><h3>Knusprige Pouletstreifen (CH)</h3><p>Mit Süss-Saure Sauce, Jasmin Reis und Gurken</p></div>
+            <div class="dish-price-col"><span class="dish-price">CHF 22.90</span></div>
+            <a href="/bestellen" class="dish-order-btn">Bestellen</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="menu-note reveal">
+        🌶️ Schärfegrad nach Wunsch anpassbar &nbsp;·&nbsp;
+        (CH) = Schweizer Herkunft &nbsp;·&nbsp; (VT) = Vietnam &nbsp;·&nbsp; (CN) = China
+        &nbsp;·&nbsp; Allergene und vegetarische/vegane Optionen gerne auf Anfrage.
+      </p>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       CAFÉ & BUBBLE TEA
+  ══════════════════════════════════════════════ -->
+  <section id="cafe" aria-labelledby="cafe-heading">
+    <div class="container">
+
+      <div class="cafe-header-layout">
+        <div class="reveal">
+          <span class="section-label">Trinken &amp; Geniessen</span>
+          <h2 class="section-title" id="cafe-heading">Café &amp; Bubble Tea</h2>
+          <p class="section-sub">
+            Neben dem Essen bieten wir eine bunte Auswahl an Kaffee, thailändischen Tees
+            und Bubble Teas – frisch gemixt und wunderschön anzuschauen.
+          </p>
+        </div>
+        <div class="cafe-header-img reveal reveal-delay-1">
+          <img src="Bilder/Bubble_Tea.webp" alt="Bunter Bubble Tea bei Ruay Thai Noodle" loading="lazy" width="560" height="350" />
+        </div>
+      </div>
+
+      <div class="cafe-price-groups">
+        <div class="price-group reveal">
+          <div class="price-group-title">☕ Kaffee</div>
+          <div class="price-row"><span>Espresso</span><span>CHF 4.00</span></div>
+          <div class="price-row"><span>Americano</span><span>CHF 4.50</span></div>
+          <div class="price-row"><span>Latte</span><span>CHF 5.00</span></div>
+          <div class="price-row"><span>Cappuccino</span><span>CHF 5.00</span></div>
+          <div class="price-row"><span>Macchiato</span><span>CHF 5.00</span></div>
+          <div class="price-row"><span>Caffè Crème</span><span>CHF 4.50</span></div>
+        </div>
+        <div class="price-group reveal reveal-delay-1">
+          <div class="price-group-title">🧊 Iced Caffè</div>
+          <div class="price-row"><span>Espresso</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Caffè Latte</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Cappuccino</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Latte Macchiato</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Caramel Macchiato</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Mocca</span><span>CHF 7.50</span></div>
+        </div>
+        <div class="price-group reveal reveal-delay-2">
+          <div class="price-group-title">🍵 Iced Tea</div>
+          <div class="price-row"><span>Thai Tea Latte</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Green Tea Latte</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Milk Fresh Pink</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Cacao Latte</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Honey Lemon Tea</span><span>CHF 7.50</span></div>
+          <div class="price-row"><span>Lemon Tea</span><span>CHF 7.00</span></div>
+        </div>
+        <div class="price-group reveal reveal-delay-3">
+          <div class="price-group-title">🧋 Bubble Tea</div>
+          <div class="bubble-note"><span>S &nbsp;CHF 6.50</span><span>·</span><span>L &nbsp;CHF 8.50</span></div>
+          <div class="bubble-list">
+            <div class="bubble-item"><span class="bubble-dot"></span>Taiwan Milk Tea</div>
+            <div class="bubble-item"><span class="bubble-dot"></span>Brown Sugar Milk Tea</div>
+            <div class="bubble-item"><span class="bubble-dot"></span>Thai Green Tea Milk</div>
+            <div class="bubble-item"><span class="bubble-dot"></span>Thai Milk Tea</div>
+            <div class="bubble-item"><span class="bubble-dot"></span>Taro Milk</div>
+            <div class="bubble-item"><span class="bubble-dot"></span>Pink Fresh Milk</div>
+            <div class="bubble-item"><span class="bubble-dot"></span>Strawberry Milk</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       ÜBER UNS
+  ══════════════════════════════════════════════ -->
+  <section id="ueber-uns" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-layout">
+
+        <div class="reveal">
+          <span class="section-label">Unsere Geschichte</span>
+          <h2 class="section-title" id="about-heading">Mit Herzblut &amp; Leidenschaft</h2>
+          <div class="about-text">
+            <p>
+              Ruay Thai Noodle ist mehr als ein Restaurant – es ist ein kleines Stück Thailand
+              mitten in Dietikon. Mit viel Herzblut und Leidenschaft für die thailändische Küche
+              haben wir diesen gemütlichen Ort geschaffen, wo sich Gäste wie Freunde fühlen sollen.
+            </p>
+            <p>
+              Unsere Rezepte stammen direkt aus Thailand – überliefert von der Familie und
+              mit frischen, sorgfältig ausgewählten Zutaten zubereitet. Wir glauben daran,
+              dass gutes Essen Menschen zusammenbringt.
+            </p>
+            <p>
+              Als kleiner, familiär geführter Laden sind wir stolz auf das persönliche Erlebnis,
+              das wir unseren Gästen bieten. Hier kennt man sich, hier ist jeder willkommen –
+              ob zum schnellen Mittagessen oder für einen entspannten Bubble Tea am Nachmittag.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-image-wrap reveal reveal-delay-1">
+          <div class="about-img-main">
+            <img src="Bilder/Owner_1.avif" alt="Die Inhaberin von Ruay Thai Noodle" loading="lazy" width="480" height="640" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       BESUCH
+  ══════════════════════════════════════════════ -->
+  <section id="besuch" aria-labelledby="visit-heading">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Wir freuen uns auf euch</span>
+        <h2 class="section-title" id="visit-heading">Uns besuchen</h2>
+      </div>
+
+      <div class="visit-cards">
+
+        <div class="info-block reveal">
+          <h3>📍 Adresse</h3>
+          <p class="info-text"><strong>Ruay Thai Noodle</strong><br />Heimstrasse 10<br />8953 Dietikon<br />Schweiz</p>
+          <a class="map-link" href="https://maps.google.com/?q=Heimstrasse+10,+8953+Dietikon" target="_blank" rel="noopener noreferrer">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            In Google Maps öffnen
+          </a>
+        </div>
+
+        <div class="info-block reveal reveal-delay-1">
+          <h3>🕐 Öffnungszeiten</h3>
+          <table class="hours-table">
+            <tbody>
+              <tr><td>Montag – Freitag</td><td>11:00–14:30 &nbsp;/&nbsp; 17:30–22:00 Uhr</td></tr>
+              <tr><td>Samstag</td><td>12:00–20:30 Uhr</td></tr>
+              <tr><td>Sonntag</td><td class="closed">Geschlossen</td></tr>
+            </tbody>
+          </table>
+          <p class="hours-note">* Abweichungen an Feiertagen möglich.</p>
+        </div>
+
+        <div class="info-block reveal reveal-delay-2">
+          <h3>📞 Kontakt &amp; Bestellen</h3>
+          <p class="info-text"><a href="tel:+41798481522">079 848 15 22</a></p>
+          <a href="/bestellen" class="btn btn-green">Jetzt online bestellen</a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       FAQ
+  ══════════════════════════════════════════════ -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Ihre Fragen, unsere Antworten</span>
+        <h2 class="section-title" id="faq-heading">Häufig gestellte Fragen</h2>
+      </div>
+
+      <div class="faq-list">
+
+        <details class="faq-item reveal">
+          <summary>Gibt es vegane oder glutenfreie Gerichte?</summary>
+          <div class="faq-answer">
+            <p>Ja, viele unserer Wok-Gerichte, Nudelsuppen und Currys können auf Wunsch vollständig vegan zubereitet werden – mit pflanzlichen Alternativen statt Fisch- oder Austernsauce und frischem Tofu.</p>
+            <p>Für eine glutenfreie Ernährung bitte einfach bei der Bestellung Bescheid geben. Viele Gerichte lassen sich mit glutenfreier Sojasauce zubereiten, und Reis sowie Reisnudeln sind von Natur aus glutenfrei. Bitte beachten Sie, dass in unserer Küche auch weizenhaltige Zutaten verarbeitet werden.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal reveal-delay-1">
+          <summary>Welche Zahlungsarten sind möglich?</summary>
+          <div class="faq-answer">
+            <p>Bei uns stehen alle gängigen Zahlungswege offen: bar, mit Debit- und Kreditkarten (Visa, Mastercard) sowie kontaktlos per Apple Pay oder Google Pay.</p>
+            <p>Um Wartezeiten zu vermeiden, können Sie Ihr Essen auch vorab <a href="/bestellen">online</a> oder telefonisch zur Abholung bestellen.</p>
+          </div>
+        </details>
+
+        <details class="faq-item reveal reveal-delay-2">
+          <summary>Wie scharf sind die Gerichte? Kann man den Schärfegrad wählen?</summary>
+          <div class="faq-answer">
+            <p>Bei fast allen Gerichten können Sie den Schärfegrad selbst bestimmen – sprechen Sie uns einfach bei der Bestellung an:</p>
+            <ul>
+              <li><strong>Stufe 1 – Mild:</strong> Voller Geschmack, auch ideal für Kinder.</li>
+              <li><strong>Stufe 2 – Medium:</strong> Angenehme, typisch asiatische Schärfe.</li>
+              <li><strong>Stufe 3 – Thai-scharf:</strong> Originale thailändische Chilis – nur für echte Schärfe-Liebhaber!</li>
+            </ul>
+          </div>
+        </details>
+
+        <details class="faq-item reveal reveal-delay-2">
+          <summary>Gibt es Parkplätze oder eine ÖV-Haltestelle in der Nähe?</summary>
+          <div class="faq-answer">
+            <p>In der unmittelbaren Umgebung stehen Kurzzeitparkplätze und blaue Zonen zur Verfügung. Mit den öffentlichen Verkehrsmitteln ist Ruay Thai Noodle ebenfalls gut erreichbar – die nächste Haltestelle liegt nur wenige Gehminuten entfernt.</p>
+          </div>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo"><img src="Bilder/Logo.avif" alt="Ruay Thai Noodle Logo" width="44" height="44" /></div>
+          <span class="footer-brand-name">Ruay Thai Noodle</span>
+        </div>
+        <div class="footer-center">
+          Heimstrasse 10, 8953 Dietikon<br />
+          Authentisches Thai Streetfood in der Schweiz
+        </div>
+        <nav class="footer-links" aria-label="Footer Navigation">
+          <a href="#thai-gerichte">Menü</a>
+          <a href="#cafe">Café</a>
+          <a href="#besuch">Besuch</a>
+          <a href="#ueber-uns">Über uns</a>
+          <a href="/bestellen">Bestellen</a>
+          <a href="/impressum">Impressum</a>
+          <a href="/datenschutz">Datenschutz</a>
+        </nav>
+      </div>
+      <hr class="footer-divider" />
+      <p class="footer-copy">&copy; <span id="year"></span> Ruay Thai Noodle – Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav: always visible over hero (transparent), cream bar on scroll
+    const navbar = document.getElementById('navbar');
+    navbar.classList.add('visible');
+    function updateNav() {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // Active nav link
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+    function updateActive() {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    }
+    window.addEventListener('scroll', updateActive, { passive: true });
+
+    // Hamburger
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+    hamburger.addEventListener('click', () => {
+      const open = hamburger.classList.toggle('open');
+      navMobile.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    navMobile.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navMobile.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }));
+
+    // Menu Tabs
+    document.querySelectorAll('.menu-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const panelId = btn.getAttribute('aria-controls');
+        document.querySelectorAll('.menu-tab-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        document.querySelectorAll('.menu-tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(panelId);
+        panel.classList.add('active');
+        panel.querySelectorAll('.reveal:not(.visible)').forEach(el => observer.observe(el));
+      });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
