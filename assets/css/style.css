@@ -617,24 +617,30 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
   background: rgba(74,52,20,.15);
 }
 
-/* Pickup CTA (gross) */
+/* Pickup Banner */
 .pickup-cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 14px;
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: var(--r-md);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.pickup-tag {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
   background: var(--green);
   color: #fff;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 16px 36px;
-  border-radius: var(--r-pill);
-  text-decoration: none;
-  transition: var(--t);
-  box-shadow: 0 4px 18px rgba(30,74,40,.22);
+  padding: 3px 10px;
+  border-radius: 50px;
 }
-.pickup-cta:hover { background: #163820; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,74,40,.28); }
-.pickup-arrow { font-style: normal; }
 
 .shop-layout { display: grid; grid-template-columns: 1fr 360px; gap: 32px; align-items: start; padding: 48px 0 80px; }
 
