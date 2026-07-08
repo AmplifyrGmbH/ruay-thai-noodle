@@ -573,78 +573,42 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
 .page-hero h1 em { font-style: italic; color: var(--chili); }
 .page-hero > .container > p { color: var(--text-mid); font-size: .97rem; max-width: 500px; margin: 0 auto; }
 
-/* Order choice cards */
+/* Order choice pills */
 .order-choice {
-  display: grid;
-  grid-template-columns: 5fr 3fr;
-  gap: 16px;
-  margin: 20px auto 0;
-  max-width: 820px;
-  text-align: left;
-  align-items: stretch;
-}
-.order-choice-card {
-  background: var(--white);
-  border-radius: var(--r-md);
-  padding: 20px 22px;
-  box-shadow: var(--shadow-sm);
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 12px;
-  transition: var(--t);
-  border: 1.5px solid var(--beige-mid);
-  color: inherit;
-  cursor: pointer;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
-a.order-choice-card:hover,
-.order-choice-card:hover {
-  border-color: var(--green);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
-.order-choice-card--featured {
-  border-color: var(--green);
-}
-.order-choice-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--green);
-  margin: 0;
-}
-.order-choice-card p {
+.order-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border-radius: var(--r-pill);
   font-size: .9rem;
-  color: var(--text-mid);
-  line-height: 1.65;
-  flex: 1;
-  margin: 0;
-}
-.order-choice-cta {
-  font-size: .88rem;
   font-weight: 600;
-  color: var(--green);
-  margin-top: 4px;
-}
-.delivery-links {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 4px;
-}
-.delivery-link {
-  display: inline-block;
-  font-size: .88rem;
-  font-weight: 600;
-  color: var(--text-mid);
   text-decoration: none;
-  border-bottom: 1px solid var(--beige-mid);
-  padding-bottom: 2px;
-  transition: color var(--t);
+  border: 1.5px solid var(--green);
+  color: var(--green);
+  background: transparent;
+  transition: var(--t);
+  white-space: nowrap;
 }
-.delivery-link:hover { color: var(--green); border-color: var(--green); }
-@media (max-width: 640px) {
-  .order-choice { grid-template-columns: 1fr; }
-  .order-choice-card--featured { padding: 32px 24px; }
+.order-pill:hover { background: var(--green); color: #fff; }
+.order-pill--primary { background: var(--green); color: #fff; }
+.order-pill--primary:hover { background: var(--green-mid); border-color: var(--green-mid); }
+.order-pill-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.order-pill-label {
+  font-size: .85rem;
+  color: var(--text-mid);
+  white-space: nowrap;
 }
 
 .shop-layout { display: grid; grid-template-columns: 1fr 360px; gap: 32px; align-items: start; padding: 48px 0 80px; }
