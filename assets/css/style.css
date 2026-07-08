@@ -564,7 +564,7 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
    ============================================================ */
 .page-hero {
   background: linear-gradient(155deg, var(--bg-from), var(--bg-mid));
-  min-height: 100svh;
+  min-height: 33svh;
   display: flex;
   align-items: center;
   padding: calc(var(--nav-h) + 48px) 0 56px;
