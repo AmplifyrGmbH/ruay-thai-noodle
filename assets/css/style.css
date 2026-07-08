@@ -573,43 +573,68 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
 .page-hero h1 em { font-style: italic; color: var(--chili); }
 .page-hero > .container > p { color: var(--text-mid); font-size: .97rem; max-width: 500px; margin: 0 auto; }
 
-/* Order choice pills */
-.order-choice {
+/* Delivery row (klein, oben) */
+.delivery-row {
   display: flex;
   align-items: center;
-  gap: 12px;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 20px;
+  flex-wrap: wrap;
 }
-.order-pill {
+.delivery-row-label {
+  font-size: .82rem;
+  color: var(--text-mid);
+}
+.delivery-row-link {
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--t);
+}
+.delivery-row-link:hover { color: var(--green); }
+.delivery-row-sep { color: var(--text-light); font-size: .82rem; }
+
+/* Divider */
+.order-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px auto;
+  max-width: 420px;
+  color: var(--text-light);
+  font-size: .8rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.order-divider::before,
+.order-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(74,52,20,.15);
+}
+
+/* Pickup CTA (gross) */
+.pickup-cta {
   display: inline-flex;
   align-items: center;
-  padding: 10px 22px;
+  gap: 10px;
+  background: var(--green);
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 16px 36px;
   border-radius: var(--r-pill);
-  font-size: .9rem;
-  font-weight: 600;
   text-decoration: none;
-  border: 1.5px solid var(--green);
-  color: var(--green);
-  background: transparent;
   transition: var(--t);
-  white-space: nowrap;
+  box-shadow: 0 4px 18px rgba(30,74,40,.22);
 }
-.order-pill:hover { background: var(--green); color: #fff; }
-.order-pill--primary { background: var(--green); color: #fff; }
-.order-pill--primary:hover { background: var(--green-mid); border-color: var(--green-mid); }
-.order-pill-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-.order-pill-label {
-  font-size: .85rem;
-  color: var(--text-mid);
-  white-space: nowrap;
-}
+.pickup-cta:hover { background: #163820; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(30,74,40,.28); }
+.pickup-arrow { font-style: normal; }
 
 .shop-layout { display: grid; grid-template-columns: 1fr 360px; gap: 32px; align-items: start; padding: 48px 0 80px; }
 
@@ -859,12 +884,12 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
   .drawer-backdrop { display: block; }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   :root { --nav-h: 64px; }
   section { padding: 48px 0; }
 
-  nav ul { display: none; }
-  .nav-cta { display: none; }
+  nav { display: none; }
+  .nav-cta { display: none !important; }
   .hamburger { display: flex; }
   .nav-mobile { display: block; }
 
