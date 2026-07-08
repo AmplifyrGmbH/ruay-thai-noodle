@@ -593,14 +593,15 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
   display: flex;
   flex-direction: column;
   gap: 4px;
-  background: var(--green);
   color: #fff;
   padding: 16px 20px;
   border-radius: var(--r-md);
   text-decoration: none;
   transition: var(--t);
 }
-.delivery-card:hover { background: #163820; transform: translateY(-2px); }
+.delivery-card:hover { transform: translateY(-2px); filter: brightness(1.1); }
+.delivery-card--justeat  { background: #FF8000; }
+.delivery-card--ubereats { background: #000; }
 .delivery-card-label {
   font-size: .7rem;
   font-weight: 500;
