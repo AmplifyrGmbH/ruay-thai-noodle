@@ -320,6 +320,20 @@
   };
   if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
 
+  /* ─── Drawer checkout → zeigt Formular unter dem Menü ─── */
+  const drawerCheckoutBtn = document.getElementById('drawerCheckoutBtn');
+  if (drawerCheckoutBtn) {
+    drawerCheckoutBtn.addEventListener('click', e => {
+      e.preventDefault();
+      closeDrawer();
+      if (checkoutForm) {
+        checkoutForm.classList.remove('hidden');
+        if (btnCheckout) btnCheckout.style.display = 'none';
+        setTimeout(() => checkoutForm.scrollIntoView({ behavior: 'smooth', block: 'start' }), 320);
+      }
+    });
+  }
+
   /* ─── Add buttons ─── */
   document.querySelectorAll('.add-btn').forEach(btn => {
     btn.addEventListener('click', () => {

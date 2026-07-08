@@ -588,11 +588,34 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
 /* Bestelloptionen */
 main { padding: 56px 0 80px; }
 
-.order-options {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+.order-sections {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
   margin-bottom: 40px;
+  flex-wrap: wrap;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.order-group { display: flex; flex-direction: column; gap: 16px; }
+.order-group-label {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+.order-divider {
+  width: 1px;
+  background: rgba(30,74,40,.1);
+  align-self: stretch;
+  margin: 0 32px;
+}
+.order-options {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .order-card {
@@ -603,20 +626,23 @@ main { padding: 56px 0 80px; }
   border-radius: var(--r-md);
   text-decoration: none;
   transition: transform var(--t), box-shadow var(--t);
-  min-height: 200px;
+  width: 220px;
+  height: 220px;
 }
 .order-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 
-.order-card--uber  { background: #000; color: #fff; }
-.order-card--justeat { background: #FF8000; color: #fff; }
-.order-card--phone { background: var(--calm-green); color: var(--green); border: 1.5px solid rgba(30,74,40,.12); }
+.order-card--uber     { background: #000; color: #fff; }
+.order-card--justeat  { background: #FF8000; color: #fff; }
+.order-card--whatsapp { background: #25D366; color: #fff; }
+.order-card--phone    { background: var(--calm-green); color: var(--green); border: 1.5px solid rgba(30,74,40,.12); }
 
 .order-card-logo { margin-bottom: 4px; }
 .order-card-number { font-size: 1.3rem; font-weight: 700; margin: 0; }
 .order-card-desc { font-size: .88rem; opacity: .75; margin: 0; flex: 1; }
 .order-card-cta { font-size: .9rem; font-weight: 700; margin-top: auto; }
 .order-card--uber .order-card-cta,
-.order-card--justeat .order-card-cta { color: rgba(255,255,255,.9); }
+.order-card--justeat .order-card-cta,
+.order-card--whatsapp .order-card-cta { color: rgba(255,255,255,.9); }
 .order-card--phone .order-card-cta { color: var(--green); }
 
 .order-note { text-align: center; font-size: .9rem; color: var(--text-light); }
@@ -929,7 +955,11 @@ main { padding: 56px 0 80px; }
   .nav-mobile { display: block; }
 
   /* ── Bestellen Optionen ── */
-  .order-options { grid-template-columns: 1fr; gap: 14px; }
+  .order-sections { flex-direction: column; gap: 32px; }
+  .order-divider { width: 100%; height: 1px; margin: 0; align-self: auto; }
+  .order-options { gap: 14px; }
+  .order-card { width: 100%; height: auto; }
+  .order-sections { width: 100%; }
   main { padding: 32px 0 60px; }
 
   /* ── Bestellen banner ── */

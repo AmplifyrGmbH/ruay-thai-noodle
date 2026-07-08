@@ -185,6 +185,8 @@
       background: linear-gradient(155deg, #F8EDD0 0%, #F2DFAF 100%);
       display: flex;
       align-items: center;
+      justify-content: center;
+      text-align: center;
       padding: calc(var(--nav-h) + clamp(32px,6vh,80px)) clamp(32px,5vw,72px) clamp(32px,6vh,80px);
     }
     .hero-right-img {
@@ -545,9 +547,11 @@
       #hero { height: auto; min-height: unset; overflow: visible; }
       #hero .ticker { position: static; }
       .hero-split { grid-template-columns: 1fr; grid-template-rows: auto auto; height: auto; }
-      .hero-right-img { display: block; order: -1; height: 52vw; min-height: 200px; max-height: 260px; }
-      .hero-left { padding: calc(var(--nav-h) + 20px) 24px 36px; align-items: flex-start; }
-      .hero-text h1 { font-size: clamp(1.7rem, 7vw, 2.4rem); }
+      .hero-right-img { display: block; order: -1; height: 42vw; min-height: 160px; max-height: 210px; }
+      .hero-left { padding: calc(var(--nav-h) + 10px) 20px 20px; align-items: flex-start; }
+      .hero-text h1 { font-size: clamp(1.6rem, 6.5vw, 2.2rem); margin-bottom: 10px; }
+      .hero-text p { margin-bottom: 14px; }
+      .hero-pickup-hint { margin-bottom: 12px; }
       .hero-ctas { flex-direction: column; gap: 10px; }
       .hero-ctas .btn { width: 100%; justify-content: center; }
 
@@ -642,8 +646,8 @@
           <ul>
             <li><a href="#menu">Menü</a></li>
             <li><a href="#cafe">Café &amp; Bubble Tea</a></li>
-            <li><a href="#ueber-uns">Über uns</a></li>
             <li><a href="#besuch">Besuch</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
           </ul>
         </nav>
 
@@ -661,8 +665,8 @@
     <ul>
       <li><a href="#menu">Menü</a></li>
       <li><a href="#cafe">Café &amp; Bubble Tea</a></li>
-      <li><a href="#ueber-uns">Über uns</a></li>
       <li><a href="#besuch">Besuch</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
     </ul>
     <a href="/bestellen" class="mobile-cta">Jetzt bestellen</a>
   </div>
