@@ -573,73 +573,86 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
 .page-hero h1 em { font-style: italic; color: var(--chili); }
 .page-hero > .container > p { color: var(--text-mid); font-size: .97rem; max-width: 500px; margin: 0 auto; }
 
-/* Delivery row (klein, oben) */
-.delivery-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-.delivery-row-label {
-  font-size: .82rem;
-  color: var(--text-mid);
-}
-.delivery-row-link {
-  font-size: .82rem;
-  font-weight: 600;
-  color: var(--text-mid);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: color var(--t);
-}
-.delivery-row-link:hover { color: var(--green); }
-.delivery-row-sep { color: var(--text-light); font-size: .82rem; }
-
-/* Divider */
-.order-divider {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin: 20px auto;
-  max-width: 420px;
-  color: var(--text-light);
-  font-size: .8rem;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-.order-divider::before,
-.order-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: rgba(74,52,20,.15);
-}
-
-/* Pickup Banner */
-.pickup-cta {
-  display: inline-flex;
-  align-items: center;
+/* Order layout */
+.order-layout {
+  display: grid;
+  grid-template-rows: auto auto;
   gap: 14px;
-  border: 1.5px solid var(--green);
-  color: var(--green);
-  font-size: 1rem;
-  font-weight: 600;
-  padding: 14px 28px;
-  border-radius: var(--r-md);
-  flex-wrap: wrap;
-  justify-content: center;
+  margin: 24px auto 0;
+  max-width: 680px;
+  text-align: left;
 }
-.pickup-tag {
-  font-size: .75rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+
+/* Delivery cards (2 Spalten) */
+.delivery-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.delivery-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   background: var(--green);
   color: #fff;
-  padding: 3px 10px;
-  border-radius: 50px;
+  padding: 16px 20px;
+  border-radius: var(--r-md);
+  text-decoration: none;
+  transition: var(--t);
+}
+.delivery-card:hover { background: #163820; transform: translateY(-2px); }
+.delivery-card-label {
+  font-size: .7rem;
+  font-weight: 500;
+  opacity: .65;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.delivery-card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Pickup Banner mit Hintergrundbild */
+.pickup-banner {
+  position: relative;
+  border: 1.5px solid var(--green);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  padding: 24px 28px;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+}
+.pickup-banner-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+  opacity: .15;
+}
+.pickup-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(251,246,234,.80);
+}
+.pickup-banner-content { position: relative; z-index: 1; }
+.pickup-banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 4px;
+}
+.pickup-banner-sub {
+  font-size: .83rem;
+  color: var(--text-mid);
+}
+
+@media (max-width: 480px) {
+  .delivery-cards { grid-template-columns: 1fr; }
 }
 
 .shop-layout { display: grid; grid-template-columns: 1fr 360px; gap: 32px; align-items: start; padding: 48px 0 80px; }
