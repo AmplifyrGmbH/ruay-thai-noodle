@@ -182,8 +182,8 @@ nav ul a:hover, nav ul a.active {
 .nav-cta { flex-shrink: 0; }
 
 /* Hamburger */
-.hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; width: 32px; }
-.hamburger span { display: block; height: 2px; background: var(--green); border-radius: 2px; transition: var(--t); }
+.hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; padding: 4px; width: 40px; height: 40px; cursor: pointer; border: none; background: none; flex-shrink: 0; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--green); border-radius: 2px; transition: var(--t); }
 .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -196,7 +196,7 @@ nav ul a:hover, nav ul a.active {
   background: rgba(251,246,234,.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  z-index: 99;
+  z-index: 300;
   padding: 16px 24px 24px;
   transform: translateY(-8px);
   opacity: 0;
@@ -591,9 +591,9 @@ footer { background: var(--green); color: rgba(255,255,255,.7); padding: 56px 0 
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   transition: var(--t);
-  border: 2px solid transparent;
+  border: 1.5px solid var(--beige-mid);
   color: inherit;
   cursor: pointer;
 }
@@ -601,39 +601,14 @@ a.order-choice-card:hover,
 .order-choice-card:hover {
   border-color: var(--green);
   box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 .order-choice-card--featured {
-  background: var(--white);
   border-color: var(--green);
-  padding: 40px 36px;
 }
-.choice-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  background: var(--green);
-  color: #fff;
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: var(--r-pill);
-  margin-bottom: 4px;
-  align-self: flex-start;
-}
-.order-choice-card--featured .order-choice-icon { font-size: 2.6rem; }
-.order-choice-card--featured h2 { font-size: 1.7rem; }
-.order-choice-card--featured p { font-size: .97rem; }
-.order-choice-card--featured .order-choice-cta {
-  font-size: .95rem;
-  margin-top: 8px;
-}
-.order-choice-icon { font-size: 2rem; line-height: 1; }
 .order-choice-card h2 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--green);
   margin: 0;
@@ -654,26 +629,20 @@ a.order-choice-card:hover,
 .delivery-links {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 6px;
+  gap: 8px;
+  margin-top: 4px;
 }
 .delivery-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 18px;
-  border-radius: var(--r-pill);
+  display: inline-block;
   font-size: .88rem;
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--text-mid);
   text-decoration: none;
-  transition: var(--t);
-  letter-spacing: .01em;
+  border-bottom: 1px solid var(--beige-mid);
+  padding-bottom: 2px;
+  transition: color var(--t);
 }
-.delivery-link-uber  { background: #000; color: #fff; }
-.delivery-link-uber:hover  { background: #222; transform: translateY(-1px); box-shadow: var(--shadow-sm); }
-.delivery-link-justeat { background: #FF8000; color: #fff; }
-.delivery-link-justeat:hover { background: #e06e00; transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.delivery-link:hover { color: var(--green); border-color: var(--green); }
 @media (max-width: 640px) {
   .order-choice { grid-template-columns: 1fr; }
   .order-choice-card--featured { padding: 32px 24px; }

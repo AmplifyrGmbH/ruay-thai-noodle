@@ -349,6 +349,17 @@
       line-height: 1.7;
       margin-bottom: clamp(24px, 3.5vh, 40px);
     }
+    .hero-pickup-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .8rem;
+      font-weight: 500;
+      color: #E8A87C;
+      padding: 0;
+      margin-bottom: 20px;
+      letter-spacing: .01em;
+    }
     .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn {
       display: inline-flex;
@@ -572,7 +583,39 @@
 
     /* ─── Besuch ─── */
     #besuch { background: var(--cream); }
-    .visit-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .visit-intro { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: center; margin-bottom: 48px; }
+    .visit-intro-img { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; }
+    .visit-intro-img img { width: 100%; height: 100%; object-fit: cover; }
+    .visit-intro-text h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--text-dark); margin-bottom: 16px; line-height: 1.25; }
+    .visit-intro-text p { font-size: .97rem; color: var(--text-mid); line-height: 1.75; }
+    .visit-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+
+    /* ─── WhatsApp Side Sticky ─── */
+    .wa-sticky {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      z-index: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 10px 0 0 10px;
+      box-shadow: -3px 0 16px rgba(37,211,102,.35);
+      text-decoration: none;
+      transition: width .25s ease, box-shadow .25s ease, background .2s ease;
+    }
+    .wa-sticky:hover {
+      width: 58px;
+      background: #1ebe5d;
+      box-shadow: -5px 0 24px rgba(37,211,102,.55);
+    }
+    .wa-sticky svg { flex-shrink: 0; }
+    .wa-label { display: none; }
     .info-block { background: #fff; border-radius: var(--radius-md); padding: 28px 28px 24px; box-shadow: var(--shadow-card); }
     .info-block h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 14px; }
     .hours-table { width: 100%; border-collapse: collapse; font-size: .88rem; }
@@ -643,10 +686,9 @@
       .hamburger { display: flex; }
 
       /* Hero */
-      .hero-split { grid-template-columns: 1fr; }
-      .hero-right-img { display: none; }
-      .hero-right-img { display: none; }
-      .hero-left { padding: calc(var(--nav-h) + 32px) 24px 48px; }
+      .hero-split { grid-template-columns: 1fr; grid-template-rows: 45vw 1fr; }
+      .hero-right-img { display: block; order: -1; height: 45vw; min-height: 200px; max-height: 320px; }
+      .hero-left { padding: calc(var(--nav-h) + 24px) 24px 80px; }
       .hero-text h1 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
       .hero-ctas { gap: 10px; }
 
@@ -667,6 +709,7 @@
       .about-layout { grid-template-columns: 1fr; gap: 36px; }
 
       /* Besuch */
+      .visit-intro { grid-template-columns: 1fr; gap: 28px; }
       .visit-cards { grid-template-columns: 1fr; }
       .info-block { padding: 20px 18px; }
 
@@ -716,8 +759,8 @@
           <ul>
             <li><a href="#thai-gerichte">Thai Gerichte</a></li>
             <li><a href="#cafe">Café &amp; Bubble Tea</a></li>
-            <li><a href="#ueber-uns">Über uns</a></li>
             <li><a href="#besuch">Besuch</a></li>
+            <li><a href="#ueber-uns">Über uns</a></li>
           </ul>
         </nav>
 
@@ -735,8 +778,8 @@
     <ul>
       <li><a href="#thai-gerichte">Thai Gerichte</a></li>
       <li><a href="#cafe">Café &amp; Bubble Tea</a></li>
-      <li><a href="#ueber-uns">Über uns</a></li>
       <li><a href="#besuch">Besuch</a></li>
+      <li><a href="#ueber-uns">Über uns</a></li>
     </ul>
     <a href="/bestellen" class="mobile-cta">Jetzt bestellen</a>
   </div>
@@ -758,6 +801,7 @@
           Curries, Bubble Tea und mehr – mit Liebe und frischen Zutaten
           täglich zubereitet.
         </p>
+        <p class="hero-pickup-hint">✓ Online vorbestellen &amp; abholen</p>
         <div class="hero-ctas">
           <a href="#thai-gerichte" class="btn btn-outline-white">Menü ansehen</a>
           <a href="/bestellen" class="btn btn-green">Jetzt bestellen</a>
@@ -1106,52 +1150,30 @@
   <!-- ══════════════════════════════════════════════
        ÜBER UNS
   ══════════════════════════════════════════════ -->
-  <section id="ueber-uns" aria-labelledby="about-heading">
-    <div class="container">
-      <div class="about-layout">
-
-        <div class="reveal">
-          <span class="section-label">Unsere Geschichte</span>
-          <h2 class="section-title" id="about-heading">Mit Herzblut &amp; Leidenschaft</h2>
-          <div class="about-text">
-            <p>
-              Ruay Thai Noodle ist mehr als ein Restaurant – es ist ein kleines Stück Thailand
-              mitten in Dietikon. Mit viel Herzblut und Leidenschaft für die thailändische Küche
-              haben wir diesen gemütlichen Ort geschaffen, wo sich Gäste wie Freunde fühlen sollen.
-            </p>
-            <p>
-              Unsere Rezepte stammen direkt aus Thailand – überliefert von der Familie und
-              mit frischen, sorgfältig ausgewählten Zutaten zubereitet. Wir glauben daran,
-              dass gutes Essen Menschen zusammenbringt.
-            </p>
-            <p>
-              Als kleiner, familiär geführter Laden sind wir stolz auf das persönliche Erlebnis,
-              das wir unseren Gästen bieten. Hier kennt man sich, hier ist jeder willkommen –
-              ob zum schnellen Mittagessen oder für einen entspannten Bubble Tea am Nachmittag.
-            </p>
-          </div>
-        </div>
-
-        <div class="about-image-wrap reveal reveal-delay-1">
-          <div class="about-img-main">
-            <img src="Bilder/Owner_1.avif" alt="Die Inhaberin von Ruay Thai Noodle" loading="lazy" width="480" height="640" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════
-       BESUCH
-  ══════════════════════════════════════════════ -->
   <section id="besuch" aria-labelledby="visit-heading">
     <div class="container">
 
       <div class="section-header reveal">
         <span class="section-label">Wir freuen uns auf euch</span>
-        <h2 class="section-title" id="visit-heading">Uns besuchen</h2>
+        <h2 class="section-title" id="visit-heading">Besuchen Sie uns</h2>
+      </div>
+
+      <div class="visit-intro reveal">
+        <div class="visit-intro-img">
+          <img src="Bilder/Laden.webp" alt="Ruay Thai Noodle Laden in Dietikon" loading="lazy" width="800" height="600" />
+        </div>
+        <div class="visit-intro-text">
+          <h3>Frisch, schnell, authentisch – mitten in Dietikon</h3>
+          <p>
+            Jeden Morgen beginnt es mit einer intensiven Hühnerbrühe, die stundenlang zieht. Dazu frische Nudeln direkt aus Thailand, knackiges Gemüse und die Aromen, die man sonst nur auf den Märkten Bangkoks findet. Bei Ruay Thai Noodle wird nicht vorproduziert – alles entsteht auf Bestellung, frisch und mit Sorgfalt.
+          </p>
+          <p>
+            Ob ein schnelles Mittagessen unter der Woche oder ein entspannter Bubble Tea am Nachmittag: Hier fühlt man sich willkommen. Die Speisekarte ist bewusst überschaubar – wer sich auf weniges konzentriert, macht es besser.
+          </p>
+          <p>
+            Wir freuen uns auf Ihren Besuch an der Heimstrasse 10 in Dietikon.
+          </p>
+        </div>
       </div>
 
       <div class="visit-cards">
@@ -1177,14 +1199,42 @@
           <p class="hours-note">* Abweichungen an Feiertagen möglich.</p>
         </div>
 
-        <div class="info-block reveal reveal-delay-2">
-          <h3>📞 Kontakt &amp; Bestellen</h3>
-          <p class="info-text"><a href="tel:+41798481522">079 848 15 22</a></p>
-          <a href="/bestellen" class="btn btn-green">Jetzt online bestellen</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       ÜBER UNS
+  ══════════════════════════════════════════════ -->
+  <section id="ueber-uns" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-layout">
+
+        <div class="reveal">
+          <span class="section-label">Unsere Geschichte</span>
+          <h2 class="section-title" id="about-heading">Mit Herzblut &amp; Leidenschaft</h2>
+          <div class="about-text">
+            <p>
+              Adrian Błaszczyk aus Polen kocht seit über 23 Jahren – unter anderem als Privatkoch für den thailändischen König in Deutschland, ohne es damals zu wissen. Vor vier Jahren zog er in die Schweiz und wurde zweiter Küchenchef im Dorint Hotel am Zürcher Flughafen. Dort lernte er Matuwan kennen, die im Service arbeitete.
+            </p>
+            <p>
+              Matuwan ist in Bangkok aufgewachsen. Ihre Familie kocht seit über 20 Jahren Streetfood auf den Märkten der Stadt – das Wissen darüber trägt sie in sich. «Ich bin zwar hauptberuflich Koch, doch von meiner Frau habe ich noch vieles gelernt», sagt Adrian. Als sie ihn das erste Mal bekochte, war ihm sofort klar: Sie hat es im Blut.
+            </p>
+            <p>
+              Die Idee, dieses Streetfood in die Schweiz zu bringen, kam von Matuwan – denn in der Region gab es das so noch nicht. An der Heimstrasse 10 in Dietikon haben die beiden nun ihr Lokal eröffnet.
+            </p>
+          </div>
+        </div>
+
+        <div class="about-image-wrap reveal reveal-delay-1">
+          <div class="about-img-main">
+            <img src="Bilder/Owner_1.avif" alt="Die Inhaberin von Ruay Thai Noodle" loading="lazy" width="480" height="640" />
+          </div>
         </div>
 
       </div>
-
     </div>
   </section>
 
@@ -1255,13 +1305,13 @@
         </div>
         <div class="footer-center">
           Heimstrasse 10, 8953 Dietikon<br />
-          Authentisches Thai Streetfood in der Schweiz
+          <a href="tel:+41798481522" style="color:rgba(255,255,255,.75);text-decoration:none;">079 848 15 22</a>
         </div>
         <nav class="footer-links" aria-label="Footer Navigation">
           <a href="#thai-gerichte">Menü</a>
           <a href="#cafe">Café</a>
-          <a href="#besuch">Besuch</a>
           <a href="#ueber-uns">Über uns</a>
+          <a href="#besuch">Besuch</a>
           <a href="/bestellen">Bestellen</a>
           <a href="/impressum">Impressum</a>
           <a href="/datenschutz">Datenschutz</a>
@@ -1332,6 +1382,14 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+
+  <!-- WhatsApp Business Sticky Button -->
+  <a class="wa-sticky" href="https://wa.me/41798481522" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp schreiben">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </svg>
+    <span class="wa-label">WhatsApp schreiben</span>
+  </a>
 
 </body>
 </html>
