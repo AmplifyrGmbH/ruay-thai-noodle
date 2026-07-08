@@ -63,30 +63,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ─── Menu chips / panels ───────────────────────────────────
+  // ─── Menu chips / panels + mobile select ───────────────────
   const chips = document.querySelectorAll('.chip[data-panel]');
+  const menuSelect = document.querySelector('.menu-select');
+
+  function switchPanel(target) {
+    chips.forEach(c => { c.classList.toggle('active', c.dataset.panel === target); });
+    document.querySelectorAll('.menu-panel').forEach(p => {
+      p.classList.toggle('active', p.id === target);
+    });
+    if (menuSelect) menuSelect.value = target;
+  }
+
   chips.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const target = chip.dataset.panel;
-      chips.forEach(c => { c.classList.toggle('active', c === chip); });
-      document.querySelectorAll('.menu-panel').forEach(p => {
-        p.classList.toggle('active', p.id === target);
+    chip.addEventListener('click', () => switchPanel(chip.dataset.panel));
+  });
+
+  if (menuSelect) {
+    menuSelect.addEventListener('change', () => switchPanel(menuSelect.value));
+  }
+
+  // ─── Menu tab buttons (index.html uses aria-controls tabs) ────
+  const tabBtns = document.querySelectorAll('.menu-tab-btn');
+  if (tabBtns.length) {
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const panelId = btn.getAttribute('aria-controls');
+        tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+        document.querySelectorAll('.menu-tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const panel = document.getElementById(panelId);
+        if (panel) {
+          panel.classList.add('active');
+          if (revealObserver) {
+            panel.querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+          }
+        }
       });
     });
-  });
+  }
 
   // ─── Scroll reveal ─────────────────────────────────────────
   const revealEls = document.querySelectorAll('.reveal');
+  let revealObserver = null;
   if (revealEls.length) {
-    const observer = new IntersectionObserver(entries => {
+    revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+          revealObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
-    revealEls.forEach(el => observer.observe(el));
+    revealEls.forEach(el => revealObserver.observe(el));
   }
 
 });
