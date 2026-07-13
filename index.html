@@ -382,31 +382,43 @@
       transition: border-color var(--t), transform var(--t);
     }
 
-    /* Hauptgerichte: 2-column compact grid */
-    #menu .dish-list {
+    /* Hauptgerichte: 2-column dish cards */
+    #menu .dish-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* Dish Card: Bild links, Info rechts */
+    .dish-card {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      grid-template-columns: 100px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 14px;
+      background: var(--bg-card);
+      border: 1px solid rgba(245,200,66,.12);
+      border-radius: 10px;
+      transition: border-color var(--t);
     }
-    #menu .dish-row {
-      padding: 12px 14px;
-      gap: 10px;
-      align-items: center;
+    .dish-card:hover { border-color: rgba(245,200,66,.25); }
+    .dish-img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 7px;
+      display: block;
     }
-    #menu .dish-body h3 { font-size: .88rem; margin-bottom: 2px; }
-    #menu .dish-body p { font-size: .75rem; line-height: 1.4; }
-    #menu .dish-variants { margin-top: 6px; gap: 1px; }
-    #menu .dish-variant { font-size: .74rem; padding: 2px 0; }
-    #menu .dish-num { font-size: .88rem; }
-    #menu .price-tag { font-size: .82rem; white-space: nowrap; }
-    #menu .order-btn { font-size: .75rem; padding: 5px 10px; }
+    .dish-info { display: flex; flex-direction: column; gap: 6px; }
+    .dish-header { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .dish-header h3 { margin: 0; }
+    .dish-footer { display: flex; justify-content: flex-end; margin-top: 4px; }
     @media (max-width: 768px) {
       #menu .dish-list { grid-template-columns: 1fr; }
+      .dish-card { grid-template-columns: 1fr; }
+      .dish-card .dish-img { aspect-ratio: 16/9; }
+      .dish-footer { gap: 8px; }
     }
     .dish-row:hover { border-color: rgba(245,200,66,.18); transform: translateX(3px); }
     .dish-num { font-family: 'Oswald', sans-serif; font-size: 1rem; color: var(--accent); font-weight: 600; line-height: 1.5; }
-    .dish-body h3 { font-size: .97rem; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.35; }
-    .dish-body p { font-size: .8rem; color: var(--text-lt); line-height: 1.55; }
+    .dish-body h3, .dish-info h3 { font-size: .97rem; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.35; }
+    .dish-body p, .dish-info > p { font-size: .8rem; color: var(--text-lt); line-height: 1.55; }
     .dish-variants { margin-top: 8px; display: flex; flex-direction: column; gap: 2px; }
     .dish-variant { display: flex; justify-content: space-between; font-size: .79rem; color: var(--text-mid); padding: 3px 0; border-bottom: 1px dashed rgba(255,255,255,.07); gap: 12px; }
     .dish-variant:last-child { border-bottom: none; }
@@ -423,7 +435,8 @@
     .diet-badge-v  { background: rgba(46,107,58,.3); color: #7ecf8a; }
     .diet-badge-ve { background: rgba(46,107,58,.5); color: #a5d6aa; }
     .diet-badge-gf { background: rgba(181,119,61,.2); color: #D4A820; }
-    .dish-badges { display: flex; gap: 5px; margin-top: 7px; flex-wrap: wrap; }
+    .dish-badges { display: flex; gap: 5px; flex-wrap: wrap; }
+    .dish-body .dish-badges { margin-top: 7px; }
     .menu-note { text-align: center; font-size: .82rem; color: var(--text-lt); margin-top: 32px; line-height: 1.8; }
 
     /* ============================================================
@@ -860,10 +873,25 @@
       <img src="Bilder/Laden/laden_2.jpg" alt="Ruay Thai Noodle – Theke und Lounge in Dietikon" loading="eager" fetchpriority="high" />
     </div>
     <div class="slide">
+      <img src="Bilder/Essen/IMG-20260705-WA0017.jpg" alt="Rotes Curry mit Pouletstreifen" loading="lazy" />
+    </div>
+    <div class="slide">
       <img src="Bilder/Laden/laden_1.jpg" alt="Ruay Thai Noodle – Gästeraum mit Thai-Deko" loading="lazy" />
     </div>
     <div class="slide">
+      <img src="Bilder/Essen/IMG-20260613-WA0000.jpg" alt="Gelbes Curry mit Tofu" loading="lazy" />
+    </div>
+    <div class="slide">
       <img src="Bilder/Laden/laden_3.jpg" alt="Ruay Thai Noodle – Restaurant von innen" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Essen/IMG-20260628-WA0002.jpg" alt="Gebratener Reis" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Essen/IMG-20260712-WA0024.jpg" alt="Pad Thai" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Essen/IMG-20260613-WA0004.jpg" alt="Knusprige Ente" loading="lazy" />
     </div>
 
     <!-- Overlay -->
@@ -885,6 +913,11 @@
       <button class="slide-dot active" role="tab" aria-selected="true"  aria-label="Slide 1"></button>
       <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
       <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 5"></button>
+      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 6"></button>
+      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 7"></button>
+      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 8"></button>
     </div>
 
     <button class="slide-arrow prev" aria-label="Vorheriges Bild">
@@ -1216,117 +1249,140 @@
         <p class="section-sub">Täglich frisch zubereitet mit echten thailändischen Zutaten.</p>
       </div>
 
-      <div class="menu-photos reveal">
-        <img src="Bilder/Essen/IMG-20260705-WA0005.jpg" alt="Hauptgericht Thai Küche" loading="lazy" />
-        <img src="Bilder/Essen/IMG-20260705-WA0007.jpg" alt="Frisches Hauptgericht" loading="lazy" />
-      </div>
-
       <div class="dish-list">
-        <div class="dish-row reveal">
-          <div class="dish-num">1</div>
-          <div class="dish-body">
-            <h3>Gelbes Curry mit Tofu</h3><p>Gemüse und Jasmin Reis</p>
-            <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260613-WA0000.jpg" alt="Gelbes Curry mit Tofu" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Gelbes Curry mit Tofu</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
+            </div>
+            <p>Gemüse und Jasmin Reis</p>
+            <div class="dish-footer"><span class="price-tag">CHF 20.90</span></div>
           </div>
-          <span class="price-tag">CHF 20.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">2</div>
-          <div class="dish-body">
-            <h3>Poulet Teriyaki (CH)</h3><p>Mit Jasmin Reis</p>
-            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260613-WA0003.jpg" alt="Poulet Teriyaki" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Poulet Teriyaki (CH)</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+            </div>
+            <p>Mit Jasmin Reis</p>
+            <div class="dish-footer"><span class="price-tag">CHF 21.90</span></div>
           </div>
-          <span class="price-tag">CHF 21.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">3</div>
-          <div class="dish-body"><h3>Knusprige Ente (CN)</h3><p>Mit Rote Curry Sauce und Jasmin Reis</p></div>
-          <span class="price-tag">CHF 26.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
-        </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">4</div>
-          <div class="dish-body">
-            <h3>Rotes Curry mit Pouletstreifen (CH)</h3><p>Mit Jasmin Reis</p>
-            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260613-WA0004.jpg" alt="Knusprige Ente" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Knusprige Ente (CN)</h3>
+            </div>
+            <p>Mit Rote Curry Sauce und Jasmin Reis</p>
+            <div class="dish-footer"><span class="price-tag">CHF 26.90</span></div>
           </div>
-          <span class="price-tag">CHF 20.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">5</div>
-          <div class="dish-body">
-            <h3>Tom Kha Gai</h3><p>Mit Pouletfleisch (CH) und Jasmin Reis</p>
-            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260705-WA0017.jpg" alt="Rotes Curry mit Pouletstreifen" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Rotes Curry mit Pouletstreifen (CH)</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+            </div>
+            <p>Mit Jasmin Reis</p>
+            <div class="dish-footer"><span class="price-tag">CHF 20.90</span></div>
           </div>
-          <span class="price-tag">CHF 22.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">6</div>
-          <div class="dish-body">
-            <h3>Pad Thai</h3><p>Gebratene Reisnudeln, Sojasprossen, Schnittlauch, Erdnüsse, Tamarinde Sauce</p>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260703-WA0001.jpg" alt="Tom Kha Gai" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Tom Kha Gai</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+            </div>
+            <p>Mit Pouletfleisch (CH) und Jasmin Reis</p>
+            <div class="dish-footer"><span class="price-tag">CHF 22.90</span></div>
+          </div>
+        </div>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260712-WA0024.jpg" alt="Pad Thai" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Pad Thai</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+            </div>
+            <p>Gebratene Reisnudeln, Sojasprossen, Schnittlauch, Erdnüsse, Tamarinde Sauce</p>
             <div class="dish-variants">
               <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
               <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
               <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
             </div>
-            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+            <div class="dish-footer"><span class="price-tag">ab CHF 22.50</span></div>
           </div>
-          <span class="price-tag">ab CHF 22.50</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">7</div>
-          <div class="dish-body">
-            <h3>Gebratener Reis</h3><p>Jasminreis, gebraten mit Ei und Gemüse</p>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260628-WA0002.jpg" alt="Gebratener Reis" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Gebratener Reis</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
+            </div>
+            <p>Jasminreis, gebraten mit Ei und Gemüse</p>
             <div class="dish-variants">
               <div class="dish-variant"><span>Mit Gemüse</span><span class="v-price">CHF 19.50</span></div>
               <div class="dish-variant"><span>Mit Pouletstreifen (CH)</span><span class="v-price">CHF 22.50</span></div>
               <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
             </div>
-            <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
+            <div class="dish-footer"><span class="price-tag">ab CHF 19.50</span></div>
           </div>
-          <span class="price-tag">ab CHF 19.50</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">8</div>
-          <div class="dish-body"><h3>Poulet Teriyaki mit Pandan Nudeln (CH)</h3><p>Choi Sum Gemüse und Zucchini</p></div>
-          <span class="price-tag">CHF 22.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260705-WA0005.jpg" alt="Poulet Teriyaki mit Pandan Nudeln" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Poulet Teriyaki mit Pandan Nudeln (CH)</h3>
+            </div>
+            <p>Choi Sum Gemüse und Zucchini</p>
+            <div class="dish-footer"><span class="price-tag">CHF 22.90</span></div>
+          </div>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">9</div>
-          <div class="dish-body">
-            <h3>Grünes Curry</h3><p>Mit Kokosnussmilch, Thai-Auberginen, Fleisch nach Wahl</p>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/20251006_182012.jpg" alt="Grünes Curry" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Grünes Curry</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span></div>
+            </div>
+            <p>Mit Kokosnussmilch, Thai-Auberginen, Fleisch nach Wahl</p>
             <div class="dish-variants">
               <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
               <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
               <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
               <div class="dish-variant"><span>Mit Rindsfleisch (CH)</span><span class="v-price">CHF 26.00</span></div>
             </div>
-            <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span></div>
+            <div class="dish-footer"><span class="price-tag">ab CHF 22.50</span></div>
           </div>
-          <span class="price-tag">ab CHF 22.50</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">10</div>
-          <div class="dish-body">
-            <h3>Gelbes Curry mit Kokosnussmilch</h3><p>Gemüse und Pouletfleisch (CH)</p>
-            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260705-WA0007.jpg" alt="Gelbes Curry mit Kokosnussmilch" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Gelbes Curry mit Kokosnussmilch</h3>
+              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+            </div>
+            <p>Gemüse und Pouletfleisch (CH)</p>
+            <div class="dish-footer"><span class="price-tag">CHF 20.90</span></div>
           </div>
-          <span class="price-tag">CHF 20.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
         </div>
-        <div class="dish-row reveal">
-          <div class="dish-num">11</div>
-          <div class="dish-body"><h3>Knusprige Pouletstreifen (CH)</h3><p>Mit Süss-Saure Sauce, Jasmin Reis und Gurken</p></div>
-          <span class="price-tag">CHF 22.90</span>
-          <a href="/bestellen" class="order-btn">Bestellen</a>
+        <div class="dish-card reveal">
+          <img src="Bilder/Essen/IMG-20260628-WA0003.jpg" alt="Knusprige Pouletstreifen" loading="lazy" class="dish-img" />
+          <div class="dish-info">
+            <div class="dish-header">
+              <h3>Knusprige Pouletstreifen (CH)</h3>
+            </div>
+            <p>Mit Süss-Saure Sauce, Jasmin Reis und Gurken</p>
+            <div class="dish-footer"><span class="price-tag">CHF 22.90</span></div>
+          </div>
         </div>
       </div>
 
