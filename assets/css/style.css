@@ -635,6 +635,7 @@ main { padding: 56px 0 80px; }
 .order-card--justeat  { background: #FF8000; color: #fff; }
 .order-card--whatsapp { background: #25D366; color: #fff; }
 .order-card--phone    { background: var(--calm-green); color: var(--green); border: 1.5px solid rgba(30,74,40,.12); }
+.order-card--email    { background: var(--green); color: #fff; }
 
 .order-card-logo { margin-bottom: 4px; }
 .order-card-number { font-size: 1.3rem; font-weight: 700; margin: 0; }

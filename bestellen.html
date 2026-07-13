@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Bestellen – Ruay Thai Noodle Dietikon</title>
-  <meta name="description" content="Thai Essen bestellen bei Ruay Thai Noodle in Dietikon – über Uber Eats, Just Eat oder telefonisch unter 079 848 15 22." />
+  <meta name="description" content="Thai Essen bestellen bei Ruay Thai Noodle in Dietikon – per E-Mail, Telefon, WhatsApp, Uber Eats oder Just Eat. Abholung oder Lieferung." />
   <link rel="canonical" href="https://ruay-thai-noodle.ch/bestellen" />
 
   <meta property="og:type"        content="website" />
   <meta property="og:url"         content="https://ruay-thai-noodle.ch/bestellen" />
   <meta property="og:title"       content="Bestellen – Ruay Thai Noodle" />
-  <meta property="og:description" content="Thai Essen bestellen über Uber Eats, Just Eat oder telefonisch." />
+  <meta property="og:description" content="Thai Essen bestellen – per E-Mail, Telefon, Uber Eats oder Just Eat." />
   <meta property="og:image"       content="https://ruay-thai-noodle.ch/Bilder/Logo.avif" />
   <meta property="og:image:width"  content="400" />
   <meta property="og:image:height" content="400" />
@@ -22,9 +22,145 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <style>
+    /* ─── Dark Theme Override ─── */
+    :root {
+      --bg:      #0A0A0A;
+      --bg-2:    #111111;
+      --bg-card: #161616;
+      --accent:  #F5C842;
+      --text:    #F0EDE6;
+      --text-mid: rgba(240,237,230,.68);
+      --text-lt:  rgba(240,237,230,.38);
+      --brd-sub:  rgba(255,255,255,.07);
+    }
+
+    body { background: var(--bg); color: var(--text); }
+
+    /* Nav */
+    #navbar,
+    #navbar.scrolled { background: rgba(10,10,10,.96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 1px 0 rgba(255,255,255,.06); }
+    .nav-brand-name { font-family: 'Oswald', sans-serif; color: var(--text); }
+    nav ul a { color: rgba(240,237,230,.7); }
+    nav ul a:hover, nav ul a.active { background: rgba(245,200,66,.1); color: var(--accent); }
+    .nav-cta { background: var(--accent); color: #0A0A0A; }
+    .nav-cta:hover { background: #D4A820; }
+    .hamburger span { background: var(--text); }
+    .nav-mobile { background: rgba(10,10,10,.98); }
+    .nav-mobile ul a { color: rgba(240,237,230,.7); }
+    .nav-mobile ul a:hover { background: rgba(245,200,66,.08); color: var(--accent); }
+    .nav-mobile .mobile-cta { background: var(--accent); color: #0A0A0A; }
+
+    /* Banner */
+    .order-banner {
+      background: linear-gradient(155deg, #0D0D0D 0%, #141414 55%, #111 100%);
+      border-bottom: 1px solid rgba(245,200,66,.1);
+    }
+    .order-banner-thai { color: var(--accent); opacity: .7; }
+    .order-banner h1 { font-family: 'Oswald', sans-serif; color: var(--accent); font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; }
+    .order-banner h1 em { font-style: normal; color: var(--text); }
+    .order-banner-sub { color: var(--text-mid); }
+
+    /* Main */
+    main { background: var(--bg-2); }
+
+    /* Group labels */
+    .order-group-label { color: var(--text-lt); }
+
+    /* Divider */
+    .order-divider { background: rgba(255,255,255,.07); }
+
+    /* Cards – base */
+    .order-card { border-radius: 18px; }
+    .order-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.5); }
+
+    /* Phone card → dark */
+    .order-card--phone {
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--brd-sub);
+    }
+    .order-card--phone .order-card-cta { color: var(--accent); }
+
+    /* Email card → accent */
+    .order-card--email {
+      background: rgba(245,200,66,.1);
+      color: var(--text);
+      border: 1px solid rgba(245,200,66,.2);
+    }
+    .order-card--email svg { color: var(--accent); }
+    .order-card--email .order-card-cta { color: var(--accent); }
+    .order-card--email .order-card-number { color: var(--accent); font-size: .82rem !important; }
+
+    /* ─── Layout overrides ─── */
+    .order-sections {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+    .order-group { width: 100%; }
+    .order-group-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-lt);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .order-options {
+      display: grid;
+      gap: 14px;
+    }
+    /* Abholung: 3 cards */
+    .order-group:first-child .order-options {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    /* Lieferung: 2 cards */
+    .order-group:last-child .order-options {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .order-card {
+      width: 100%;
+      height: auto;
+      min-height: 180px;
+      padding: 28px 24px;
+      border-radius: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,.13) !important;
+    }
+    .order-card-logo { margin-bottom: 4px; }
+    .order-card-number { font-size: 1.25rem; font-weight: 700; margin: 0; }
+    .order-card-desc { font-size: .9rem; opacity: .75; flex: 1; margin: 0; }
+    .order-card-cta { font-size: .92rem; font-weight: 700; margin-top: auto; }
+    .order-divider { display: none; }
+
+    /* Note */
+    .order-note { color: var(--text-lt); }
+    .order-note a { color: var(--accent); border-bottom-color: rgba(245,200,66,.3); }
+    .order-note a:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .order-group:first-child .order-options { grid-template-columns: 1fr; }
+      .order-group:last-child .order-options { grid-template-columns: 1fr; }
+    }
+
+    /* Footer */
+    footer { background: #060606; border-top: 1px solid rgba(255,255,255,.06); color: rgba(240,237,230,.45); }
+    .footer-name { color: var(--text); font-family: 'Oswald', sans-serif; }
+    .footer-nav a { color: rgba(240,237,230,.4); }
+    .footer-nav a:hover { color: var(--text); }
+    .footer-divider { border-color: rgba(255,255,255,.06); }
+    .footer-copy { color: rgba(240,237,230,.22); }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -40,9 +176,9 @@
 
 <body>
 
-  <!-- ══════════════════════════════════════════════
+  <!-- ════════════════════
        NAVIGATION
-  ══════════════════════════════════════════════ -->
+  ════════════════════ -->
   <header id="navbar" class="scrolled visible" role="banner">
     <div class="container">
       <div class="nav-inner">
@@ -56,9 +192,9 @@
 
         <nav aria-label="Hauptnavigation">
           <ul>
+            <li><a href="/#mittagsbuffet">Buffet</a></li>
+            <li><a href="/#getraenke">Getränke</a></li>
             <li><a href="/#menu">Menü</a></li>
-            <li><a href="/#cafe">Café &amp; Bubble Tea</a></li>
-            <li><a href="/#besuch">Besuch</a></li>
             <li><a href="/#ueber-uns">Über uns</a></li>
           </ul>
         </nav>
@@ -75,35 +211,80 @@
 
   <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobilnavigation">
     <ul>
+      <li><a href="/#mittagsbuffet">Buffet</a></li>
+      <li><a href="/#getraenke">Getränke</a></li>
       <li><a href="/#menu">Menü</a></li>
-      <li><a href="/#cafe">Café &amp; Bubble Tea</a></li>
-      <li><a href="/#besuch">Besuch</a></li>
       <li><a href="/#ueber-uns">Über uns</a></li>
     </ul>
     <a href="/bestellen" class="mobile-cta">Jetzt bestellen</a>
   </div>
 
 
-  <!-- ══════════════════════════════════════════════
+  <!-- ════════════════════
        BANNER
-  ══════════════════════════════════════════════ -->
+  ════════════════════ -->
   <div class="order-banner grain">
     <div class="container">
       <p class="order-banner-thai">สั่งอาหาร</p>
       <h1>Jetzt <em>bestellen</em></h1>
-      <p class="order-banner-sub">Frisch gekocht, direkt zu dir – wähle deinen Lieferdienst oder ruf uns an.</p>
+      <p class="order-banner-sub">Frisch gekocht, direkt zu dir – wähle deinen bevorzugten Bestellweg.</p>
     </div>
   </div>
 
 
-  <!-- ══════════════════════════════════════════════
+  <!-- ════════════════════
        BESTELLOPTIONEN
-  ══════════════════════════════════════════════ -->
+  ════════════════════ -->
   <main>
     <div class="container">
       <div class="order-sections">
 
-        <!-- Gruppe 1: Lieferung -->
+        <!-- Gruppe 1: Abholung -->
+        <div class="order-group">
+          <p class="order-group-label">🥡 Abholung (günstiger)</p>
+          <div class="order-options">
+
+            <a href="mailto:bestellung@ruay-thai-noodle.ch" class="order-card order-card--email">
+              <div class="order-card-logo">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <p class="order-card-desc">Bestellung per E-Mail</p>
+              <p class="order-card-number" style="font-size:.85rem;">bestellung@<br/>ruay-thai-noodle.ch</p>
+              <span class="order-card-cta">E-Mail schreiben &rarr;</span>
+            </a>
+
+            <a href="tel:+41798481522" class="order-card order-card--phone">
+              <div class="order-card-logo">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.44 2 2 0 0 1 3.62 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 15.25z"/>
+                </svg>
+              </div>
+              <p class="order-card-number">079 848 15 22</p>
+              <p class="order-card-desc">Telefonisch bestellen</p>
+              <span class="order-card-cta">Anrufen &rarr;</span>
+            </a>
+
+            <a href="https://wa.me/41798481522" target="_blank" rel="noopener noreferrer" class="order-card order-card--whatsapp">
+              <div class="order-card-logo">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+                </svg>
+              </div>
+              <p class="order-card-number">079 848 15 22</p>
+              <p class="order-card-desc">Bestellung per WhatsApp</p>
+              <span class="order-card-cta">Schreiben &rarr;</span>
+            </a>
+
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="order-divider" aria-hidden="true"></div>
+
+        <!-- Gruppe 2: Lieferung -->
         <div class="order-group">
           <p class="order-group-label">🛵 Mit Lieferung</p>
           <div class="order-options">
@@ -115,7 +296,7 @@
                 </svg>
               </div>
               <p class="order-card-desc">Lieferung nach Hause</p>
-              <span class="order-card-cta">Jetzt bestellen →</span>
+              <span class="order-card-cta">Jetzt bestellen &rarr;</span>
             </a>
 
             <a href="https://www.just-eat.ch/speisekarte/ruay-thai-nudeln" target="_blank" rel="noopener noreferrer" class="order-card order-card--justeat">
@@ -125,40 +306,7 @@
                 </svg>
               </div>
               <p class="order-card-desc">Lieferung nach Hause</p>
-              <span class="order-card-cta">Jetzt bestellen →</span>
-            </a>
-
-          </div>
-        </div>
-
-        <!-- Divider -->
-        <div class="order-divider" aria-hidden="true"></div>
-
-        <!-- Gruppe 2: Direkt -->
-        <div class="order-group">
-          <p class="order-group-label">🥡 Zur Abholung (günstiger)</p>
-          <div class="order-options">
-
-            <a href="https://wa.me/41798481522" target="_blank" rel="noopener noreferrer" class="order-card order-card--whatsapp">
-              <div class="order-card-logo">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-                </svg>
-              </div>
-              <p class="order-card-number">079 848 15 22</p>
-              <p class="order-card-desc">Bestellung per WhatsApp</p>
-              <span class="order-card-cta">Schreiben →</span>
-            </a>
-
-            <a href="tel:+41798481522" class="order-card order-card--phone">
-              <div class="order-card-logo">
-                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.44 2 2 0 0 1 3.62 1.26h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 15.25z"/>
-                </svg>
-              </div>
-              <p class="order-card-number">079 848 15 22</p>
-              <p class="order-card-desc">Telefonisch bestellen</p>
-              <span class="order-card-cta">Anrufen →</span>
+              <span class="order-card-cta">Jetzt bestellen &rarr;</span>
             </a>
 
           </div>
