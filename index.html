@@ -34,7 +34,7 @@
     "description": "Authentisches Thai Streetfood – Nudelsuppen, Curries, Pad Thai und Bubble Tea in Dietikon, Schweiz. Mittagsbuffet Mo–Fr ab CHF 18.50. Familiär geführt, täglich frisch zubereitet.",
     "url": "https://ruay-thai-noodle.ch",
     "telephone": "+41798481522",
-    "email": "bestellung@ruay-thai-noodle.ch",
+    "email": "info@ruay-thai-noodle.ch",
     "image": "https://ruay-thai-noodle.ch/Bilder/Laden.webp",
     "priceRange": "CHF 18–27",
     "servesCuisine": "Thai",
@@ -276,6 +276,17 @@
       letter-spacing: .04em;
     }
     .slide-ctas { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,200,66,.12);
+      border: 1px solid rgba(245,200,66,.3);
+      border-radius: 50px; padding: 7px 18px;
+      font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 500;
+      color: var(--accent); letter-spacing: .02em;
+      margin-bottom: 20px; backdrop-filter: blur(6px);
+    }
+    .hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2s ease-in-out infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
     .slide-dots {
       position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
       z-index: 3; display: flex; gap: 8px; align-items: center;
@@ -302,12 +313,12 @@
     ============================================================ */
     #restaurant { background: var(--bg); text-align: center; padding: 80px 0 72px; }
     .restaurant-logo {
-      width: 90px; height: 90px; border-radius: 50%; object-fit: cover;
-      margin: 0 auto 28px; display: block;
-      box-shadow: 0 0 0 3px rgba(245,200,66,.2), var(--shadow);
+      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+      margin: 0 auto 32px; display: block;
+      box-shadow: 0 0 0 4px rgba(245,200,66,.2), var(--shadow);
     }
     .restaurant-name {
-      font-family: 'Oswald', sans-serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-family: 'Oswald', sans-serif; font-size: clamp(2.4rem, 5vw, 3.6rem);
       font-weight: 700; color: var(--accent); margin-bottom: 24px; letter-spacing: .03em;
     }
     .restaurant-text { max-width: 740px; margin: 0 auto; }
@@ -389,7 +400,7 @@
     #menu .dish-num { font-size: .88rem; }
     #menu .price-tag { font-size: .82rem; white-space: nowrap; }
     #menu .order-btn { font-size: .75rem; padding: 5px 10px; }
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
       #menu .dish-list { grid-template-columns: 1fr; }
     }
     .dish-row:hover { border-color: rgba(245,200,66,.18); transform: translateX(3px); }
@@ -420,8 +431,11 @@
     ============================================================ */
     #mittagsbuffet { background: var(--bg); }
     .buffet-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .buffet-img { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 4/5; }
-    .buffet-img img { width: 100%; height: 100%; object-fit: cover; }
+    .buffet-img { border-radius: var(--r-lg); overflow: hidden; }
+    .buffet-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .buffet-imgs img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+    .buffet-imgs-mobile { display: none; }
+    .buffet-cta-mobile { display: none; }
     .buffet-badge {
       display: inline-flex; align-items: center; gap: 8px;
       background: rgba(245,200,66,.1); border: 1px solid rgba(245,200,66,.2);
@@ -442,8 +456,9 @@
        GETRÄNKE & BUBBLE TEA
     ============================================================ */
     #getraenke { background: var(--bg-2); }
-    .drinks-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-    .drink-img { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 3/4; position: sticky; top: calc(var(--nav-h) + 20px); }
+    .drink-photos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 48px; }
+    .drink-photos img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--r-md); display: block; }
+    .drink-photos-mobile { display: none; }
     .drink-img img { width: 100%; height: 100%; object-fit: cover; }
     .drink-grids { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     .drink-card { background: var(--bg-card); border: 1px solid var(--brd-sub); border-radius: var(--r-md); padding: 20px; }
@@ -469,7 +484,12 @@
     }
     .soup-price-badge .sp-amount { font-size: 1.6rem; line-height: 1; }
     .soup-price-badge .sp-curr { font-size: .75rem; opacity: .7; margin-top: 2px; }
-    .soup-builder { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .soup-pairs { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+    .soup-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
+    .soup-pair:nth-child(even) .soup-pair-img { order: 2; }
+    .soup-pair:nth-child(even) .soup-step { order: 1; }
+    .soup-pair-img { border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4/3; }
+    .soup-pair-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .soup-step { background: var(--bg-card); border: 1px solid var(--brd-sub); border-radius: var(--r-md); padding: 22px; }
     .soup-step-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
     .soup-step-num {
@@ -490,33 +510,93 @@
     .extra-chip-price { font-size: .82rem; color: var(--chili); font-weight: 700; }
     .soup-cta { text-align: center; margin-top: 40px; }
     .soup-cta p { font-size: .88rem; color: var(--text-lt); margin-top: 14px; }
+    .soup-photos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 40px; }
+    .soup-photos img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r-md); display: block; }
+    .menu-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 32px; }
+    .menu-photos img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--r-md); display: block; }
 
     /* ============================================================
        ÜBER UNS / INHABER
     ============================================================ */
     #ueber-uns { background: var(--bg-2); }
-    .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-    .about-text p { font-size: .98rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 16px; }
-    .about-text p:last-child { margin-bottom: 0; }
+
+    /* Über uns – Person zigzag */
+    .about-person {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+      align-items: center; margin-bottom: 72px;
+    }
+    .about-person-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .about-person-imgs img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; border-radius: var(--r-md); display: block; }
+    .about-mobile-img { display: none; }
+    .about-person-text h3 {
+      font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700;
+      color: var(--accent); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .04em;
+    }
+    .about-person-text p { font-size: .97rem; color: var(--text-mid); line-height: 1.85; }
+
+    /* Together block */
+    .about-together-img { border-radius: var(--r-lg); overflow: hidden; aspect-ratio: 16/8; margin-bottom: 48px; position: relative; }
+    .about-together-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
+    .about-together-text { max-width: 760px; margin: 0 auto; text-align: center; }
+    .about-together-text p { font-size: .97rem; color: var(--text-mid); line-height: 1.85; margin-bottom: 28px; }
     .about-quote {
       background: rgba(245,200,66,.06); border-left: 3px solid var(--accent);
       border-radius: 0 var(--r-sm) var(--r-sm) 0;
-      padding: 18px 22px; margin: 24px 0;
-      font-style: italic; color: var(--text); line-height: 1.7; font-size: .97rem;
+      padding: 18px 22px; font-style: italic; color: var(--text); line-height: 1.75; font-size: .93rem;
+      text-align: left;
     }
-    .about-owners { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-    .owner-card { border-radius: var(--r-md); overflow: hidden; aspect-ratio: 3/4; }
-    .owner-card img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+    /* Desktop: Zitat auf dem Bild */
+    .about-quote-overlay {
+      position: absolute; bottom: -2px; left: -2px; right: -2px;
+      background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,.9) 30%, rgba(0,0,0,.6) 60%, transparent 100%);
+      border-left: none; border-radius: 0 0 var(--r-lg) var(--r-lg);
+      padding: 0px 48px 32px;
+      font-family: 'Inter', sans-serif; font-style: italic;
+      font-size: 1.05rem; font-weight: 400; line-height: 1.8;
+      color: #fff; letter-spacing: .01em;
+      text-align: center;
+      text-shadow: 0 2px 12px rgba(0,0,0,.9), 0 1px 4px rgba(0,0,0,.8);
+    }
+    .about-quote-overlay strong { font-style: normal; font-size: .84rem; color: var(--accent); display: block; margin-top: 12px; text-shadow: 0 2px 8px rgba(0,0,0,.9); }
 
     /* ============================================================
-       GALERIE
+       GALERIE / DIASHOW
     ============================================================ */
     #galerie { background: var(--bg); }
-    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-    .gallery-item { border-radius: var(--r-md); overflow: hidden; aspect-ratio: 3/4; }
-    .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
-    .gallery-item:hover img { transform: scale(1.04); }
+    .gal-show {
+      position: relative; border-radius: var(--r-lg); overflow: hidden;
+      aspect-ratio: 16/9; max-height: 420px; background: #111; user-select: none;
+      max-width: 860px; margin: 0 auto;
+    }
+    .gal-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+    .gal-slide.active { opacity: 1; }
+    .gal-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gal-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%); z-index: 3;
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(0,0,0,.45); backdrop-filter: blur(8px);
+      color: #fff; display: flex; align-items: center; justify-content: center;
+      border: 1px solid rgba(255,255,255,.18); cursor: pointer; transition: var(--t);
+    }
+    .gal-arrow:hover { background: rgba(245,200,66,.25); border-color: var(--accent); color: var(--accent); }
+    .gal-arrow.gal-prev { left: 16px; }
+    .gal-arrow.gal-next { right: 16px; }
+    .gal-dots {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      z-index: 3; display: flex; gap: 6px; align-items: center;
+    }
+    .gal-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(255,255,255,.35); cursor: pointer;
+      border: none; padding: 0; transition: var(--t);
+    }
+    .gal-dot.active { background: var(--accent); width: 20px; border-radius: 3px; }
+    .gal-counter {
+      position: absolute; top: 16px; right: 18px; z-index: 3;
+      font-family: 'Oswald', sans-serif; font-size: .82rem; font-weight: 600;
+      color: rgba(255,255,255,.7); background: rgba(0,0,0,.4);
+      backdrop-filter: blur(6px); padding: 4px 10px; border-radius: 20px;
+    }
 
     /* ============================================================
        FAQ
@@ -601,16 +681,22 @@
       .about-layout,
       .buffet-layout,
       .drinks-layout { grid-template-columns: 1fr; gap: 40px; }
-      .drink-img { position: static; aspect-ratio: 16/9; }
+      .drink-photos { grid-template-columns: repeat(2, 1fr); }
       .soup-builder { grid-template-columns: 1fr; }
-      .about-owners { max-width: 400px; margin: 0 auto; }
+      .about-owners { max-width: 100%; }
       .footer-inner { grid-template-columns: 1fr; gap: 20px; text-align: center; }
       .footer-brand { justify-content: center; }
       .footer-right { align-items: center; }
       .footer-nav { justify-content: center; }
       /* Buffet: Bild unter Text */
-      .buffet-img { order: 2; aspect-ratio: 16/9; }
+      .buffet-img { order: 2; aspect-ratio: auto; }
       .buffet-text { order: 1; }
+      .buffet-cta-desktop { display: none; }
+      .buffet-cta-mobile { display: inline-flex; order: 3; margin-top: 8px; justify-self: center; }
+      /* Buffet Mobile: erste 2 Bilder zwischen Zeit und Preis */
+      .buffet-imgs-mobile { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin: 20px 0; }
+      .buffet-imgs-mobile img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+      .buffet-imgs img:nth-child(-n+2) { display: none; }
     }
 
     @media (max-width: 768px) {
@@ -639,7 +725,10 @@
       .gallery-item.wide { grid-column: span 2; }
       .drink-grids { grid-template-columns: 1fr; }
       .visit-cards { grid-template-columns: 1fr; max-width: 440px; }
-      .dish-row { grid-template-columns: 28px 1fr auto; }
+      .dish-row { display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: flex-start; }
+      .dish-num { flex-shrink: 0; width: 28px; }
+      .dish-body { flex: 1; min-width: 0; }
+      .price-tag { flex-basis: 100%; margin-left: 38px; margin-top: 0; align-self: start; }
       .dish-row .order-btn { display: none; }
       .dish-variant .v-price { display: inline; }
       .menu-tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
@@ -649,11 +738,27 @@
       /* Nudelsuppe */
       .soup-step { padding: 16px; }
       .soup-intro { margin-bottom: 32px; }
+      .soup-pair { grid-template-columns: 1fr; }
+      .soup-pair:nth-child(even) .soup-pair-img,
+      .soup-pair:nth-child(even) .soup-step { order: unset; }
       .soup-extras { padding: 16px; }
 
       /* Inhaber */
-      .about-layout { gap: 32px; }
+      .about-person { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
+      .about-person-imgs { display: none; }
+      .about-mobile-img { display: block; border-radius: var(--r-lg); overflow: hidden; margin-bottom: 32px; }
+      .about-mobile-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; display: block; }
+      .about-together-img { aspect-ratio: 4/3; }
+      .about-quote-overlay { position: static; background: rgba(245,200,66,.06); border-left: 3px solid var(--accent); border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 18px 22px; font-size: .93rem; color: var(--text); margin-top: 20px; }
       .info-block { padding: 20px; }
+
+      /* Getränke */
+      .drink-photos { display: none; }
+      .drink-photos-mobile { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
+      .drink-photos-mobile img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--r-md); display: block; }
+
+      /* Galerie Diashow */
+      .gal-show { aspect-ratio: 4/3; max-height: 280px; }
 
       /* Buttons: min tap target */
       .btn { min-height: 48px; }
@@ -677,8 +782,8 @@
       .gallery-grid { grid-template-columns: 1fr; }
       .gallery-item.wide { grid-column: span 1; aspect-ratio: 16/9; }
 
-      /* Inhaber Fotos: nebeneinander bleibt besser als gestapelt */
       .about-owners { grid-template-columns: 1fr 1fr; max-width: 100%; }
+      .drink-photos { grid-template-columns: repeat(2, 1fr); }
 
       /* Suppe */
       .soup-builder { grid-template-columns: 1fr; }
@@ -751,24 +856,23 @@
   ════════════════════════════════ -->
   <section id="hero" aria-label="Bildergalerie Restaurant">
 
-    <!-- Slide 1 – Restaurant -->
     <div class="slide active">
       <img src="Bilder/Laden.webp" alt="Ruay Thai Noodle Restaurant in Dietikon" loading="eager" fetchpriority="high" />
     </div>
-
-    <!-- Slide 2 – Essen -->
     <div class="slide">
-      <div class="slide-ph"><span class="slide-ph-txt">Foto folgt</span></div>
+      <img src="Bilder/Essen/IMG-20260705-WA0017.jpg" alt="Thailändisches Essen" loading="lazy" />
     </div>
-
-    <!-- Slide 3 – Atmosphäre -->
     <div class="slide">
-      <div class="slide-ph"><span class="slide-ph-txt">Foto folgt</span></div>
+      <img src="Bilder/Essen/20251006_182012.jpg" alt="Frisches Thai-Gericht" loading="lazy" />
     </div>
-
-    <!-- Slide 4 – Team -->
     <div class="slide">
-      <div class="slide-ph"><span class="slide-ph-txt">Foto folgt</span></div>
+      <img src="Bilder/Essen/IMG-20260628-WA0002.jpg" alt="Thai Küche frisch" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Essen/IMG-20260703-WA0001.jpg" alt="Thai Spezialität" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Essen/IMG-20260607-WA0000.jpg" alt="Frisches Thai Food" loading="lazy" />
     </div>
 
     <!-- Overlay -->
@@ -778,6 +882,7 @@
         <span class="slide-logo-name">Ruay Thai Noodle</span>
       </div>
       <p class="slide-thai">ก๋วยเตี๋ยวไทย คุณรวย</p>
+      <div class="hero-badge">Neu: Vorbestellen &amp; abholen – kein Anstehen</div>
       <div class="slide-ctas">
         <a href="#nudelsuppe" class="btn btn-outline">Menü ansehen</a>
         <a href="/bestellen" class="btn btn-primary">Jetzt bestellen</a>
@@ -786,10 +891,12 @@
 
     <!-- Controls -->
     <div class="slide-dots" role="tablist" aria-label="Slideshow Navigation">
-      <button class="slide-dot active" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+      <button class="slide-dot active" role="tab" aria-selected="true"  aria-label="Slide 1"></button>
       <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
       <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
       <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
+      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 5"></button>
+      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 6"></button>
     </div>
 
     <button class="slide-arrow prev" aria-label="Vorheriges Bild">
@@ -808,8 +915,7 @@
   <section id="restaurant" aria-labelledby="restaurant-heading">
     <div class="container">
       <div class="reveal">
-        <img class="restaurant-logo" src="Bilder/Logo.avif" alt="Ruay Thai Noodle Logo" width="90" height="90" />
-        <h1 class="restaurant-name" id="restaurant-heading">Ruay Thai Noodle</h1>
+        <img class="restaurant-logo" src="Bilder/Logo.avif" alt="Ruay Thai Noodle Logo" width="140" height="140" />
       </div>
       <div class="restaurant-text reveal reveal-d1">
         <p>
@@ -862,13 +968,22 @@
       <div class="buffet-layout">
 
         <div class="buffet-img reveal">
-          <div class="ph-wrap" data-label="Buffet-Foto folgt" style="min-height:380px;border-radius:28px;"></div>
+          <div class="buffet-imgs">
+            <img src="Bilder/Mittagsbuffet/IMG-20260712-WA0006.jpg" alt="Mittagsbuffet Ruay Thai Noodle" loading="lazy" />
+            <img src="Bilder/Mittagsbuffet/IMG-20260712-WA0009.jpg" alt="Mittagsbuffet Auswahl" loading="lazy" />
+            <img src="Bilder/Mittagsbuffet/IMG-20260712-WA0012.jpg" alt="Thailändische Spezialitäten Buffet" loading="lazy" />
+            <img src="Bilder/Mittagsbuffet/IMG-20260712-WA0010.jpg" alt="Frisches Mittagsbuffet" loading="lazy" />
+          </div>
         </div>
 
         <div class="buffet-text reveal reveal-d1">
           <span class="section-label">Mittagspause</span>
           <h2 class="section-title" id="buffet-heading">Mittagsbuffet</h2>
           <span class="buffet-badge">Mo – Fr &nbsp;·&nbsp; 11:00 – 14:30 Uhr</span>
+          <div class="buffet-imgs-mobile">
+            <img src="Bilder/Mittagsbuffet/IMG-20260712-WA0006.jpg" alt="Mittagsbuffet" loading="lazy" />
+            <img src="Bilder/Mittagsbuffet/IMG-20260712-WA0009.jpg" alt="Mittagsbuffet Auswahl" loading="lazy" />
+          </div>
           <div class="buffet-price">
             ab CHF 18.50
             <small>pro Person</small>
@@ -879,8 +994,10 @@
           <p>
             Schnell, frisch und in bester Qualität – das ist unser Anspruch beim Mittagsbuffet. Selbstverständlich können Sie während dieser Zeit auch aus unserer À-la-carte-Speisekarte wählen.
           </p>
-          <a href="/bestellen" class="btn btn-primary" style="margin-top:24px;">Tisch reservieren</a>
+          <a href="/bestellen" class="btn btn-primary buffet-cta-desktop" style="margin-top:24px;">Tisch reservieren</a>
         </div>
+
+        <a href="/bestellen" class="btn btn-primary buffet-cta-mobile" style="align-self:center;">Vorbestellen</a>
 
       </div>
     </div>
@@ -902,13 +1019,21 @@
         </p>
       </div>
 
-      <div class="drinks-layout">
+      <!-- Desktop: alle 4 Bilder -->
+      <div class="drink-photos reveal">
+        <img src="Bilder/Buuble%20Tea/IMG-20260222-WA0004.jpg" alt="Bubble Tea" loading="lazy" />
+        <img src="Bilder/Buuble%20Tea/IMG-20260703-WA0000.jpg" alt="Bubble Tea Variante" loading="lazy" />
+        <img src="Bilder/Buuble%20Tea/IMG-20260628-WA0004.jpg" alt="Bubble Tea Auswahl" loading="lazy" />
+        <img src="Bilder/Buuble%20Tea/IMG-20260712-WA0011.jpg" alt="Bubble Tea frisch" loading="lazy" />
+      </div>
 
-        <div class="drink-img reveal">
-          <img src="Bilder/Bubble_Tea.webp" alt="Bunter Bubble Tea bei Ruay Thai Noodle" loading="lazy" width="480" height="640" />
-        </div>
+      <!-- Mobile: erste 2 Bilder -->
+      <div class="drink-photos-mobile reveal">
+        <img src="Bilder/Buuble%20Tea/IMG-20260222-WA0004.jpg" alt="Bubble Tea" loading="lazy" />
+        <img src="Bilder/Buuble%20Tea/IMG-20260703-WA0000.jpg" alt="Bubble Tea Variante" loading="lazy" />
+      </div>
 
-        <div class="reveal reveal-d1">
+      <div class="reveal reveal-d1">
           <div class="drink-grids">
             <div class="drink-card">
               <div class="drink-card-title">Kaffee</div>
@@ -951,7 +1076,12 @@
           </div>
         </div>
 
+      <!-- Mobile: letzte 2 Bilder -->
+      <div class="drink-photos-mobile reveal" style="margin-top:24px;margin-bottom:0;">
+        <img src="Bilder/Buuble%20Tea/IMG-20260628-WA0004.jpg" alt="Bubble Tea Auswahl" loading="lazy" />
+        <img src="Bilder/Buuble%20Tea/IMG-20260712-WA0011.jpg" alt="Bubble Tea frisch" loading="lazy" />
       </div>
+
     </div>
   </section>
 
@@ -976,78 +1106,94 @@
         </p>
       </div>
 
-      <div class="soup-builder reveal reveal-d1">
+      <div class="soup-pairs reveal reveal-d1">
 
-        <!-- Schritt 1 -->
-        <div class="soup-step">
-          <div class="soup-step-header">
-            <div class="soup-step-num">1</div>
-            <div class="soup-step-info">
-              <div class="soup-step-label">Nudeln wählen</div>
-              <div class="soup-step-sub">Eine Sorte wählen</div>
-            </div>
+        <div class="soup-pair">
+          <div class="soup-pair-img">
+            <img src="Bilder/Essen/IMG-20260613-WA0000.jpg" alt="Thai Nudelsuppe" loading="lazy" />
           </div>
-          <div class="soup-options">
-            <span class="soup-option">Eiernudeln</span>
-            <span class="soup-option">Reisnudeln</span>
-            <span class="soup-option">Pandan-Nudeln</span>
-            <span class="soup-option">Wai-Wai-Reisnudeln</span>
-            <span class="soup-option">Mama-Nudeln</span>
-            <span class="soup-option">Glasnudeln</span>
+          <div class="soup-step">
+            <div class="soup-step-header">
+              <div class="soup-step-num">1</div>
+              <div class="soup-step-info">
+                <div class="soup-step-label">Nudeln wählen</div>
+                <div class="soup-step-sub">Eine Sorte wählen</div>
+              </div>
+            </div>
+            <div class="soup-options">
+              <span class="soup-option">Eiernudeln</span>
+              <span class="soup-option">Reisnudeln</span>
+              <span class="soup-option">Pandan-Nudeln</span>
+              <span class="soup-option">Wai-Wai-Reisnudeln</span>
+              <span class="soup-option">Mama-Nudeln</span>
+              <span class="soup-option">Glasnudeln</span>
+            </div>
           </div>
         </div>
 
-        <!-- Schritt 2 -->
-        <div class="soup-step">
-          <div class="soup-step-header">
-            <div class="soup-step-num">2</div>
-            <div class="soup-step-info">
-              <div class="soup-step-label">Protein wählen</div>
-              <div class="soup-step-sub">Eine Option wählen</div>
-            </div>
+        <div class="soup-pair">
+          <div class="soup-pair-img">
+            <img src="Bilder/Essen/IMG-20260613-WA0004.jpg" alt="Thai Protein Auswahl" loading="lazy" />
           </div>
-          <div class="soup-options">
-            <span class="soup-option">Mariniertes Schweinefleisch</span>
-            <span class="soup-option">Mariniertes Poulet</span>
-            <span class="soup-option">Poulet-Hackfleisch</span>
-            <span class="soup-option">Gebratener Tofu mit Gemüse</span>
-            <span class="soup-option">Teriyaki-Poulet</span>
-            <span class="soup-option">Crevetten (3 Stk.)</span>
+          <div class="soup-step">
+            <div class="soup-step-header">
+              <div class="soup-step-num">2</div>
+              <div class="soup-step-info">
+                <div class="soup-step-label">Protein wählen</div>
+                <div class="soup-step-sub">Eine Option wählen</div>
+              </div>
+            </div>
+            <div class="soup-options">
+              <span class="soup-option">Mariniertes Schweinefleisch</span>
+              <span class="soup-option">Mariniertes Poulet</span>
+              <span class="soup-option">Poulet-Hackfleisch</span>
+              <span class="soup-option">Gebratener Tofu mit Gemüse</span>
+              <span class="soup-option">Teriyaki-Poulet</span>
+              <span class="soup-option">Crevetten (3 Stk.)</span>
+            </div>
           </div>
         </div>
 
-        <!-- Schritt 3 -->
-        <div class="soup-step">
-          <div class="soup-step-header">
-            <div class="soup-step-num">3</div>
-            <div class="soup-step-info">
-              <div class="soup-step-label">2 Extras wählen</div>
-              <div class="soup-step-sub">Zwei Zutaten wählen</div>
-            </div>
+        <div class="soup-pair">
+          <div class="soup-pair-img">
+            <img src="Bilder/Essen/IMG-20260628-WA0003.jpg" alt="Thai Extras" loading="lazy" />
           </div>
-          <div class="soup-options">
-            <span class="soup-option">Schweine-Wan-Tan (2 Stk.)</span>
-            <span class="soup-option">Poulet-Hackfleisch</span>
-            <span class="soup-option">Schweinefleisch-Bällchen (2 Stk.)</span>
-            <span class="soup-option">Saisonales Gemüse</span>
-            <span class="soup-option">Fischbällchen (2 Stk.)</span>
-            <span class="soup-option">Crevetten-Wan-Tan (2 Stk.)</span>
+          <div class="soup-step">
+            <div class="soup-step-header">
+              <div class="soup-step-num">3</div>
+              <div class="soup-step-info">
+                <div class="soup-step-label">2 Extras wählen</div>
+                <div class="soup-step-sub">Zwei Zutaten wählen</div>
+              </div>
+            </div>
+            <div class="soup-options">
+              <span class="soup-option">Schweine-Wan-Tan (2 Stk.)</span>
+              <span class="soup-option">Poulet-Hackfleisch</span>
+              <span class="soup-option">Schweinefleisch-Bällchen (2 Stk.)</span>
+              <span class="soup-option">Saisonales Gemüse</span>
+              <span class="soup-option">Fischbällchen (2 Stk.)</span>
+              <span class="soup-option">Crevetten-Wan-Tan (2 Stk.)</span>
+            </div>
           </div>
         </div>
 
-        <!-- Schritt 4 -->
-        <div class="soup-step">
-          <div class="soup-step-header">
-            <div class="soup-step-num">4</div>
-            <div class="soup-step-info">
-              <div class="soup-step-label">Brühe wählen</div>
-              <div class="soup-step-sub">Eine Brühe wählen</div>
-            </div>
+        <div class="soup-pair">
+          <div class="soup-pair-img">
+            <img src="Bilder/Essen/IMG-20260418-WA0018.jpg" alt="Thai Brühe" loading="lazy" />
           </div>
-          <div class="soup-options">
-            <span class="soup-option">Tom Yam (Pouletbrühe)</span>
-            <span class="soup-option">Pouletbrühe</span>
-            <span class="soup-option">Gemüsebrühe</span>
+          <div class="soup-step">
+            <div class="soup-step-header">
+              <div class="soup-step-num">4</div>
+              <div class="soup-step-info">
+                <div class="soup-step-label">Brühe wählen</div>
+                <div class="soup-step-sub">Eine Brühe wählen</div>
+              </div>
+            </div>
+            <div class="soup-options">
+              <span class="soup-option">Tom Yam (Pouletbrühe)</span>
+              <span class="soup-option">Pouletbrühe</span>
+              <span class="soup-option">Gemüsebrühe</span>
+            </div>
           </div>
         </div>
 
@@ -1065,11 +1211,6 @@
         </div>
       </div>
 
-      <div class="soup-cta reveal">
-        <a href="tel:+41798481522" class="btn btn-primary">Telefonisch bestellen</a>
-        <a href="https://wa.me/41798481522" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Per WhatsApp</a>
-        <p>Sagen Sie uns einfach Ihre Auswahl – wir bereiten Ihre Suppe frisch zu.</p>
-      </div>
 
     </div>
   </section>
@@ -1085,6 +1226,11 @@
         <span class="section-label">Unsere Küche</span>
         <h2 class="section-title" id="menu-heading">Hauptgerichte</h2>
         <p class="section-sub">Täglich frisch zubereitet mit echten thailändischen Zutaten.</p>
+      </div>
+
+      <div class="menu-photos reveal">
+        <img src="Bilder/Essen/IMG-20260705-WA0005.jpg" alt="Hauptgericht Thai Küche" loading="lazy" />
+        <img src="Bilder/Essen/IMG-20260705-WA0007.jpg" alt="Frisches Hauptgericht" loading="lazy" />
       </div>
 
       <div class="dish-list">
@@ -1211,39 +1357,56 @@
   ════════════════════════════════ -->
   <section id="ueber-uns" aria-labelledby="about-heading">
     <div class="container">
-      <div class="about-layout">
 
-        <div class="reveal">
-          <span class="section-label">Unsere Geschichte</span>
-          <h2 class="section-title" id="about-heading">Mit Herzblut<br /><em>&amp; Leidenschaft</em></h2>
-          <div class="about-text">
-            <p>
-              Adrian ist Koch mit über 20 Jahren Berufserfahrung. Seine Erfahrungen sammelte er in Polen, Deutschland und der Schweiz. Seit Beginn seiner Karriere ist er eng mit der asiatischen Küche verbunden. In Deutschland kochte er über vier Jahre lang für die thailändische Königsfamilie und konnte dort seine Kenntnisse der authentischen thailändischen Küche weiter vertiefen.
-            </p>
-            <p>
-              Matuwan hat bereits seit ihrer Kindheit eine enge Verbindung zur Küche. Ihre Familie bereitet seit Jahrzehnten Street Food auf den Strassen Bangkoks zu und serviert dort eine originale thailändische Nudelsuppe. Ausserdem führte Matuwan in der Vergangenheit ein eigenes Café in Thailand – dadurch können Sie ihre originalen Familienrezepte auch bei uns geniessen.
-            </p>
-            <p>
-              Adrian und Matuwan lernten sich in Zürich kennen. Dort fassten sie den Entschluss, gemeinsam Ruay Thai Noodle zu gründen. Heute kochen sie Seite an Seite Gerichte, die auf traditionellen Rezepten basieren und gleichzeitig mit kreativen Geschmackskombinationen überraschen.
-            </p>
-            <blockquote class="about-quote">
-              «Unser Tag beginnt mit dem Einkauf von frischem Fleisch und frischem Gemüse. Jeden Morgen kochen wir unsere Suppe, bereiten Wan-Tan-Teigtaschen von Hand zu, kochen frisches Curry und schneiden sowie blanchieren das Gemüse. Unser Konzept basiert darauf, täglich alles frisch zuzubereiten. Deshalb ist unsere Speisekarte bewusst klein – denn für uns steht Qualität immer vor Quantität.»
-              <br /><br />
-              <strong style="font-style:normal;font-size:.85rem;color:var(--text-lt);">— Adrian &amp; Matuwan</strong>
-            </blockquote>
-          </div>
-        </div>
-
-        <div class="about-owners reveal reveal-d1">
-          <div class="owner-card">
-            <img src="Bilder/Owner_1.avif" alt="Adrian Blaszczyk, Inhaber Ruay Thai Noodle" loading="lazy" width="480" height="640" />
-          </div>
-          <div class="owner-card">
-            <img src="Bilder/Owner_2.avif" alt="Matuwan Hanam, Inhaberin Ruay Thai Noodle" loading="lazy" width="480" height="640" />
-          </div>
-        </div>
-
+      <div class="section-header reveal">
+        <span class="section-label">Unsere Geschichte</span>
+        <h2 class="section-title" id="about-heading">Mit Herzblut<br /><em>&amp; Leidenschaft</em></h2>
       </div>
+
+      <!-- Mobile-only Einzelbild -->
+      <div class="about-mobile-img">
+        <img src="Bilder/Adrian%20%26%20Barbie/Owner_2.avif" alt="Adrian und Matuwan" loading="lazy" />
+      </div>
+
+      <!-- 1. Adrian: Text links, Bild rechts -->
+      <div class="about-person reveal">
+        <div class="about-person-text">
+          <h3>Adrian Błaszczyk</h3>
+          <p>Adrian ist Koch mit über 20 Jahren Berufserfahrung. Seine Erfahrungen sammelte er in Polen, Deutschland und der Schweiz. Seit Beginn seiner Karriere ist er eng mit der asiatischen Küche verbunden. In Deutschland kochte er über vier Jahre lang für die thailändische Königsfamilie und konnte dort seine Kenntnisse der authentischen thailändischen Küche weiter vertiefen.</p>
+        </div>
+        <div class="about-person-imgs">
+          <img src="Bilder/Adrian%20%26%20Barbie/20250215_190225.jpg" alt="Adrian Błaszczyk" loading="lazy" style="object-position: bottom center;" />
+          <img src="Bilder/Adrian%20%26%20Barbie/IMG-20260712-WA0023.jpg" alt="Adrian Błaszczyk" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- 2. Matuwan: Bild links, Text rechts -->
+      <div class="about-person reveal">
+        <div class="about-person-imgs">
+          <img src="Bilder/Adrian%20%26%20Barbie/20250718_200144.jpg" alt="Matuwan Hanam" loading="lazy" />
+          <img src="Bilder/Adrian%20%26%20Barbie/20251005_164732.jpg" alt="Matuwan Hanam" loading="lazy" style="object-position: center 60%;" />
+        </div>
+        <div class="about-person-text">
+          <h3>Matuwan Hanam</h3>
+          <p>Matuwan hat bereits seit ihrer Kindheit eine enge Verbindung zur Küche. Ihre Familie bereitet seit mehr als zwei Jahrzehnten Street Food auf den Strassen Bangkoks zu und serviert dort eine originale thailändische Nudelsuppe. Ausserdem führte Matuwan in der Vergangenheit ein eigenes Café in Thailand — dadurch hast du die Möglichkeit, ihre originalen Familienrezepte auch bei uns zu geniessen.</p>
+        </div>
+      </div>
+
+      <!-- 3. Gemeinsamer Text -->
+      <div class="about-together-text reveal">
+        <p>Adrian und Matuwan lernten sich in Zürich kennen. Dort fassten sie den Entschluss, gemeinsam Ruay Thai Noodle zu gründen. Heute kochen sie Gerichte, die auf traditionellen thailändischen Rezepten basieren und gleichzeitig mit kreativen Geschmackskombinationen überraschen.</p>
+      </div>
+
+      <!-- 4. Gemeinsam: grosses Bild -->
+      <div class="about-together-img reveal">
+        <img src="Bilder/Adrian%20%26%20Barbie/20250724_114319.jpg" alt="Adrian und Matuwan gemeinsam" loading="lazy" />
+        <blockquote class="about-quote-overlay">
+          «Unser Tag beginnt mit dem Einkauf von frischem Fleisch und frischem Gemüse. Jeden Morgen kochen wir unsere thailändische Suppe, bereiten Wan-Tan-Teigtaschen von Hand zu, kochen frisches Curry und schneiden sowie blanchieren das Gemüse. Unser Konzept basiert darauf, täglich alles frisch zuzubereiten. Deshalb ist unsere Speisekarte bewusst klein – denn für uns steht Qualität immer vor Quantität.»
+          <strong>— Adrian &amp; Matuwan</strong>
+        </blockquote>
+      </div>
+
+
     </div>
   </section>
 
@@ -1259,22 +1422,41 @@
         <h2 class="section-title" id="gallery-heading">Impressionen aus Thailand</h2>
       </div>
 
-      <div class="gallery-grid reveal reveal-d1">
-        <div class="gallery-item wide">
-          <div class="ph-wrap" data-label="Foto folgt" style="min-height:240px;border-radius:18px;"></div>
+      <div class="gal-show reveal">
+
+        <div class="gal-slide active"><img src="Bilder/Impressionen%20Thailand/20250210_185050%201.jpg" alt="Strassenmarkt Thailand" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250209_004436.jpg" alt="Nachtleben Bangkok" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250210_115901%201.jpg" alt="Impressionen Thailand" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250210_134105%201.jpg" alt="Thailand Stimmung" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250210_185053.jpg" alt="Thailand Abend" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250212_212819.jpg" alt="Nachtmarkt Thailand" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250215_192718%201.jpg" alt="Stimmung Thailand" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250215_193029%201.jpg" alt="Abendstimmung Thailand" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250217_142150.jpg" alt="Tempel Thailand" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250218_141338.jpg" alt="Thailand Eindrücke" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250723_200815%201.jpg" alt="Thailand Abend" loading="lazy" /></div>
+        <div class="gal-slide"><img src="Bilder/Impressionen%20Thailand/20250724_112943.jpg" alt="Thailand Impressionen" loading="lazy" /></div>
+
+        <button class="gal-arrow gal-prev" aria-label="Vorheriges Bild">&#8249;</button>
+        <button class="gal-arrow gal-next" aria-label="Nächstes Bild">&#8250;</button>
+
+        <div class="gal-dots" role="tablist">
+          <button class="gal-dot active" aria-label="Bild 1"></button>
+          <button class="gal-dot" aria-label="Bild 2"></button>
+          <button class="gal-dot" aria-label="Bild 3"></button>
+          <button class="gal-dot" aria-label="Bild 4"></button>
+          <button class="gal-dot" aria-label="Bild 5"></button>
+          <button class="gal-dot" aria-label="Bild 6"></button>
+          <button class="gal-dot" aria-label="Bild 7"></button>
+          <button class="gal-dot" aria-label="Bild 8"></button>
+          <button class="gal-dot" aria-label="Bild 9"></button>
+          <button class="gal-dot" aria-label="Bild 10"></button>
+          <button class="gal-dot" aria-label="Bild 11"></button>
+          <button class="gal-dot" aria-label="Bild 12"></button>
         </div>
-        <div class="gallery-item">
-          <div class="ph-wrap" data-label="Foto folgt" style="min-height:200px;border-radius:18px;"></div>
-        </div>
-        <div class="gallery-item">
-          <div class="ph-wrap" data-label="Foto folgt" style="min-height:200px;border-radius:18px;"></div>
-        </div>
-        <div class="gallery-item">
-          <div class="ph-wrap" data-label="Foto folgt" style="min-height:200px;border-radius:18px;"></div>
-        </div>
-        <div class="gallery-item wide">
-          <div class="ph-wrap" data-label="Foto folgt" style="min-height:240px;border-radius:18px;"></div>
-        </div>
+
+        <div class="gal-counter"><span class="gal-cur">1</span> / 12</div>
+
       </div>
 
     </div>
@@ -1368,7 +1550,7 @@
           </div>
           <div class="contact-row">
             <span class="contact-icon">✉️</span>
-            <a href="mailto:bestellung@ruay-thai-noodle.ch">bestellung@ruay-thai-noodle.ch</a>
+            <a href="mailto:info@ruay-thai-noodle.ch">info@ruay-thai-noodle.ch</a>
           </div>
           <a class="map-link" href="https://maps.google.com/?q=Heimstrasse+10,+8953+Dietikon" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -1415,7 +1597,7 @@
             <a href="/impressum">Impressum</a>
             <a href="/datenschutz">Datenschutz</a>
           </nav>
-          <a class="footer-email" href="mailto:bestellung@ruay-thai-noodle.ch">bestellung@ruay-thai-noodle.ch</a>
+          <a class="footer-email" href="mailto:info@ruay-thai-noodle.ch">info@ruay-thai-noodle.ch</a>
         </div>
       </div>
       <hr class="footer-divider" />
@@ -1434,6 +1616,43 @@
   </a>
 
   <script src="assets/js/main.js" defer></script>
+
+  <!-- Galerie Diashow -->
+  <script>
+    (function() {
+      const slides  = document.querySelectorAll('.gal-slide');
+      const dots    = document.querySelectorAll('.gal-dot');
+      const counter = document.querySelector('.gal-cur');
+      if (!slides.length) return;
+      let cur = 0, timer, touchX = 0;
+
+      function goTo(n) {
+        slides[cur].classList.remove('active');
+        dots[cur].classList.remove('active');
+        cur = (n + slides.length) % slides.length;
+        slides[cur].classList.add('active');
+        dots[cur].classList.add('active');
+        if (counter) counter.textContent = cur + 1;
+      }
+      function start() { timer = setInterval(() => goTo(cur + 1), 4500); }
+      function reset() { clearInterval(timer); start(); }
+
+      dots.forEach((d, i) => d.addEventListener('click', () => { goTo(i); reset(); }));
+      document.querySelector('.gal-arrow.gal-prev').addEventListener('click', () => { goTo(cur - 1); reset(); });
+      document.querySelector('.gal-arrow.gal-next').addEventListener('click', () => { goTo(cur + 1); reset(); });
+
+      const show = document.querySelector('.gal-show');
+      show.addEventListener('mouseenter', () => clearInterval(timer));
+      show.addEventListener('mouseleave', start);
+      show.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+      show.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 40) { goTo(dx < 0 ? cur + 1 : cur - 1); reset(); }
+      });
+
+      start();
+    })();
+  </script>
 
   <!-- Slideshow Script -->
   <script>
