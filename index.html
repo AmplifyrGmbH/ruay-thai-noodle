@@ -371,6 +371,28 @@
       border: 1px solid var(--brd-sub); border-radius: var(--r-sm);
       transition: border-color var(--t), transform var(--t);
     }
+
+    /* Hauptgerichte: 2-column compact grid */
+    #menu .dish-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    #menu .dish-row {
+      padding: 12px 14px;
+      gap: 10px;
+      align-items: center;
+    }
+    #menu .dish-body h3 { font-size: .88rem; margin-bottom: 2px; }
+    #menu .dish-body p { font-size: .75rem; line-height: 1.4; }
+    #menu .dish-variants { margin-top: 6px; gap: 1px; }
+    #menu .dish-variant { font-size: .74rem; padding: 2px 0; }
+    #menu .dish-num { font-size: .88rem; }
+    #menu .price-tag { font-size: .82rem; white-space: nowrap; }
+    #menu .order-btn { font-size: .75rem; padding: 5px 10px; }
+    @media (max-width: 640px) {
+      #menu .dish-list { grid-template-columns: 1fr; }
+    }
     .dish-row:hover { border-color: rgba(245,200,66,.18); transform: translateX(3px); }
     .dish-num { font-family: 'Oswald', sans-serif; font-size: 1rem; color: var(--accent); font-weight: 600; line-height: 1.5; }
     .dish-body h3 { font-size: .97rem; font-weight: 600; color: var(--text); margin-bottom: 4px; line-height: 1.35; }
@@ -644,7 +666,7 @@
           <ul>
             <li><a href="#mittagsbuffet">Buffet</a></li>
             <li><a href="#getraenke">Getränke</a></li>
-            <li><a href="#menu">Menü</a></li>
+            <li><a href="#nudelsuppe">Menü</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
           </ul>
         </nav>
@@ -663,7 +685,7 @@
     <ul>
       <li><a href="#mittagsbuffet">Buffet</a></li>
       <li><a href="#getraenke">Getränke</a></li>
-      <li><a href="#menu">Menü</a></li>
+      <li><a href="#nudelsuppe">Menü</a></li>
       <li><a href="#ueber-uns">Über uns</a></li>
     </ul>
     <a href="/bestellen" class="mobile-cta">Jetzt bestellen</a>
@@ -703,7 +725,7 @@
       </div>
       <p class="slide-thai">ก๋วยเตี๋ยวไทย คุณรวย</p>
       <div class="slide-ctas">
-        <a href="#menu" class="btn btn-outline">Menü ansehen</a>
+        <a href="#nudelsuppe" class="btn btn-outline">Menü ansehen</a>
         <a href="/bestellen" class="btn btn-primary">Jetzt bestellen</a>
       </div>
     </div>
@@ -881,226 +903,6 @@
 
 
   <!-- ════════════════════════════════
-       SPEISEKARTE
-  ════════════════════════════════ -->
-  <section id="menu" aria-labelledby="menu-heading">
-    <div class="container">
-
-      <div class="section-header reveal">
-        <span class="section-label">Unsere Küche</span>
-        <h2 class="section-title" id="menu-heading">Speisekarte</h2>
-        <p class="section-sub">Alle Gerichte werden täglich frisch mit echten thailändischen Zutaten zubereitet.</p>
-      </div>
-
-      <div class="menu-tabs reveal" role="tablist">
-        <button class="menu-tab-btn active" role="tab" aria-selected="true" aria-controls="tab-suppen" id="btn-suppen">Suppen (1–8)</button>
-        <button class="menu-tab-btn" role="tab" aria-selected="false" aria-controls="tab-hauptgerichte" id="btn-hauptgerichte">Hauptgerichte (9–19)</button>
-      </div>
-
-      <!-- Suppen -->
-      <div class="menu-tab-panel active" id="tab-suppen" role="tabpanel" aria-labelledby="btn-suppen">
-        <div class="broth-banner reveal">
-          <div class="broth-banner-left">
-            <strong>Wähle deine Brühe</strong>
-            <div class="broth-options">
-              <span class="broth-chip">Pouletbrühe</span>
-              <span class="broth-chip">Tom-Yam</span>
-              <span class="broth-chip">Vegetarisch</span>
-            </div>
-          </div>
-          <div class="broth-price">CHF 21.90<small>pro Suppe</small></div>
-        </div>
-        <div class="dish-list">
-          <div class="dish-row reveal">
-            <div class="dish-num">1</div>
-            <div class="dish-body"><h3>Suppe mit Eiernudeln</h3><p>Schweinen Wan-Tan, Schweinefleisch, Choi Sum Gemüse, Rosa Schweinefleisch</p></div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">2</div>
-            <div class="dish-body"><h3>Suppe mit Pandan Nudeln</h3><p>Shrimps Wan-Tan, Choi Sum Gemüse, Sojasprossen, Pouletstreifen</p></div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">3</div>
-            <div class="dish-body">
-              <h3>Suppe mit Reisnudeln 3mm</h3><p>Poulet Teriyaki, Fischballs, Sojasprossen</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">4</div>
-            <div class="dish-body"><h3>Suppe mit Wan-Tan (8 Stück)</h3><p>Choi-Sum Gemüse, Frühlingszwiebeln, Koriander – Shrimps oder Schweinefleisch</p></div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">5</div>
-            <div class="dish-body">
-              <h3>Suppe mit Reisnudeln</h3><p>Rosa Schweinefleisch, Schweinefleisch Balls, Sojasprossen, Frühlingszwiebeln, Koriander</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">6</div>
-            <div class="dish-body"><h3>Tom Yam Suppe mit Pandan Nudeln</h3><p>Poulet Hackfleisch, Choy Sum Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p></div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">7</div>
-            <div class="dish-body">
-              <h3>Tom Yam Suppe mit Wai Wai Nudeln</h3><p>Krevetten, Fischballs, Choy Sum Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">8</div>
-            <div class="dish-body">
-              <h3>Reisnudeln mit gebratenem Tofu</h3><p>Gemüse, Sojasprossen, Frühlingszwiebeln, Koriander</p>
-              <div class="dish-badges">
-                <span class="diet-badge diet-badge-v">V</span>
-                <span class="diet-badge diet-badge-ve">Ve</span>
-                <span class="diet-badge diet-badge-gf">GF</span>
-              </div>
-            </div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hauptgerichte -->
-      <div class="menu-tab-panel" id="tab-hauptgerichte" role="tabpanel" aria-labelledby="btn-hauptgerichte">
-        <div class="dish-list">
-          <div class="dish-row reveal">
-            <div class="dish-num">9</div>
-            <div class="dish-body">
-              <h3>Gelbes Curry mit Tofu</h3><p>Gemüse und Jasmin Reis</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 20.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">10</div>
-            <div class="dish-body">
-              <h3>Poulet Teriyaki (CH)</h3><p>Mit Jasmin Reis</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 21.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">11</div>
-            <div class="dish-body"><h3>Knusprige Ente (CN)</h3><p>Mit Rote Curry Sauce und Jasmin Reis</p></div>
-            <span class="price-tag">CHF 26.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">12</div>
-            <div class="dish-body">
-              <h3>Rotes Curry mit Pouletstreifen (CH)</h3><p>Mit Jasmin Reis</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 20.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">13</div>
-            <div class="dish-body">
-              <h3>Tom Kha Gai</h3><p>Mit Pouletfleisch (CH) und Jasmin Reis</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 22.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">14</div>
-            <div class="dish-body">
-              <h3>Pad Thai</h3><p>Gebratene Reisnudeln, Sojasprossen, Schnittlauch, Erdnüsse, Tamarinde Sauce</p>
-              <div class="dish-variants">
-                <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
-                <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
-              </div>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">ab CHF 22.50</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">15</div>
-            <div class="dish-body">
-              <h3>Gebratener Reis</h3><p>Jasminreis, gebraten mit Ei und Gemüse</p>
-              <div class="dish-variants">
-                <div class="dish-variant"><span>Mit Gemüse</span><span class="v-price">CHF 19.50</span></div>
-                <div class="dish-variant"><span>Mit Pouletstreifen (CH)</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
-              </div>
-              <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">ab CHF 19.50</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">16</div>
-            <div class="dish-body"><h3>Poulet Teriyaki mit Pandan Nudeln (CH)</h3><p>Choi Sum Gemüse und Zucchini</p></div>
-            <span class="price-tag">CHF 22.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">17</div>
-            <div class="dish-body">
-              <h3>Grünes Curry</h3><p>Mit Kokosnussmilch, Thai-Auberginen, Fleisch nach Wahl</p>
-              <div class="dish-variants">
-                <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
-                <div class="dish-variant"><span>Mit Rindsfleisch (CH)</span><span class="v-price">CHF 26.00</span></div>
-              </div>
-              <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span></div>
-            </div>
-            <span class="price-tag">ab CHF 22.50</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">18</div>
-            <div class="dish-body">
-              <h3>Gelbes Curry mit Kokosnussmilch</h3><p>Gemüse und Pouletfleisch (CH)</p>
-              <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
-            </div>
-            <span class="price-tag">CHF 20.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-          <div class="dish-row reveal">
-            <div class="dish-num">19</div>
-            <div class="dish-body"><h3>Knusprige Pouletstreifen (CH)</h3><p>Mit Süss-Saure Sauce, Jasmin Reis und Gurken</p></div>
-            <span class="price-tag">CHF 22.90</span>
-            <a href="/bestellen" class="order-btn">Bestellen</a>
-          </div>
-        </div>
-      </div>
-
-      <p class="menu-note reveal">
-        Schärfegrad nach Wunsch anpassbar &nbsp;·&nbsp;
-        (CH) Schweizer Herkunft &nbsp;·&nbsp; (VT) Vietnam &nbsp;·&nbsp; (CN) China<br />
-        V = Vegetarisch &nbsp;·&nbsp; Ve = Vegan &nbsp;·&nbsp; GF = Glutenfrei &nbsp;·&nbsp; Allergene gerne auf Anfrage
-      </p>
-
-    </div>
-  </section>
-
-
-  <!-- ════════════════════════════════
        NUDELSUPPE ZUSAMMENSTELLEN
   ════════════════════════════════ -->
   <section id="nudelsuppe" aria-labelledby="soup-heading">
@@ -1214,6 +1016,137 @@
         <a href="https://wa.me/41798481522" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Per WhatsApp</a>
         <p>Sagen Sie uns einfach Ihre Auswahl – wir bereiten Ihre Suppe frisch zu.</p>
       </div>
+
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════
+       HAUPTGERICHTE
+  ════════════════════════════════ -->
+  <section id="menu" aria-labelledby="menu-heading">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Unsere Küche</span>
+        <h2 class="section-title" id="menu-heading">Hauptgerichte</h2>
+        <p class="section-sub">Täglich frisch zubereitet mit echten thailändischen Zutaten.</p>
+      </div>
+
+      <div class="dish-list">
+        <div class="dish-row reveal">
+          <div class="dish-num">1</div>
+          <div class="dish-body">
+            <h3>Gelbes Curry mit Tofu</h3><p>Gemüse und Jasmin Reis</p>
+            <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
+          </div>
+          <span class="price-tag">CHF 20.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">2</div>
+          <div class="dish-body">
+            <h3>Poulet Teriyaki (CH)</h3><p>Mit Jasmin Reis</p>
+            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+          </div>
+          <span class="price-tag">CHF 21.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">3</div>
+          <div class="dish-body"><h3>Knusprige Ente (CN)</h3><p>Mit Rote Curry Sauce und Jasmin Reis</p></div>
+          <span class="price-tag">CHF 26.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">4</div>
+          <div class="dish-body">
+            <h3>Rotes Curry mit Pouletstreifen (CH)</h3><p>Mit Jasmin Reis</p>
+            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+          </div>
+          <span class="price-tag">CHF 20.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">5</div>
+          <div class="dish-body">
+            <h3>Tom Kha Gai</h3><p>Mit Pouletfleisch (CH) und Jasmin Reis</p>
+            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+          </div>
+          <span class="price-tag">CHF 22.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">6</div>
+          <div class="dish-body">
+            <h3>Pad Thai</h3><p>Gebratene Reisnudeln, Sojasprossen, Schnittlauch, Erdnüsse, Tamarinde Sauce</p>
+            <div class="dish-variants">
+              <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
+              <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
+              <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
+            </div>
+            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+          </div>
+          <span class="price-tag">ab CHF 22.50</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">7</div>
+          <div class="dish-body">
+            <h3>Gebratener Reis</h3><p>Jasminreis, gebraten mit Ei und Gemüse</p>
+            <div class="dish-variants">
+              <div class="dish-variant"><span>Mit Gemüse</span><span class="v-price">CHF 19.50</span></div>
+              <div class="dish-variant"><span>Mit Pouletstreifen (CH)</span><span class="v-price">CHF 22.50</span></div>
+              <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
+            </div>
+            <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span><span class="diet-badge diet-badge-gf">GF</span></div>
+          </div>
+          <span class="price-tag">ab CHF 19.50</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">8</div>
+          <div class="dish-body"><h3>Poulet Teriyaki mit Pandan Nudeln (CH)</h3><p>Choi Sum Gemüse und Zucchini</p></div>
+          <span class="price-tag">CHF 22.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">9</div>
+          <div class="dish-body">
+            <h3>Grünes Curry</h3><p>Mit Kokosnussmilch, Thai-Auberginen, Fleisch nach Wahl</p>
+            <div class="dish-variants">
+              <div class="dish-variant"><span>Mit Tofu</span><span class="v-price">CHF 22.50</span></div>
+              <div class="dish-variant"><span>Mit Pouletfleisch (CH)</span><span class="v-price">CHF 22.50</span></div>
+              <div class="dish-variant"><span>Mit Shrimps (VT)</span><span class="v-price">CHF 24.50</span></div>
+              <div class="dish-variant"><span>Mit Rindsfleisch (CH)</span><span class="v-price">CHF 26.00</span></div>
+            </div>
+            <div class="dish-badges"><span class="diet-badge diet-badge-v">V</span></div>
+          </div>
+          <span class="price-tag">ab CHF 22.50</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">10</div>
+          <div class="dish-body">
+            <h3>Gelbes Curry mit Kokosnussmilch</h3><p>Gemüse und Pouletfleisch (CH)</p>
+            <div class="dish-badges"><span class="diet-badge diet-badge-gf">GF</span></div>
+          </div>
+          <span class="price-tag">CHF 20.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+        <div class="dish-row reveal">
+          <div class="dish-num">11</div>
+          <div class="dish-body"><h3>Knusprige Pouletstreifen (CH)</h3><p>Mit Süss-Saure Sauce, Jasmin Reis und Gurken</p></div>
+          <span class="price-tag">CHF 22.90</span>
+          <a href="/bestellen" class="order-btn">Bestellen</a>
+        </div>
+      </div>
+
+      <p class="menu-note reveal">
+        Schärfegrad nach Wunsch anpassbar &nbsp;·&nbsp;
+        (CH) Schweizer Herkunft &nbsp;·&nbsp; (VT) Vietnam &nbsp;·&nbsp; (CN) China<br />
+        V = Vegetarisch &nbsp;·&nbsp; Ve = Vegan &nbsp;·&nbsp; GF = Glutenfrei &nbsp;·&nbsp; Allergene gerne auf Anfrage
+      </p>
 
     </div>
   </section>
