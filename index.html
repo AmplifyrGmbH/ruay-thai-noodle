@@ -746,8 +746,8 @@
       /* Inhaber */
       .about-person { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
       .about-person-imgs { display: none; }
-      .about-mobile-img { display: block; border-radius: var(--r-lg); overflow: hidden; margin-bottom: 32px; }
-      .about-mobile-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; display: block; }
+      .about-mobile-img { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 32px; }
+      .about-mobile-img img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top center; border-radius: var(--r-md); display: block; }
       .about-together-img { aspect-ratio: 4/3; }
       .about-quote-overlay { position: static; background: rgba(245,200,66,.06); border-left: 3px solid var(--accent); border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 18px 22px; font-size: .93rem; color: var(--text); margin-top: 20px; }
       .info-block { padding: 20px; }
@@ -1363,9 +1363,10 @@
         <h2 class="section-title" id="about-heading">Mit Herzblut<br /><em>&amp; Leidenschaft</em></h2>
       </div>
 
-      <!-- Mobile-only Einzelbild -->
+      <!-- Mobile-only Bilder -->
       <div class="about-mobile-img">
-        <img src="Bilder/Adrian%20%26%20Barbie/Owner_2.avif" alt="Adrian und Matuwan" loading="lazy" />
+        <img src="Bilder/Adrian%20%26%20Barbie/20250215_190225.jpg" alt="Adrian und Matuwan" loading="lazy" style="object-position: bottom center;" />
+        <img src="Bilder/Adrian%20%26%20Barbie/20250718_200144.jpg" alt="Adrian und Matuwan" loading="lazy" />
       </div>
 
       <!-- 1. Adrian: Text links, Bild rechts -->
