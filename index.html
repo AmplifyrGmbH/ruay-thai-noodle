@@ -497,12 +497,10 @@
     }
     .soup-price-badge .sp-amount { font-size: 1.6rem; line-height: 1; }
     .soup-price-badge .sp-curr { font-size: .75rem; opacity: .7; margin-top: 2px; }
-    .soup-pairs { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
-    .soup-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; }
-    .soup-pair:nth-child(even) .soup-pair-img { order: 2; }
-    .soup-pair:nth-child(even) .soup-step { order: 1; }
-    .soup-pair-img { border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4/3; }
-    .soup-pair-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .soup-builder { display: flex; flex-direction: column; gap: 16px; margin-bottom: 14px; }
+    .soup-imgs-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .soup-imgs-col img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r-md); display: block; }
+    .soup-steps-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .soup-step { background: var(--bg-card); border: 1px solid var(--brd-sub); border-radius: var(--r-md); padding: 22px; }
     .soup-step-header { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
     .soup-step-num {
@@ -751,9 +749,8 @@
       /* Nudelsuppe */
       .soup-step { padding: 16px; }
       .soup-intro { margin-bottom: 32px; }
-      .soup-pair { grid-template-columns: 1fr; }
-      .soup-pair:nth-child(even) .soup-pair-img,
-      .soup-pair:nth-child(even) .soup-step { order: unset; }
+      .soup-imgs-col { grid-template-columns: repeat(3, 1fr); }
+      .soup-steps-col { grid-template-columns: 1fr; }
       .soup-extras { padding: 16px; }
 
       /* Inhaber */
@@ -1127,12 +1124,17 @@
         </p>
       </div>
 
-      <div class="soup-pairs reveal reveal-d1">
+      <div class="soup-builder reveal reveal-d1">
 
-        <div class="soup-pair">
-          <div class="soup-pair-img">
-            <img src="Bilder/Essen/IMG-20260613-WA0000.jpg" alt="Thai Nudelsuppe" loading="lazy" />
-          </div>
+        <!-- Bilder links -->
+        <div class="soup-imgs-col">
+          <img src="Bilder/Suppe/IMG-20260703-WA0001.jpg" alt="Thai Nudelsuppe" loading="lazy" />
+          <img src="Bilder/Suppe/IMG-20260712-WA0004.jpg" alt="Thai Nudelsuppe Variante" loading="lazy" />
+          <img src="Bilder/Suppe/IMG-20260712-WA0003.jpg" alt="Thai Nudelsuppe mit Einlagen" loading="lazy" />
+        </div>
+
+        <!-- Konfigurationsschritte rechts -->
+        <div class="soup-steps-col">
           <div class="soup-step">
             <div class="soup-step-header">
               <div class="soup-step-num">1</div>
@@ -1149,12 +1151,6 @@
               <span class="soup-option">Mama-Nudeln</span>
               <span class="soup-option">Glasnudeln</span>
             </div>
-          </div>
-        </div>
-
-        <div class="soup-pair">
-          <div class="soup-pair-img">
-            <img src="Bilder/Essen/IMG-20260613-WA0004.jpg" alt="Thai Protein Auswahl" loading="lazy" />
           </div>
           <div class="soup-step">
             <div class="soup-step-header">
@@ -1173,12 +1169,6 @@
               <span class="soup-option">Crevetten (3 Stk.)</span>
             </div>
           </div>
-        </div>
-
-        <div class="soup-pair">
-          <div class="soup-pair-img">
-            <img src="Bilder/Essen/IMG-20260628-WA0003.jpg" alt="Thai Extras" loading="lazy" />
-          </div>
           <div class="soup-step">
             <div class="soup-step-header">
               <div class="soup-step-num">3</div>
@@ -1195,12 +1185,6 @@
               <span class="soup-option">Fischbällchen (2 Stk.)</span>
               <span class="soup-option">Crevetten-Wan-Tan (2 Stk.)</span>
             </div>
-          </div>
-        </div>
-
-        <div class="soup-pair">
-          <div class="soup-pair-img">
-            <img src="Bilder/Essen/IMG-20260418-WA0018.jpg" alt="Thai Brühe" loading="lazy" />
           </div>
           <div class="soup-step">
             <div class="soup-step-header">
