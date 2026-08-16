@@ -186,6 +186,7 @@
       -webkit-backdrop-filter: blur(16px);
       box-shadow: 0 1px 0 rgba(255,255,255,.06);
     }
+    #navbar.menu-open { background: #0A0A0A; }
     .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
       height: var(--nav-h); gap: 24px;
@@ -215,19 +216,18 @@
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
     .nav-mobile {
       display: none; position: fixed;
-      top: var(--nav-h); left: 0; right: 0;
-      background: rgba(10,10,10,.98); backdrop-filter: blur(16px);
-      z-index: 300; padding: 16px 24px 24px;
+      top: var(--nav-h); left: 0; right: 0; bottom: 0;
+      background: #0A0A0A;
+      z-index: 300; padding: 8px 24px 32px;
       transform: translateY(-8px); opacity: 0; pointer-events: none;
       transition: transform var(--t), opacity var(--t);
-      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+      overflow-y: auto;
     }
     .nav-mobile.open { transform: translateY(0); opacity: 1; pointer-events: all; }
-    .nav-mobile ul { flex-direction: column; gap: 0; align-items: stretch; }
-    .nav-mobile ul a { display: block; padding: 12px 16px; font-size: 1.05rem; font-weight: 500; color: rgba(240,237,230,.7); border-radius: 8px; }
-    .nav-mobile ul a:hover { background: rgba(245,200,66,.08); color: var(--accent); }
-    .nav-mobile .mobile-cta { display: block; margin-top: 16px; text-align: center; padding: 14px 20px; background: var(--accent); color: #0A0A0A; border-radius: 50px; font-weight: 600; }
-    .nav-mobile .mobile-cta:hover { background: #D4A820; }
+    .nav-mobile ul { display: flex; flex-direction: column; gap: 0; align-items: stretch; margin: 0; padding: 0; list-style: none; }
+    .nav-mobile ul li { border-bottom: 1px solid rgba(255,255,255,.07); }
+    .nav-mobile ul a { display: block; padding: 16px 4px; font-size: 1rem; font-weight: 500; color: rgba(240,237,230,.7); }
+    .nav-mobile ul a:hover { color: var(--accent); }
 
     /* ============================================================
        HERO SLIDESHOW
@@ -424,8 +424,8 @@
     .dish-variants { margin-top: 8px; display: flex; flex-direction: column; gap: 2px; }
     .dish-variant { display: flex; justify-content: space-between; font-size: .79rem; color: var(--text-mid); padding: 3px 0; border-bottom: 1px dashed rgba(255,255,255,.07); gap: 12px; }
     .dish-variant:last-child { border-bottom: none; }
-    .dish-variant .v-price { color: var(--chili); font-weight: 700; white-space: nowrap; }
-    .price-tag { font-size: .82rem; font-weight: 700; color: var(--chili); background: rgba(232,51,58,.1); padding: 4px 10px; border-radius: 50px; white-space: nowrap; align-self: start; margin-top: 2px; }
+    .dish-variant .v-price { color: var(--accent); font-weight: 700; white-space: nowrap; }
+    .price-tag { font-size: .82rem; font-weight: 700; color: var(--accent); background: rgba(245,200,66,.08); padding: 4px 10px; border-radius: 50px; white-space: nowrap; align-self: start; margin-top: 2px; }
     .order-btn {
       padding: 7px 14px; background: transparent; color: var(--accent);
       border: 1px solid rgba(245,200,66,.25); border-radius: 50px;
@@ -471,6 +471,7 @@
        MENÜ-ITEM (Tab-Panels, Suppen)
     ============================================================ */
     .menu-item-list { display: flex; flex-direction: column; gap: 4px; }
+    .menu-item-list--2col { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
     .menu-item {
       display: grid; grid-template-columns: 1fr auto;
       gap: 16px; align-items: start;
@@ -494,17 +495,20 @@
     }
 
     /* Curry */
-    .curry-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px; }
-    .curry-type-card { background: var(--bg-card); border: 1px solid var(--brd-sub); border-radius: var(--r-sm); padding: 14px 16px; }
-    .curry-type-name { font-family: 'Oswald', sans-serif; font-size: .88rem; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
-    .curry-type-card p { font-size: .76rem; color: var(--text-lt); line-height: 1.55; }
+    .curry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+    .curry-card { background: var(--bg-card); border: 1px solid var(--brd-sub); border-radius: var(--r-sm); padding: 18px 20px; display: flex; flex-direction: column; }
+    .curry-card-name { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+    .curry-card-desc { font-size: .76rem; color: var(--text-lt); line-height: 1.55; margin-bottom: 14px; }
+    .curry-proteins { border-top: 1px solid var(--brd-sub); padding-top: 12px; display: flex; flex-direction: column; gap: 5px; margin-top: auto; }
+    .curry-protein { display: flex; justify-content: space-between; font-size: .82rem; color: var(--text-mid); }
+    .curry-protein .cp-price { color: var(--accent); font-weight: 600; }
     .curry-protein-label { font-family: 'Oswald', sans-serif; font-size: .8rem; font-weight: 600; color: var(--text-lt); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 10px; }
     @media (max-width: 768px) {
-      .curry-types { grid-template-columns: 1fr 1fr; }
       .menu-item { grid-template-columns: 1fr auto; gap: 10px; }
+      .menu-item-list--2col { grid-template-columns: 1fr; }
     }
-    @media (max-width: 480px) {
-      .curry-types { grid-template-columns: 1fr; }
+    @media (max-width: 600px) {
+      .curry-grid { grid-template-columns: 1fr; }
     }
 
     /* ============================================================
@@ -520,7 +524,7 @@
     .drink-card-title { font-family: 'Oswald', sans-serif; font-size: .95rem; font-weight: 600; color: var(--accent); margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid rgba(245,200,66,.1); }
     .drink-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-size: .82rem; color: var(--text-mid); border-bottom: 1px solid rgba(255,255,255,.04); gap: 8px; }
     .drink-row:last-child { border-bottom: none; }
-    .drink-row span:last-child { font-weight: 600; color: var(--text); white-space: nowrap; }
+    .drink-row span:last-child { font-weight: 600; color: var(--accent); white-space: nowrap; }
     .bubble-note { display: inline-flex; gap: 10px; background: rgba(245,200,66,.08); border-radius: 50px; padding: 5px 14px; font-size: .8rem; font-weight: 600; color: var(--accent); margin-bottom: 12px; }
     .bubble-item { padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,.04); font-size: .82rem; color: var(--text-mid); display: flex; align-items: center; gap: 8px; }
     .bubble-item:last-child { border-bottom: none; }
@@ -758,9 +762,8 @@
       .price-tag { flex-basis: 100%; margin-left: 38px; margin-top: 0; align-self: start; }
       .dish-row .order-btn { display: none; }
       .dish-variant .v-price { display: inline; }
-      .menu-tabs { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 2px; }
-      .menu-tabs::-webkit-scrollbar { display: none; }
-      .menu-tab-btn { padding: 10px 14px; font-size: .88rem; min-height: 44px; white-space: nowrap; flex-shrink: 0; }
+      .menu-tabs { flex-wrap: nowrap; justify-content: center; gap: 0; }
+      .menu-tab-btn { padding: 10px 8px; font-size: .72rem; min-height: 44px; white-space: nowrap; flex: 1; text-align: center; }
 
       /* Nudelsuppe */
       .soup-intro { margin-bottom: 28px; }
@@ -846,14 +849,12 @@
         <nav aria-label="Hauptnavigation">
           <ul>
             <li><a href="#mittagsbuffet">Buffet</a></li>
-            <li><a href="#getraenke">Getränke</a></li>
             <li><a href="#nudelsuppe">Spezialität</a></li>
             <li><a href="#menu">Menü</a></li>
+            <li><a href="#getraenke">Getränke</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
           </ul>
         </nav>
-
-        <a href="tel:+41798481522" class="nav-cta">Reservieren</a>
 
         <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -866,12 +867,11 @@
   <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobilnavigation">
     <ul>
       <li><a href="#mittagsbuffet">Buffet</a></li>
-      <li><a href="#getraenke">Getränke</a></li>
       <li><a href="#nudelsuppe">Spezialität</a></li>
       <li><a href="#menu">Menü</a></li>
+      <li><a href="#getraenke">Getränke</a></li>
       <li><a href="#ueber-uns">Über uns</a></li>
     </ul>
-    <a href="tel:+41798481522" class="mobile-cta">Reservieren</a>
   </div>
 
 
@@ -881,28 +881,28 @@
   <section id="hero" aria-label="Bildergalerie Restaurant">
 
     <div class="slide active">
-      <img src="Bilder/Laden/laden_2.jpg" alt="Ruay Thai Noodle – Theke und Lounge in Dietikon" loading="eager" fetchpriority="high" />
+      <img src="Bilder/Essen/IMG-20260613-WA0000.jpg" alt="Khao Soi – Ruay Thai Noodle Dietikon" loading="eager" fetchpriority="high" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Hero/bangkok_street2.avif" alt="Strassenmarkt Bangkok Thailand" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Essen/IMG-20260703-WA0001.jpg" alt="Originale Thai-Nudelsuppe" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Hero/bangkok-city.avif" alt="Bangkok bei Nacht" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Essen/IMG-20260628-WA0002.jpg" alt="Gebratener Reis Kao Phad" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Hero/bangkok_china.avif" alt="Chinatown Bangkok" loading="lazy" />
     </div>
     <div class="slide">
       <img src="Bilder/Essen/IMG-20260705-WA0017.jpg" alt="Rotes Curry mit Pouletstreifen" loading="lazy" />
     </div>
     <div class="slide">
-      <img src="Bilder/Laden/laden_1.jpg" alt="Ruay Thai Noodle – Gästeraum mit Thai-Deko" loading="lazy" />
-    </div>
-    <div class="slide">
-      <img src="Bilder/Essen/IMG-20260613-WA0000.jpg" alt="Gelbes Curry mit Tofu" loading="lazy" />
-    </div>
-    <div class="slide">
-      <img src="Bilder/Laden/laden_3.jpg" alt="Ruay Thai Noodle – Restaurant von innen" loading="lazy" />
-    </div>
-    <div class="slide">
-      <img src="Bilder/Essen/IMG-20260628-WA0002.jpg" alt="Gebratener Reis" loading="lazy" />
-    </div>
-    <div class="slide">
-      <img src="Bilder/Essen/IMG-20260712-WA0024.jpg" alt="Pad Thai" loading="lazy" />
-    </div>
-    <div class="slide">
-      <img src="Bilder/Essen/IMG-20260613-WA0004.jpg" alt="Knusprige Ente" loading="lazy" />
+      <img src="Bilder/Hero/bangkok_lampen.avif" alt="Lampions Bangkok Thailand" loading="lazy" />
     </div>
 
     <!-- Overlay -->
@@ -913,29 +913,11 @@
       </div>
       <p class="slide-thai">ก๋วยเตี๋ยวไทย คุณรวย</p>
       <div class="slide-ctas">
-        <a href="#nudelsuppe" class="btn btn-outline">Suppen</a>
-        <a href="#menu" class="btn btn-primary">Speisekarte</a>
+        <a href="#mittagsbuffet" class="btn btn-outline">Mittagsmenü</a>
+        <a href="#nudelsuppe" class="btn btn-primary">Spezialitäten</a>
       </div>
     </div>
 
-    <!-- Controls -->
-    <div class="slide-dots" role="tablist" aria-label="Slideshow Navigation">
-      <button class="slide-dot active" role="tab" aria-selected="true"  aria-label="Slide 1"></button>
-      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 2"></button>
-      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 3"></button>
-      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 4"></button>
-      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 5"></button>
-      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 6"></button>
-      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 7"></button>
-      <button class="slide-dot" role="tab" aria-selected="false" aria-label="Slide 8"></button>
-    </div>
-
-    <button class="slide-arrow prev" aria-label="Vorheriges Bild">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <button class="slide-arrow next" aria-label="Nächstes Bild">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
 
   </section>
 
@@ -1025,70 +1007,10 @@
           <p>
             Schnell, frisch und in bester Qualität – das ist unser Anspruch beim Mittagsbuffet. Selbstverständlich können Sie während dieser Zeit auch aus unserer À-la-carte-Speisekarte wählen.
           </p>
-          <a href="tel:+41798481522" class="btn btn-primary buffet-cta-desktop" style="margin-top:24px;">Tisch reservieren</a>
         </div>
 
-        <a href="tel:+41798481522" class="btn btn-primary buffet-cta-mobile" style="align-self:center;">Reservieren</a>
 
       </div>
-    </div>
-  </section>
-
-
-  <!-- ════════════════════════════════
-       GETRÄNKE
-  ════════════════════════════════ -->
-  <section id="getraenke" aria-labelledby="drinks-heading">
-    <div class="container">
-
-      <div class="section-header reveal">
-        <span class="section-label">Trinken &amp; Geniessen</span>
-        <h2 class="section-title" id="drinks-heading">Getränke</h2>
-        <p class="section-sub">
-          Von Thai-Bier bis Iced Coffee und Iced Tea – eine grosse Auswahl erwartet Sie.
-        </p>
-      </div>
-
-      <div class="reveal reveal-d1">
-        <div class="drink-grids">
-          <div class="drink-card">
-            <div class="drink-card-title">Heissgetränke</div>
-            <div class="drink-row"><span>Americano</span><span>CHF 4.00</span></div>
-            <div class="drink-row"><span>Caffè Crème</span><span>CHF 4.00</span></div>
-            <div class="drink-row"><span>Caffè Latte</span><span>CHF 4.00</span></div>
-            <div class="drink-row"><span>Cappuccino</span><span>CHF 4.00</span></div>
-            <div class="drink-row"><span>Espresso</span><span>CHF 4.00</span></div>
-            <div class="drink-row"><span>Macchiato</span><span>CHF 4.00</span></div>
-          </div>
-          <div class="drink-card">
-            <div class="drink-card-title">Iced Coffee 330ml</div>
-            <div class="drink-row"><span>Latte</span><span>CHF 7.50</span></div>
-            <div class="drink-row"><span>Latte Macchiato</span><span>CHF 7.50</span></div>
-            <div class="drink-row"><span>Caramel Macchiato</span><span>CHF 7.50</span></div>
-            <div class="drink-row"><span>Cappuccino</span><span>CHF 7.50</span></div>
-            <div class="drink-row"><span>Espresso</span><span>CHF 7.50</span></div>
-            <div class="drink-row"><span>Mocca</span><span>CHF 7.50</span></div>
-            <div class="drink-row"><span>Matcha Latte</span><span>CHF 8.50</span></div>
-          </div>
-          <div class="drink-card">
-            <div class="drink-card-title">Iced Tea</div>
-            <div class="drink-row"><span>Honey Mango 330ml</span><span>CHF 9.50</span></div>
-            <div class="drink-row"><span>Honey Lemon Tea 330ml</span><span>CHF 9.50</span></div>
-            <div class="drink-row"><span>Lemon &amp; Honig Tee 450ml</span><span>CHF 7.50</span></div>
-            <div class="drink-row"><span>Erdbeere Lemon Tea 450ml</span><span>CHF 7.00</span></div>
-          </div>
-          <div class="drink-card">
-            <div class="drink-card-title">Bier</div>
-            <div class="drink-row"><span>Hop Schwiiz 0.5l</span><span>CHF 6.00</span></div>
-            <div class="drink-row"><span>Rainbow IPA 0.5l</span><span>CHF 6.00</span></div>
-            <div class="drink-row"><span>Unamas Extra Frisches Helles 0.5l</span><span>CHF 6.00</span></div>
-            <div class="drink-row"><span>Chang 33cl</span><span>CHF 5.00</span></div>
-            <div class="drink-row"><span>Leo 33cl</span><span>CHF 5.00</span></div>
-            <div class="drink-row"><span>Singha 33cl</span><span>CHF 5.00</span></div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1117,7 +1039,7 @@
         <img src="Bilder/Suppe/IMG-20260712-WA0003.jpg" alt="Thai Nudelsuppe mit Einlagen" loading="lazy" />
       </div>
 
-      <div class="menu-item-list reveal reveal-d1">
+      <div class="menu-item-list menu-item-list--2col reveal reveal-d1">
         <div class="menu-item">
           <div>
             <h3>Eiernudeln mit Schweine-Wan-Tan</h3>
@@ -1201,12 +1123,11 @@
 
       <!-- Tabs -->
       <div class="menu-tabs reveal" role="tablist" aria-label="Speisekarte Kategorien">
-        <button class="menu-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-vorspeisen">Vorspeisen</button>
+        <button class="menu-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-vorspeisen">Vorspeise</button>
         <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-suppen">Suppen</button>
         <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-wok">Wok</button>
-        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-khaosoi">Khao Soi</button>
         <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-curry">Curry</button>
-        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-haupt">Hauptspeisen</button>
+        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-teriyaki">Teriyaki</button>
         <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-dessert">Dessert</button>
       </div>
 
@@ -1288,146 +1209,136 @@
 
       <!-- WOK -->
       <div id="tab-wok" class="menu-tab-panel" role="tabpanel">
-        <div class="menu-item-list">
+        <div class="curry-grid">
 
-          <div class="menu-item menu-item--group">
-            <div class="menu-item-group-body">
-              <h3>Gebratener Reis <span class="dish-thai">Kao Phad</span></h3>
-              <p>Jasminreis gebraten mit Ei und Frühlingszwiebeln</p>
-              <div class="dish-variants">
-                <div class="dish-variant"><span>Gemüse (Pak)</span><span class="v-price">CHF 20.90</span></div>
-                <div class="dish-variant"><span>Poulet (Gai)</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Crevetten (Gung)</span><span class="v-price">CHF 24.50</span></div>
-                <div class="dish-variant"><span>Rindfleisch (Nuer)</span><span class="v-price">CHF 24.90</span></div>
-              </div>
+          <div class="curry-card">
+            <div class="curry-card-name">Gebratener Reis <span class="dish-thai">Kao Phad</span></div>
+            <p class="curry-card-desc">Jasminreis gebraten mit Ei und Frühlingszwiebeln</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Gemüse <span style="color:var(--text-lt);font-size:.75rem">Pak</span></span><span class="cp-price">CHF 20.90</span></div>
+              <div class="curry-protein"><span>Poulet <span style="color:var(--text-lt);font-size:.75rem">Gai</span></span><span class="cp-price">CHF 22.50</span></div>
+              <div class="curry-protein"><span>Crevetten <span style="color:var(--text-lt);font-size:.75rem">Gung</span></span><span class="cp-price">CHF 24.50</span></div>
+              <div class="curry-protein"><span>Rindfleisch <span style="color:var(--text-lt);font-size:.75rem">Nuer</span></span><span class="cp-price">CHF 24.90</span></div>
             </div>
           </div>
 
-          <div class="menu-item menu-item--group">
-            <div class="menu-item-group-body">
-              <h3>Phad Thai</h3>
-              <p>Gebratene Reisnudeln, Sojasprossen, Ei, Tamarind-Sauce, Schnittlauch, Erdnüsse</p>
-              <div class="dish-variants">
-                <div class="dish-variant"><span>Tofu</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Poulet (Gai)</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Crevetten (Gung)</span><span class="v-price">CHF 24.50</span></div>
-                <div class="dish-variant"><span>Rindfleisch (Nuer)</span><span class="v-price">CHF 24.90</span></div>
-              </div>
+          <div class="curry-card">
+            <div class="curry-card-name">Phad Thai</div>
+            <p class="curry-card-desc">Gebratene Reisnudeln, Sojasprossen, Ei, Tamarind-Sauce, Schnittlauch, Erdnüsse</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 22.50</span></div>
+              <div class="curry-protein"><span>Poulet <span style="color:var(--text-lt);font-size:.75rem">Gai</span></span><span class="cp-price">CHF 22.50</span></div>
+              <div class="curry-protein"><span>Crevetten <span style="color:var(--text-lt);font-size:.75rem">Gung</span></span><span class="cp-price">CHF 24.50</span></div>
+              <div class="curry-protein"><span>Rindfleisch <span style="color:var(--text-lt);font-size:.75rem">Nuer</span></span><span class="cp-price">CHF 24.90</span></div>
             </div>
           </div>
 
-          <div class="menu-item menu-item--group">
-            <div class="menu-item-group-body">
-              <h3>Pad See Ew</h3>
-              <p>Gebratene breite Reisnudeln in dunkler Sojasauce, Ei, Broccoli, Karotten, Erdnüsse</p>
-              <div class="dish-variants">
-                <div class="dish-variant"><span>Tofu</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Poulet (Gai)</span><span class="v-price">CHF 22.50</span></div>
-                <div class="dish-variant"><span>Crevetten (Gung)</span><span class="v-price">CHF 24.50</span></div>
-                <div class="dish-variant"><span>Rindfleisch (Nuer)</span><span class="v-price">CHF 24.90</span></div>
-              </div>
+          <div class="curry-card">
+            <div class="curry-card-name">Pad See Ew</div>
+            <p class="curry-card-desc">Gebratene breite Reisnudeln in dunkler Sojasauce, Ei, Broccoli, Karotten, Erdnüsse</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 22.50</span></div>
+              <div class="curry-protein"><span>Poulet <span style="color:var(--text-lt);font-size:.75rem">Gai</span></span><span class="cp-price">CHF 22.50</span></div>
+              <div class="curry-protein"><span>Crevetten <span style="color:var(--text-lt);font-size:.75rem">Gung</span></span><span class="cp-price">CHF 24.50</span></div>
+              <div class="curry-protein"><span>Rindfleisch <span style="color:var(--text-lt);font-size:.75rem">Nuer</span></span><span class="cp-price">CHF 24.90</span></div>
             </div>
           </div>
 
-          <div class="menu-item menu-item--group">
-            <div class="menu-item-group-body">
-              <h3>Phad Kha Phao</h3>
-              <p>Peperoncini, Zwiebeln, Langbohnen, Thai Basilikum, Austernsauce. Mit Jasmin Reis und Spiegelei.</p>
-              <div class="dish-variants">
-                <div class="dish-variant"><span>Poulet (Gai)</span><span class="v-price">CHF 23.90</span></div>
-                <div class="dish-variant"><span>Schweinehack (Muh)</span><span class="v-price">CHF 23.90</span></div>
-                <div class="dish-variant"><span>Rinderhack (Nuer)</span><span class="v-price">CHF 24.90</span></div>
-                <div class="dish-variant"><span>Rinderhack + Eiernudeln</span><span class="v-price">CHF 25.90</span></div>
-              </div>
+          <div class="curry-card">
+            <div class="curry-card-name">Phad Kha Phao</div>
+            <p class="curry-card-desc">Peperoncini, Zwiebeln, Langbohnen, Thai Basilikum, Austernsauce. Mit Jasmin Reis und Spiegelei.</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Poulet <span style="color:var(--text-lt);font-size:.75rem">Gai</span></span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Schweinehack <span style="color:var(--text-lt);font-size:.75rem">Muh</span></span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Rinderhack <span style="color:var(--text-lt);font-size:.75rem">Nuer</span></span><span class="cp-price">CHF 24.90</span></div>
+              <div class="curry-protein"><span>Rinderhack + Eiernudeln</span><span class="cp-price">CHF 25.90</span></div>
             </div>
           </div>
 
-        </div>
-      </div>
+          <div class="curry-card" style="grid-column: 1 / -1">
+            <div class="curry-card-name">Gai Pad Khing</div>
+            <p class="curry-card-desc">Gebratene Pouletstreifen, Ingwerstreifen, Peperoni, Pilze, Austernsauce. Mit Jasmin Reis.</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Poulet</span><span class="cp-price">CHF 23.50</span></div>
+            </div>
+          </div>
 
-      <!-- KHAO SOI -->
-      <div id="tab-khaosoi" class="menu-tab-panel" role="tabpanel">
-        <p class="menu-tab-note">Eiernudeln oder Reisnudeln &amp; knusprig frittierte Nudeln in Curry-Kokossauce, mit Koriander, Zwiebeln und Limetten. Traditionelles Gericht aus Nordthailand / Chiang Mai.</p>
-        <div class="menu-item-list">
-          <div class="menu-item">
-            <div>
-              <h3>Khao Soi To-Fu</h3>
-              <p>Mit Tofu</p>
-            </div>
-            <span class="price-tag">CHF 23.90</span>
-          </div>
-          <div class="menu-item">
-            <div>
-              <h3>Khao Soi Gai</h3>
-              <p>Mit Pouletfleisch</p>
-            </div>
-            <span class="price-tag">CHF 24.90</span>
-          </div>
-          <div class="menu-item">
-            <div>
-              <h3>Khao Soi Gung</h3>
-              <p>Mit Crevetten</p>
-            </div>
-            <span class="price-tag">CHF 24.90</span>
-          </div>
-          <div class="menu-item">
-            <div>
-              <h3>Khao Soi Nuer</h3>
-              <p>Mit Rindfleisch</p>
-            </div>
-            <span class="price-tag">CHF 25.90</span>
-          </div>
         </div>
       </div>
 
       <!-- CURRY -->
       <div id="tab-curry" class="menu-tab-panel" role="tabpanel">
-        <p class="menu-tab-note">Alle Currys mit Jasmin Reis serviert. Curry-Typ wählen, dann Protein wählen.</p>
-        <div class="curry-types">
-          <div class="curry-type-card">
-            <div class="curry-type-name">Rotes Curry</div>
-            <p>Kokosmilch, grüne Bohnen, Bambusstreifen, Thai-Auberginen, Kaffirblätter</p>
-          </div>
-          <div class="curry-type-card">
-            <div class="curry-type-name">Grünes Curry</div>
-            <p>Kokosmilch, grüne Bohnen, Bambusstreifen, Thai-Aubergine, Erbsen, Thai Basilikum</p>
-          </div>
-          <div class="curry-type-card">
-            <div class="curry-type-name">Gelbes Curry</div>
-            <p>Kokosmilch, Blumenkohl, Karotten, Broccoli, Zucchini, Peperoni</p>
-          </div>
-          <div class="curry-type-card">
-            <div class="curry-type-name">Massaman Curry</div>
-            <p>Kokosmilch, Erdnüsse, Zwiebeln, Kartoffeln</p>
-          </div>
-          <div class="curry-type-card">
-            <div class="curry-type-name">Panaeng Curry</div>
-            <p>Kokosmilch, Thai-Aubergine, Erbsen, Kartoffeln, Kaffirblätter</p>
-          </div>
-        </div>
-        <div class="curry-protein-label">Protein wählen</div>
-        <div class="menu-item-list">
-          <div class="menu-item">
-            <div><h3>+ Tofu</h3></div>
-            <span class="price-tag">CHF 22.90</span>
-          </div>
-          <div class="menu-item">
-            <div><h3>+ Poulet</h3></div>
-            <span class="price-tag">CHF 22.90</span>
-          </div>
-          <div class="menu-item">
-            <div><h3>+ Crevetten</h3></div>
-            <span class="price-tag">CHF 23.90</span>
-          </div>
-          <div class="menu-item">
-            <div><h3>+ Rindfleisch</h3></div>
-            <span class="price-tag">CHF 24.90</span>
-          </div>
-        </div>
-      </div>
+        <p class="menu-tab-note">Alle Currys (ausser Khao Soi) mit Jasmin Reis serviert.</p>
+        <div class="curry-grid">
 
-      <!-- HAUPTSPEISEN -->
-      <div id="tab-haupt" class="menu-tab-panel" role="tabpanel">
+          <div class="curry-card">
+            <div class="curry-card-name">Rotes Curry</div>
+            <p class="curry-card-desc">Kokosmilch, grüne Bohnen, Bambusstreifen, Thai-Auberginen, Kaffirblätter</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Poulet</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Crevetten</span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Rindfleisch</span><span class="cp-price">CHF 24.90</span></div>
+            </div>
+          </div>
+
+          <div class="curry-card">
+            <div class="curry-card-name">Grünes Curry</div>
+            <p class="curry-card-desc">Kokosmilch, grüne Bohnen, Bambusstreifen, Thai-Aubergine, Erbsen, Thai Basilikum</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Poulet</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Crevetten</span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Rindfleisch</span><span class="cp-price">CHF 24.90</span></div>
+            </div>
+          </div>
+
+          <div class="curry-card">
+            <div class="curry-card-name">Gelbes Curry</div>
+            <p class="curry-card-desc">Kokosmilch, Blumenkohl, Karotten, Broccoli, Zucchini, Peperoni</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Poulet</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Crevetten</span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Rindfleisch</span><span class="cp-price">CHF 24.90</span></div>
+            </div>
+          </div>
+
+          <div class="curry-card">
+            <div class="curry-card-name">Massaman Curry</div>
+            <p class="curry-card-desc">Kokosmilch, Erdnüsse, Zwiebeln, Kartoffeln</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Poulet</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Crevetten</span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Rindfleisch</span><span class="cp-price">CHF 24.90</span></div>
+            </div>
+          </div>
+
+          <div class="curry-card">
+            <div class="curry-card-name">Panaeng Curry</div>
+            <p class="curry-card-desc">Kokosmilch, Thai-Aubergine, Erbsen, Kartoffeln, Kaffirblätter</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Poulet</span><span class="cp-price">CHF 22.90</span></div>
+              <div class="curry-protein"><span>Crevetten</span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Rindfleisch</span><span class="cp-price">CHF 24.90</span></div>
+            </div>
+          </div>
+
+          <div class="curry-card">
+            <div class="curry-card-name">Khao Soi</div>
+            <p class="curry-card-desc">Eiernudeln &amp; knusprig frittierte Nudeln in Curry-Kokossauce, Koriander, Zwiebeln, Limetten</p>
+            <div class="curry-proteins">
+              <div class="curry-protein"><span>Tofu</span><span class="cp-price">CHF 23.90</span></div>
+              <div class="curry-protein"><span>Poulet <span style="color:var(--text-lt);font-size:.75rem">Gai</span></span><span class="cp-price">CHF 24.90</span></div>
+              <div class="curry-protein"><span>Crevetten <span style="color:var(--text-lt);font-size:.75rem">Gung</span></span><span class="cp-price">CHF 24.90</span></div>
+              <div class="curry-protein"><span>Rindfleisch <span style="color:var(--text-lt);font-size:.75rem">Nuer</span></span><span class="cp-price">CHF 25.90</span></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="curry-protein-label">Spezialitäten</div>
         <div class="menu-item-list">
           <div class="menu-item">
             <div>
@@ -1436,6 +1347,19 @@
             </div>
             <span class="price-tag">CHF 26.00</span>
           </div>
+          <div class="menu-item">
+            <div>
+              <h3>Knusprige Poulet Schnitzel mit Panang Curry</h3>
+              <p>Paniertes Pouletfleisch, Panang Curry, Thai-Aubergine, Kartoffeln, grüne Erbsen, Thai Basilikum</p>
+            </div>
+            <span class="price-tag">CHF 24.90</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TERIYAKI -->
+      <div id="tab-teriyaki" class="menu-tab-panel" role="tabpanel">
+        <div class="menu-item-list">
           <div class="menu-item">
             <div>
               <h3>Poulet Teriyaki mit Pandan Nudeln</h3>
@@ -1452,24 +1376,10 @@
           </div>
           <div class="menu-item">
             <div>
-              <h3>Knusprige Poulet Schnitzel mit Panang Curry</h3>
-              <p>Paniertes Pouletfleisch, Panang Curry, Thai-Aubergine, Kartoffeln, grüne Erbsen, Thai Basilikum</p>
-            </div>
-            <span class="price-tag">CHF 24.90</span>
-          </div>
-          <div class="menu-item">
-            <div>
               <h3>Kai Jeow</h3>
               <p>Thai-Omelette mit Jasmin Reis, Gurken und Sriracha Sauce</p>
             </div>
             <span class="price-tag">CHF 16.50</span>
-          </div>
-          <div class="menu-item">
-            <div>
-              <h3>Gai Pad Khing</h3>
-              <p>Gebratene Pouletstreifen, Ingwerstreifen, Peperoni, Pilze, Austernsauce. Mit Jasmin Reis.</p>
-            </div>
-            <span class="price-tag">CHF 23.50</span>
           </div>
         </div>
       </div>
@@ -1509,6 +1419,65 @@
 
     </div>
   </section>
+
+  <!-- ════════════════════════════════
+       GETRÄNKE
+  ════════════════════════════════ -->
+  <section id="getraenke" aria-labelledby="drinks-heading">
+    <div class="container">
+
+      <div class="section-header reveal">
+        <span class="section-label">Trinken &amp; Geniessen</span>
+        <h2 class="section-title" id="drinks-heading">Getränke</h2>
+        <p class="section-sub">
+          Von Thai-Bier bis Iced Coffee und Iced Tea – eine grosse Auswahl erwartet Sie.
+        </p>
+      </div>
+
+      <div class="reveal reveal-d1">
+        <div class="drink-grids">
+          <div class="drink-card">
+            <div class="drink-card-title">Heissgetränke</div>
+            <div class="drink-row"><span>Americano</span><span>CHF 4.00</span></div>
+            <div class="drink-row"><span>Caffè Crème</span><span>CHF 4.00</span></div>
+            <div class="drink-row"><span>Caffè Latte</span><span>CHF 4.00</span></div>
+            <div class="drink-row"><span>Cappuccino</span><span>CHF 4.00</span></div>
+            <div class="drink-row"><span>Espresso</span><span>CHF 4.00</span></div>
+            <div class="drink-row"><span>Macchiato</span><span>CHF 4.00</span></div>
+          </div>
+          <div class="drink-card">
+            <div class="drink-card-title">Iced Coffee 330ml</div>
+            <div class="drink-row"><span>Latte</span><span>CHF 7.50</span></div>
+            <div class="drink-row"><span>Latte Macchiato</span><span>CHF 7.50</span></div>
+            <div class="drink-row"><span>Caramel Macchiato</span><span>CHF 7.50</span></div>
+            <div class="drink-row"><span>Cappuccino</span><span>CHF 7.50</span></div>
+            <div class="drink-row"><span>Espresso</span><span>CHF 7.50</span></div>
+            <div class="drink-row"><span>Mocca</span><span>CHF 7.50</span></div>
+            <div class="drink-row"><span>Matcha Latte</span><span>CHF 8.50</span></div>
+          </div>
+          <div class="drink-card">
+            <div class="drink-card-title">Iced Tea</div>
+            <div class="drink-row"><span>Honey Mango 330ml</span><span>CHF 9.50</span></div>
+            <div class="drink-row"><span>Honey Lemon Tea 330ml</span><span>CHF 9.50</span></div>
+            <div class="drink-row"><span>Lemon &amp; Honig Tee 450ml</span><span>CHF 7.50</span></div>
+            <div class="drink-row"><span>Erdbeere Lemon Tea 450ml</span><span>CHF 7.00</span></div>
+          </div>
+          <div class="drink-card">
+            <div class="drink-card-title">Bier</div>
+            <div class="drink-row"><span>Hop Schwiiz 0.5l</span><span>CHF 6.00</span></div>
+            <div class="drink-row"><span>Rainbow IPA 0.5l</span><span>CHF 6.00</span></div>
+            <div class="drink-row"><span>Unamas Extra Frisches Helles 0.5l</span><span>CHF 6.00</span></div>
+            <div class="drink-row"><span>Chang 33cl</span><span>CHF 5.00</span></div>
+            <div class="drink-row"><span>Leo 33cl</span><span>CHF 5.00</span></div>
+            <div class="drink-row"><span>Singha 33cl</span><span>CHF 5.00</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
 
 
   <!-- ════════════════════════════════
@@ -1720,7 +1689,7 @@
 
         <div class="info-block reveal reveal-d1">
           <h3>Öffnungszeiten</h3>
-          <span class="summer-notice">Sommersaison 2025</span>
+          <span class="summer-notice">Sommersaison 2026</span>
           <table class="hours-table">
             <tbody>
               <tr><td>Montag – Freitag</td><td>11:00–14:30 / 17:30–22:00</td></tr>
@@ -1817,35 +1786,18 @@
   <script>
     (function() {
       const slides = document.querySelectorAll('#hero .slide');
-      const dots   = document.querySelectorAll('.slide-dot');
       let current  = 0;
       let timer;
 
       function goTo(n) {
         slides[current].classList.remove('active');
-        dots[current].classList.remove('active');
-        dots[current].setAttribute('aria-selected', 'false');
         current = (n + slides.length) % slides.length;
         slides[current].classList.add('active');
-        dots[current].classList.add('active');
-        dots[current].setAttribute('aria-selected', 'true');
       }
 
       function start() {
-        timer = setInterval(() => goTo(current + 1), 5000);
+        timer = setInterval(() => goTo(current + 1), 2000);
       }
-
-      function reset() {
-        clearInterval(timer);
-        start();
-      }
-
-      dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => { goTo(i); reset(); });
-      });
-
-      document.querySelector('.slide-arrow.prev').addEventListener('click', () => { goTo(current - 1); reset(); });
-      document.querySelector('.slide-arrow.next').addEventListener('click', () => { goTo(current + 1); reset(); });
 
       // Pause on hover
       const hero = document.getElementById('hero');
