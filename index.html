@@ -621,24 +621,24 @@
     .reviews-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
     .review-card {
       width: calc(33.333% - 16px); flex-shrink: 0; margin: 0 8px;
-      background: var(--bg-card); border: 1px solid rgba(240,237,230,.08);
-      border-radius: var(--r-md); padding: 32px 24px;
-      display: flex; flex-direction: column; gap: 16px; box-sizing: border-box;
+      background: var(--bg-card); border: 1px solid rgba(240,237,230,.12);
+      border-radius: var(--r-md); padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 14px; box-sizing: border-box;
     }
     .review-header { display: flex; align-items: center; gap: 12px; }
     .review-avatar {
-      width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+      width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 700; color: #fff;
-      text-transform: uppercase; letter-spacing: .02em;
+      font-family: 'Oswald', sans-serif; font-size: .85rem; font-weight: 600; color: #fff;
+      text-transform: uppercase; letter-spacing: .04em;
     }
-    .review-info { display: flex; flex-direction: column; gap: 2px; }
+    .review-info { display: flex; flex-direction: column; gap: 3px; }
     .review-name-row { display: flex; align-items: center; gap: 10px; }
-    .review-name { font-size: .88rem; font-weight: 600; color: var(--text); }
-    .review-stars { color: #FBBC05; font-size: .9rem; letter-spacing: .05em; }
-    .review-rezensionen { font-size: .75rem; color: var(--text-lt); }
-    .review-text { font-size: .95rem; color: var(--text-mid); line-height: 1.8; margin: 0; font-style: italic; flex: 1; }
-    .review-source { display: flex; align-items: center; gap: 5px; font-size: .75rem; color: var(--text-lt); margin-top: auto; }
+    .review-name { font-family: 'Oswald', sans-serif; font-size: .95rem; font-weight: 600; color: var(--text); letter-spacing: .02em; }
+    .review-stars { color: #FBBC05; font-size: .88rem; letter-spacing: .05em; }
+    .review-rezensionen { font-size: .73rem; color: var(--text-lt); }
+    .review-text { font-size: .93rem; color: rgba(240,237,230,.88); line-height: 1.75; margin: 0; flex: 1; }
+    .review-source { display: flex; align-items: center; gap: 5px; font-size: .73rem; color: var(--text-lt); margin-top: auto; }
     .reviews-nav {
       display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 32px;
     }
@@ -962,6 +962,7 @@
             <li><a href="#nudelsuppe">Spezialität</a></li>
             <li><a href="#menu">Menü</a></li>
             <li><a href="#getraenke">Getränke</a></li>
+            <li><a href="#bewertungen">Bewertungen</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
           </ul>
         </nav>
@@ -980,6 +981,7 @@
       <li><a href="#nudelsuppe">Spezialität</a></li>
       <li><a href="#menu">Menü</a></li>
       <li><a href="#getraenke">Getränke</a></li>
+      <li><a href="#bewertungen">Bewertungen</a></li>
       <li><a href="#ueber-uns">Über uns</a></li>
     </ul>
   </div>
@@ -2109,7 +2111,7 @@
       if (!track) return;
       const cards = track.querySelectorAll('.review-card');
       const total = cards.length;
-      let cur = 0, timer;
+      let cur = 0;
 
       function visible() { return window.innerWidth < 700 ? 1 : 3; }
       function maxPos() { return total - visible(); }
@@ -2122,7 +2124,7 @@
           const d = document.createElement('button');
           d.className = 'reviews-dot' + (i === cur ? ' active' : '');
           d.setAttribute('aria-label', 'Bewertung ' + (i + 1));
-          d.addEventListener('click', () => { goTo(i); reset(); });
+          d.addEventListener('click', () => goTo(i));
           dotsWrap.appendChild(d);
         }
       }
@@ -2133,26 +2135,19 @@
         dotsWrap.querySelectorAll('.reviews-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
       }
 
-      function start() { timer = setInterval(() => goTo(cur < maxPos() ? cur + 1 : 0), 6000); }
-      function reset() { clearInterval(timer); start(); }
-
-      document.getElementById('reviewsPrev').addEventListener('click', () => { goTo(cur - 1); reset(); });
-      document.getElementById('reviewsNext').addEventListener('click', () => { goTo(cur + 1); reset(); });
+      document.getElementById('reviewsPrev').addEventListener('click', () => goTo(cur - 1));
+      document.getElementById('reviewsNext').addEventListener('click', () => goTo(cur + 1));
 
       let tx = 0;
       track.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
       track.addEventListener('touchend', e => {
         const dx = tx - e.changedTouches[0].clientX;
-        if (Math.abs(dx) > 40) { goTo(dx > 0 ? cur + 1 : cur - 1); reset(); }
+        if (Math.abs(dx) > 40) goTo(dx > 0 ? cur + 1 : cur - 1);
       });
-
-      carousel.addEventListener('mouseenter', () => clearInterval(timer));
-      carousel.addEventListener('mouseleave', start);
 
       window.addEventListener('resize', () => { buildDots(); goTo(0); });
 
       buildDots();
-      start();
     })();
   </script>
 
