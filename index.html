@@ -419,14 +419,16 @@
     .menu-tab-panel { display: none; }
     .menu-tab-panel.active { display: block; }
 
-    .menu-disclaimer {
-      display: flex; align-items: center; gap: 14px;
-      background: rgba(232,51,58,.12); border: 1px solid rgba(232,51,58,.4);
-      border-radius: var(--r-sm); padding: 16px 22px; margin-bottom: 40px;
-      font-size: .95rem; color: var(--text); line-height: 1.5;
+    .site-disclaimer {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+      background: #E8333A; color: #fff;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 10px 20px; font-size: .88rem; font-weight: 500; text-align: center;
+      line-height: 1.4;
     }
-    .menu-disclaimer-icon { font-size: 1.3rem; flex-shrink: 0; color: #E8333A; }
-    .menu-disclaimer strong { color: #E8333A; }
+    .site-disclaimer strong { font-weight: 700; }
+    #navbar { top: 44px; }
+    .nav-mobile { top: calc(44px + var(--nav-h)); }
 
     .broth-banner {
       background: rgba(245,200,66,.07); border: 1px solid rgba(245,200,66,.15);
@@ -958,6 +960,11 @@
 
 <body>
 
+  <div class="site-disclaimer" role="alert">
+    <span>⚠</span>
+    <span>Diese Speisekarte gilt ab <strong>24. August 2026</strong>. Bis dahin gilt die bisherige Karte.</span>
+  </div>
+
   <!-- ════════════════════════════════
        NAVIGATION
   ════════════════════════════════ -->
@@ -1256,11 +1263,6 @@
   ════════════════════════════════ -->
   <section id="menu" aria-labelledby="menu-heading">
     <div class="container">
-
-      <div class="menu-disclaimer reveal" role="alert">
-        <span class="menu-disclaimer-icon">⚠</span>
-        <span>Diese Speisekarte gilt ab <strong>24. August 2026</strong>. Bis dahin gilt die bisherige Karte.</span>
-      </div>
 
       <div class="section-header reveal">
         <span class="section-label">Unsere Küche</span>
