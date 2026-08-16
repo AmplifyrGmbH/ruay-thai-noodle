@@ -30,8 +30,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" /></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&family=Roboto:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&family=Roboto:wght@400;500&display=swap" /></noscript>
 
   <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -220,7 +220,9 @@
       opacity: 1; transform: none; pointer-events: all;
       background: transparent;
       box-shadow: none;
-      transition: background var(--t), box-shadow var(--t);
+      backdrop-filter: blur(0px);
+      -webkit-backdrop-filter: blur(0px);
+      transition: background var(--t), box-shadow var(--t), backdrop-filter var(--t), -webkit-backdrop-filter var(--t);
     }
     #navbar.scrolled {
       background: rgba(10,10,10,.96);
@@ -621,23 +623,27 @@
     .reviews-track { display: flex; transition: transform .5s cubic-bezier(.4,0,.2,1); }
     .review-card {
       width: calc(33.333% - 16px); flex-shrink: 0; margin: 0 8px;
-      background: var(--bg-card); border: 1px solid rgba(240,237,230,.12);
+      background: linear-gradient(160deg, #1e1e1e 0%, #131313 100%);
+      border: 1px solid rgba(240,237,230,.1);
       border-radius: var(--r-md); padding: 28px 24px;
       display: flex; flex-direction: column; gap: 14px; box-sizing: border-box;
+      box-shadow: 0 6px 28px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.07);
     }
     .review-header { display: flex; align-items: center; gap: 12px; }
     .review-avatar {
       width: 42px; height: 42px; border-radius: 50%; flex-shrink: 0;
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Oswald', sans-serif; font-size: .85rem; font-weight: 600; color: #fff;
-      text-transform: uppercase; letter-spacing: .04em;
+      font-family: 'Roboto', sans-serif; font-size: .82rem; font-weight: 500; color: #fff;
+      text-transform: uppercase; letter-spacing: .02em;
     }
     .review-info { display: flex; flex-direction: column; gap: 3px; }
     .review-name-row { display: flex; align-items: center; gap: 10px; }
-    .review-name { font-family: 'Oswald', sans-serif; font-size: .95rem; font-weight: 600; color: var(--text); letter-spacing: .02em; }
+    .review-name { font-family: 'Roboto', sans-serif; font-size: .92rem; font-weight: 500; color: var(--text); }
     .review-stars { color: #FBBC05; font-size: .88rem; letter-spacing: .05em; }
-    .review-rezensionen { font-size: .73rem; color: var(--text-lt); }
-    .review-text { font-size: .93rem; color: rgba(240,237,230,.88); line-height: 1.75; margin: 0; flex: 1; }
+    .review-rezensionen { font-family: 'Roboto', sans-serif; font-size: .73rem; color: var(--text-lt); }
+    .review-text { flex: 1; font-style: normal; }
+    .review-text p { font-family: 'Roboto', sans-serif; font-size: .9rem; color: rgba(240,237,230,.85); line-height: 1.72; margin: 0; font-weight: 400; }
+    .review-text p + p { margin-top: 10px; }
     .review-source { display: flex; align-items: center; gap: 5px; font-size: .73rem; color: var(--text-lt); margin-top: auto; }
     .reviews-nav {
       display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 32px;
@@ -962,7 +968,7 @@
             <li><a href="#nudelsuppe">Spezialität</a></li>
             <li><a href="#menu">Menü</a></li>
             <li><a href="#getraenke">Getränke</a></li>
-            <li><a href="#bewertungen">Bewertungen</a></li>
+            <li><a href="#bewertungen">Gästestimmen</a></li>
             <li><a href="#ueber-uns">Über uns</a></li>
           </ul>
         </nav>
@@ -981,7 +987,7 @@
       <li><a href="#nudelsuppe">Spezialität</a></li>
       <li><a href="#menu">Menü</a></li>
       <li><a href="#getraenke">Getränke</a></li>
-      <li><a href="#bewertungen">Bewertungen</a></li>
+      <li><a href="#bewertungen">Gästestimmen</a></li>
       <li><a href="#ueber-uns">Über uns</a></li>
     </ul>
   </div>
@@ -1039,7 +1045,7 @@
         <a href="#mittagsbuffet" class="btn btn-outline">Mittagsmenü</a>
         <a href="#nudelsuppe" class="btn btn-primary">Spezialitäten</a>
       </div>
-      <a class="hero-google-badge" href="https://www.google.com/maps/place/RuayThaiNoodle+Coffee%26Bubbletea/@47.4096828,8.4028614,17z/data=!3m1!4b1!4m6!3m5!1s0x47900d707cc0ddc9:0xb6a761d0681b0444!8m2!3d47.4096828!4d8.4054363!16s%2Fg%2F11zj4khl0z" target="_blank" rel="noopener noreferrer" aria-label="5 Sterne auf Google – 67 Bewertungen">
+      <a class="hero-google-badge" href="#bewertungen" aria-label="5 Sterne auf Google – 67 Bewertungen">
         <svg class="hero-google-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
         <span class="hero-google-stars" aria-hidden="true">★★★★★</span>
         <span class="hero-google-text"><span id="gr-rating-hero">5.0</span> · <strong><span id="gr-count-hero">67</span> Bewertungen</strong></span>
@@ -1635,7 +1641,10 @@
                 <span class="review-rezensionen">Local Guide · 69 Rezensionen</span>
               </div>
             </div>
-            <blockquote class="review-text">„Wenn du authentische Aromen und herzliche Gastfreundschaft suchst, ist dieses Restaurant ein absolutes Muss! Allein der Thai-Tee ist den Besuch wert – perfekt zubereitet, wunderbar aromatisch und unglaublich erfrischend. Das Essen ist einfach fantastisch. Alles wird frisch zubereitet, und man schmeckt die Qualität und Liebe zum Detail in jedem einzelnen Gericht. Ich komme auf jeden Fall wieder!"</blockquote>
+            <blockquote class="review-text">
+              <p>Wenn du authentische Aromen und herzliche Gastfreundschaft suchst, ist dieses Restaurant ein absolutes Muss!</p>
+              <p>Allein der Thai-Tee ist den Besuch wert – perfekt zubereitet, wunderbar aromatisch und unglaublich erfrischend. Das Essen ist einfach fantastisch, man schmeckt die Qualität und Liebe zum Detail in jedem Gericht. Ich komme auf jeden Fall wieder!</p>
+            </blockquote>
             <div class="review-source"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google</div>
           </article>
 
@@ -1650,7 +1659,10 @@
                 <span class="review-rezensionen">7 Rezensionen</span>
               </div>
             </div>
-            <blockquote class="review-text">„Das Essen bei Ruay ThaiNoodle ist schlicht hervorragend und die Portionen sind äusserst grosszügig. Das Betreiberpaar ist ausgesprochen herzlich, aufmerksam und zuvorkommend. Mittlerweile habe ich bereits zahlreiche Gerichte ausprobiert – jedes einzelne hat mich überzeugt. Eine echte Bereicherung für das Quartier, die ich uneingeschränkt weiterempfehlen kann."</blockquote>
+            <blockquote class="review-text">
+              <p>Das Essen ist schlicht hervorragend und die Portionen äusserst grosszügig. Das Betreiberpaar ist ausgesprochen herzlich, aufmerksam und zuvorkommend.</p>
+              <p>Mittlerweile habe ich zahlreiche Gerichte ausprobiert – jedes einzelne hat mich überzeugt. Eine echte Bereicherung für das Quartier!</p>
+            </blockquote>
             <div class="review-source"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google</div>
           </article>
 
@@ -1665,7 +1677,10 @@
                 <span class="review-rezensionen">2 Rezensionen</span>
               </div>
             </div>
-            <blockquote class="review-text">„Ich war schon mehrmals in Thailand und das Essen bei Ruay Thai Noodle hat mich wirklich sofort wieder dorthin zurückversetzt. Es schmeckt authentisch, frisch und einfach richtig gut. Der Service ist jedes Mal sehr herzlich und familiär. Die Preise sind fair, die Portionen genau richtig – insgesamt stimmt einfach alles."</blockquote>
+            <blockquote class="review-text">
+              <p>Ich war schon mehrmals in Thailand – das Essen hier hat mich sofort wieder dorthin zurückversetzt.</p>
+              <p>Es schmeckt authentisch, frisch und einfach richtig gut. Der Service ist herzlich und familiär, die Preise fair. Insgesamt stimmt einfach alles.</p>
+            </blockquote>
             <div class="review-source"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google</div>
           </article>
 
@@ -1680,7 +1695,10 @@
                 <span class="review-rezensionen">Local Guide · 31 Rezensionen</span>
               </div>
             </div>
-            <blockquote class="review-text">„Die besten Thai Suppen in ganz Zürich! Auch die anderen Gerichte wie Terriyaki oder das Buffet sind super fein. Und dazu verwenden sie Schweizer Fleisch, was nicht bei allen Thai Restaurants selbstverständlich ist. Wir sind Stammkunde geworden und kommen alle paar Tage – der Besitzer ist mega freundlich. Kann ich allen nur weiterempfehlen!"</blockquote>
+            <blockquote class="review-text">
+              <p>Die besten Thai Suppen in ganz Zürich! Auch Teriyaki und das Buffet sind top – und sie verwenden Schweizer Fleisch, was nicht selbstverständlich ist.</p>
+              <p>Wir sind Stammkunde geworden und kommen alle paar Tage. Der Besitzer ist mega freundlich. Absolut weiterempfehlen!</p>
+            </blockquote>
             <div class="review-source"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google</div>
           </article>
 
@@ -1695,7 +1713,10 @@
                 <span class="review-rezensionen">9 Rezensionen</span>
               </div>
             </div>
-            <blockquote class="review-text">„Sehr empfehlenswert! Die thailändische Nudelsuppe war einfach hervorragend – perfekt abgestimmt, aromatisch und mit einer unglaublich feinen, geschmackvollen Brühe. Man merkt sofort, dass hier mit viel Liebe und Können gekocht wird."</blockquote>
+            <blockquote class="review-text">
+              <p>Sehr empfehlenswert! Die Nudelsuppe war hervorragend – perfekt abgestimmt, aromatisch, mit einer unglaublich feinen Brühe.</p>
+              <p>Man merkt sofort, dass hier mit viel Liebe und Können gekocht wird.</p>
+            </blockquote>
             <div class="review-source"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google</div>
           </article>
 
@@ -1710,7 +1731,10 @@
                 <span class="review-rezensionen">1 Rezension</span>
               </div>
             </div>
-            <blockquote class="review-text">„Bis jetzt das beste Pad Thai, das ich je gegessen habe! Ich habe schon mehrmals bei Ruay Thai Noodle bestellt und wurde noch nie enttäuscht. Das Essen ist jedes Mal frisch, lecker und authentisch. Auch der Service ist super freundlich und zuverlässig. Absolut empfehlenswert!"</blockquote>
+            <blockquote class="review-text">
+              <p>Das beste Pad Thai, das ich je gegessen habe! Ich habe schon mehrmals hier bestellt und wurde noch nie enttäuscht.</p>
+              <p>Das Essen ist jedes Mal frisch, lecker und authentisch. Der Service ist super freundlich und zuverlässig. Absolut empfehlenswert!</p>
+            </blockquote>
             <div class="review-source"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google</div>
           </article>
 
@@ -1725,7 +1749,10 @@
                 <span class="review-rezensionen">Local Guide · 125 Rezensionen</span>
               </div>
             </div>
-            <blockquote class="review-text">„Habe den Laden zufällig beim Vorbeigehen gesehen – das Logo hat mich angesprochen! Pad Thai und gelben Curry Tofu zum Mitnehmen bestellt. Beides war mega lecker, die Portionen sehr gross und die Bedienung sehr sympathisch. Werde definitiv wieder kommen."</blockquote>
+            <blockquote class="review-text">
+              <p>Habe den Laden zufällig beim Vorbeigehen entdeckt – das Logo hat mich angesprochen!</p>
+              <p>Pad Thai und gelben Curry Tofu bestellt. Beides war mega lecker, die Portionen sehr gross, die Bedienung sehr sympathisch. Komme definitiv wieder!</p>
+            </blockquote>
             <div class="review-source"><svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg> Google</div>
           </article>
 
