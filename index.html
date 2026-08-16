@@ -8,18 +8,25 @@
   <meta name="description" content="Ruay Thai Noodle – Authentisches Thai Streetfood, Nudelsuppen, Curries und Wok-Gerichte in Dietikon, Schweiz. Mittagsbuffet ab CHF 18.50. Heimstrasse 10, 8953 Dietikon." />
   <link rel="canonical" href="https://ruay-thai-noodle.ch" />
 
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://ruay-thai-noodle.ch" />
-  <meta property="og:title"       content="Ruay Thai Noodle – Authentisches Thai Streetfood in Dietikon" />
-  <meta property="og:description" content="Frische Nudelsuppen, Curries, Pad Thai und Wok-Gerichte in Dietikon. Mittagsbuffet Mo–Fr ab CHF 18.50." />
-  <meta property="og:image"       content="https://ruay-thai-noodle.ch/Bilder/Logo.avif" />
-  <meta property="og:image:width"  content="400" />
-  <meta property="og:image:height" content="400" />
-  <meta name="twitter:card"       content="summary_large_image" />
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://ruay-thai-noodle.ch" />
+  <meta property="og:site_name"    content="Ruay Thai Noodle" />
+  <meta property="og:locale"       content="de_CH" />
+  <meta property="og:title"        content="Ruay Thai Noodle – Authentisches Thai Streetfood in Dietikon" />
+  <meta property="og:description"  content="Frische Nudelsuppen, Curries, Pad Thai und Wok-Gerichte in Dietikon. Mittagsbuffet Mo–Fr ab CHF 18.50." />
+  <meta property="og:image"        content="https://ruay-thai-noodle.ch/Bilder/Hero/1.jpg" />
+  <meta property="og:image:width"  content="1920" />
+  <meta property="og:image:height" content="1080" />
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Ruay Thai Noodle – Authentisches Thai Streetfood in Dietikon" />
+  <meta name="twitter:description" content="Frische Nudelsuppen, Curries, Pad Thai und Wok-Gerichte in Dietikon. Mittagsbuffet Mo–Fr ab CHF 18.50." />
+  <meta name="twitter:image"       content="https://ruay-thai-noodle.ch/Bilder/Hero/1.jpg" />
 
   <link rel="icon"             href="Bilder/Logo.avif" type="image/avif" />
   <link rel="apple-touch-icon" href="Bilder/Logo.avif" />
   <meta name="theme-color" content="#0A0A0A" />
+
+  <link rel="preload" as="image" href="Bilder/Hero/1.jpg" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,12 +38,13 @@
   {
     "@context": "https://schema.org",
     "@type": "Restaurant",
+    "@id": "https://ruay-thai-noodle.ch/#restaurant",
     "name": "Ruay Thai Noodle",
     "description": "Authentisches Thai Streetfood – Nudelsuppen, Curries, Pad Thai und Wok-Gerichte in Dietikon, Schweiz. Mittagsbuffet Mo–Fr ab CHF 18.50. Familiär geführt, täglich frisch zubereitet.",
     "url": "https://ruay-thai-noodle.ch",
     "telephone": "+41798481522",
     "email": "info@ruay-thai-noodle.ch",
-    "image": "https://ruay-thai-noodle.ch/Bilder/Laden.webp",
+    "image": "https://ruay-thai-noodle.ch/Bilder/Hero/1.jpg",
     "priceRange": "CHF 18–27",
     "servesCuisine": "Thai",
     "currenciesAccepted": "CHF",
@@ -47,16 +55,49 @@
       "postalCode": "8953",
       "addressCountry": "CH"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 47.4096828,
+      "longitude": 8.4054363
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Dietikon" },
+      { "@type": "City", "name": "Zürich" },
+      { "@type": "City", "name": "Schlieren" },
+      { "@type": "City", "name": "Spreitenbach" }
+    ],
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "11:00", "closes": "14:30" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "17:30", "closes": "22:00" }
+    ],
+    "sameAs": [
+      "https://www.google.com/maps/place/RuayThaiNoodle+Coffee%26Bubbletea/@47.4096828,8.4028614,17z/data=!3m1!4b1!4m6!3m5!1s0x47900d707cc0ddc9:0xb6a761d0681b0444!8m2!3d47.4096828!4d8.4054363!16s%2Fg%2F11zj4khl0z",
+      "https://www.instagram.com/ruaythainoodle/",
+      "https://www.facebook.com/Ruaythainoodle/",
+      "https://www.just-eat.ch/speisekarte/ruay-thai-nudeln",
+      "https://www.ubereats.com/ch-de/store/ruay-thai-noodle-takeaway/bPU6_3ZpRoq9q1JwL7ssKA"
     ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://ruay-thai-noodle.ch/#website",
+    "url": "https://ruay-thai-noodle.ch",
+    "name": "Ruay Thai Noodle",
+    "description": "Authentisches Thai Streetfood in Dietikon – Nudelsuppen, Curries, Pad Thai und Wok-Gerichte.",
+    "inLanguage": "de-CH",
+    "publisher": { "@id": "https://ruay-thai-noodle.ch/#restaurant" }
   }
   </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": "https://ruay-thai-noodle.ch/#faq",
+    "about": { "@id": "https://ruay-thai-noodle.ch/#restaurant" },
     "mainEntity": [
       {
         "@type": "Question",
@@ -288,7 +329,7 @@
       border-radius: 50px; padding: 8px 18px;
       font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 400;
       color: #fff; text-decoration: none; letter-spacing: .01em;
-      margin-top: 20px; backdrop-filter: blur(8px);
+      margin-top: 40px; backdrop-filter: blur(8px);
       transition: background .2s;
     }
     .hero-google-badge:hover { background: rgba(255,255,255,.2); }
