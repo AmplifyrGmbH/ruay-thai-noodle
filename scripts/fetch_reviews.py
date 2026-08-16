@@ -13,7 +13,7 @@ if not API_KEY:
     print("Error: GOOGLE_PLACES_API_KEY not set", file=sys.stderr)
     sys.exit(1)
 
-PLACE_ID = "ChIJyd3AcHANkEcARASbaNDXar4"  # Ruay Thai Noodle, Dietikon
+PLACE_ID = "ChIJyd3AfHANkEcRRAQbaNBhp7Y"  # Ruay Thai Noodle, Dietikon
 
 url = (
     "https://maps.googleapis.com/maps/api/place/details/json"
