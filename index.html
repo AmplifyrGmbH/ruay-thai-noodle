@@ -26,11 +26,12 @@
   <link rel="apple-touch-icon" href="Bilder/Logo.avif" />
   <meta name="theme-color" content="#0A0A0A" />
 
-  <link rel="preload" as="image" href="Bilder/Hero/1.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="Bilder/Hero/1.webp" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+Thai:wght@400;600&display=swap" /></noscript>
 
   <link rel="stylesheet" href="assets/css/style.css" />
 
@@ -286,6 +287,7 @@
       opacity: 0; transition: opacity 1.2s ease;
     }
     .slide.active { opacity: 1; }
+    .slide picture { display: block; width: 100%; height: 100%; }
     .slide img { width: 100%; height: 100%; object-fit: cover; }
     .slide::after {
       content: ''; position: absolute; inset: 0;
@@ -983,13 +985,18 @@
   </div>
 
 
+  <main id="main-content">
+
   <!-- ════════════════════════════════
        HERO SLIDESHOW
   ════════════════════════════════ -->
   <section id="hero" aria-label="Bildergalerie Restaurant">
 
     <div class="slide active">
-      <img src="Bilder/Hero/1.jpg" alt="Thai Essen – Ruay Thai Noodle Dietikon" loading="eager" fetchpriority="high" />
+      <picture>
+        <source srcset="Bilder/Hero/1.webp" type="image/webp" />
+        <img src="Bilder/Hero/1.jpg" alt="Thai Essen – Ruay Thai Noodle Dietikon" loading="eager" fetchpriority="high" />
+      </picture>
     </div>
     <div class="slide">
       <img src="Bilder/Hero/bangkok_street.jpg" alt="Strassenmarkt Bangkok Thailand" loading="lazy" />
@@ -1241,16 +1248,16 @@
 
       <!-- Tabs -->
       <div class="menu-tabs reveal" role="tablist" aria-label="Speisekarte Kategorien">
-        <button class="menu-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-vorspeisen">Vorspeise</button>
-        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-suppen">Suppen</button>
-        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-wok">Wok</button>
-        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-curry">Curry</button>
-        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-teriyaki">Teriyaki</button>
-        <button class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-dessert">Dessert</button>
+        <button id="tab-btn-vorspeisen" class="menu-tab-btn active" role="tab" aria-selected="true"  aria-controls="tab-vorspeisen">Vorspeise</button>
+        <button id="tab-btn-suppen"     class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-suppen">Suppen</button>
+        <button id="tab-btn-wok"        class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-wok">Wok</button>
+        <button id="tab-btn-curry"      class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-curry">Curry</button>
+        <button id="tab-btn-teriyaki"   class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-teriyaki">Teriyaki</button>
+        <button id="tab-btn-dessert"    class="menu-tab-btn"        role="tab" aria-selected="false" aria-controls="tab-dessert">Dessert</button>
       </div>
 
       <!-- VORSPEISEN -->
-      <div id="tab-vorspeisen" class="menu-tab-panel active" role="tabpanel">
+      <div id="tab-vorspeisen" class="menu-tab-panel active" role="tabpanel" aria-labelledby="tab-btn-vorspeisen">
         <div class="menu-item-list">
           <div class="menu-item">
             <div>
@@ -1298,7 +1305,7 @@
       </div>
 
       <!-- SUPPEN -->
-      <div id="tab-suppen" class="menu-tab-panel" role="tabpanel">
+      <div id="tab-suppen" class="menu-tab-panel" role="tabpanel" aria-labelledby="tab-btn-suppen">
         <p class="menu-tab-note">Alle Suppen mit Jasmin Reis serviert.</p>
         <div class="menu-item-list">
           <div class="menu-item">
@@ -1326,7 +1333,7 @@
       </div>
 
       <!-- WOK -->
-      <div id="tab-wok" class="menu-tab-panel" role="tabpanel">
+      <div id="tab-wok" class="menu-tab-panel" role="tabpanel" aria-labelledby="tab-btn-wok">
         <div class="curry-grid">
 
           <div class="curry-card">
@@ -1385,7 +1392,7 @@
       </div>
 
       <!-- CURRY -->
-      <div id="tab-curry" class="menu-tab-panel" role="tabpanel">
+      <div id="tab-curry" class="menu-tab-panel" role="tabpanel" aria-labelledby="tab-btn-curry">
         <p class="menu-tab-note">Alle Currys (ausser Khao Soi) mit Jasmin Reis serviert.</p>
         <div class="curry-grid">
 
@@ -1476,7 +1483,7 @@
       </div>
 
       <!-- TERIYAKI -->
-      <div id="tab-teriyaki" class="menu-tab-panel" role="tabpanel">
+      <div id="tab-teriyaki" class="menu-tab-panel" role="tabpanel" aria-labelledby="tab-btn-teriyaki">
         <div class="menu-item-list">
           <div class="menu-item">
             <div>
@@ -1503,7 +1510,7 @@
       </div>
 
       <!-- DESSERT -->
-      <div id="tab-dessert" class="menu-tab-panel" role="tabpanel">
+      <div id="tab-dessert" class="menu-tab-panel" role="tabpanel" aria-labelledby="tab-btn-dessert">
         <div class="menu-item-list">
           <div class="menu-item">
             <div>
@@ -1964,6 +1971,8 @@
   <!-- ════════════════════════════════
        FOOTER
   ════════════════════════════════ -->
+  </main><!-- /#main-content -->
+
   <footer>
     <div class="container">
       <div class="footer-inner">
