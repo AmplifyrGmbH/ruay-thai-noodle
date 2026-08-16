@@ -233,7 +233,12 @@
        HERO SLIDESHOW
     ============================================================ */
     #hero {
-      position: relative; height: 100vh; height: 100svh; min-height: 560px; overflow: hidden;
+      position: relative;
+      height: 100vh;
+      min-height: -webkit-fill-available;
+      height: 100svh;
+      min-height: 560px;
+      overflow: hidden;
     }
     .slide {
       position: absolute; inset: 0;
@@ -700,7 +705,8 @@
       z-index: 900; display: flex; align-items: center; justify-content: center;
       width: 48px; height: 48px; background: #25D366; color: #fff;
       border-radius: 8px 0 0 8px; box-shadow: -3px 0 14px rgba(37,211,102,.3);
-      transition: width .25s ease, background .2s ease;
+      transition: width .25s ease, background .2s ease, bottom .15s ease;
+      will-change: transform;
     }
     .wa-sticky:hover { width: 54px; background: #1ebe5d; }
     .wa-sticky svg { flex-shrink: 0; }
