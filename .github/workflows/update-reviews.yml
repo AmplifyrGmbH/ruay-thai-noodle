@@ -1,0 +1,28 @@
+name: Update Google Reviews
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # täglich 06:00 UTC
+  workflow_dispatch:        # manuell auslösbar
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch rating from Google Places API
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+        run: python3 scripts/fetch_reviews.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet data/reviews.json || (
+            git add data/reviews.json &&
+            git commit -m "chore: update Google review count [skip ci]" &&
+            git push
+          )
