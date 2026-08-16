@@ -548,6 +548,7 @@
     }
     .soup-price-badge .sp-amount { font-size: 1.6rem; line-height: 1; }
     .soup-price-badge .sp-curr { font-size: .75rem; opacity: .7; margin-top: 2px; }
+    .soup-hero-img { width: 100%; aspect-ratio: 16/7; object-fit: cover; border-radius: var(--r-md); display: block; margin-bottom: 16px; }
     .soup-imgs-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 24px; }
     .soup-imgs-col img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: var(--r-md); display: block; }
 
@@ -887,25 +888,31 @@
   <section id="hero" aria-label="Bildergalerie Restaurant">
 
     <div class="slide active">
-      <img src="Bilder/Essen/IMG-20260613-WA0000.jpg" alt="Khao Soi – Ruay Thai Noodle Dietikon" loading="eager" fetchpriority="high" />
+      <img src="Bilder/Hero/1.jpg" alt="Thai Essen – Ruay Thai Noodle Dietikon" loading="eager" fetchpriority="high" />
     </div>
     <div class="slide">
-      <img src="Bilder/Hero/bangkok_street2.avif" alt="Strassenmarkt Bangkok Thailand" loading="lazy" />
+      <img src="Bilder/Hero/bangkok_street.jpg" alt="Strassenmarkt Bangkok Thailand" loading="lazy" />
     </div>
     <div class="slide">
-      <img src="Bilder/Essen/IMG-20260703-WA0001.jpg" alt="Originale Thai-Nudelsuppe" loading="lazy" />
-    </div>
-    <div class="slide">
-      <img src="Bilder/Hero/bangkok-city.avif" alt="Bangkok bei Nacht" loading="lazy" />
-    </div>
-    <div class="slide">
-      <img src="Bilder/Essen/IMG-20260628-WA0002.jpg" alt="Gebratener Reis Kao Phad" loading="lazy" />
+      <img src="Bilder/Hero/3.jpg" alt="Originale Thai-Nudelsuppe" loading="lazy" />
     </div>
     <div class="slide">
       <img src="Bilder/Hero/bangkok_china.avif" alt="Chinatown Bangkok" loading="lazy" />
     </div>
     <div class="slide">
-      <img src="Bilder/Essen/IMG-20260705-WA0017.jpg" alt="Rotes Curry mit Pouletstreifen" loading="lazy" />
+      <img src="Bilder/Hero/4.jpg" alt="Thai Gericht – Ruay Thai Noodle" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Hero/bangkok_street2.avif" alt="Strassenmarkt Bangkok Thailand" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Hero/5.jpg" alt="Thai Curry – Ruay Thai Noodle" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Hero/bangkok-city.avif" alt="Bangkok bei Nacht" loading="lazy" />
+    </div>
+    <div class="slide">
+      <img src="Bilder/Hero/6.jpg" alt="Pad Thai – Ruay Thai Noodle" loading="lazy" />
     </div>
     <div class="slide">
       <img src="Bilder/Hero/bangkok_lampen.avif" alt="Lampions Bangkok Thailand" loading="lazy" />
@@ -1039,11 +1046,10 @@
         </p>
       </div>
 
-      <div class="soup-imgs-col reveal">
-        <img src="Bilder/Suppe/IMG-20260703-WA0001.jpg" alt="Thai Nudelsuppe" loading="lazy" />
-        <img src="Bilder/Suppe/IMG-20260712-WA0004.jpg" alt="Thai Nudelsuppe Variante" loading="lazy" />
-        <img src="Bilder/Suppe/IMG-20260712-WA0003.jpg" alt="Thai Nudelsuppe mit Einlagen" loading="lazy" />
+      <div class="reveal">
+        <img class="soup-hero-img" src="Bilder/originale_thai_nuddelsuppe.jpg" alt="Originale Thai-Nudelsuppe – Ruay Thai Noodle Dietikon" loading="lazy" />
       </div>
+
 
       <div class="menu-item-list menu-item-list--2col reveal reveal-d1">
         <div class="menu-item">
@@ -1802,13 +1808,20 @@
       }
 
       function start() {
-        timer = setInterval(() => goTo(current + 1), 2000);
+        clearInterval(timer);
+        timer = setInterval(() => goTo(current + 1), 1500);
       }
 
       // Pause on hover
       const hero = document.getElementById('hero');
       hero.addEventListener('mouseenter', () => clearInterval(timer));
       hero.addEventListener('mouseleave', start);
+
+      // Pause when tab is hidden, resume when visible
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) clearInterval(timer);
+        else start();
+      });
 
       start();
     })();
