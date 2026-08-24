@@ -419,15 +419,6 @@
     .menu-tab-panel { display: none; }
     .menu-tab-panel.active { display: block; }
 
-    .site-disclaimer {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 101;
-      background: #E8333A; color: #fff;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 10px 20px; font-size: .88rem; font-weight: 500; text-align: center;
-      line-height: 1.4;
-    }
-    .site-disclaimer strong { font-weight: 700; }
-
     .broth-banner {
       background: rgba(245,200,66,.07); border: 1px solid rgba(245,200,66,.15);
       border-radius: var(--r-sm); padding: 16px 20px; margin-bottom: 20px;
@@ -957,11 +948,6 @@
 </head>
 
 <body>
-
-  <div class="site-disclaimer" role="alert">
-    <span>⚠</span>
-    <span>Diese Speisekarte gilt ab dem <strong>24. August 2026</strong>. Bis dahin gilt die bisherige Karte.</span>
-  </div>
 
   <!-- ════════════════════════════════
        NAVIGATION
@@ -2195,21 +2181,6 @@
     })();
   </script>
 
-  <script>
-    (function() {
-      const bar = document.querySelector('.site-disclaimer');
-      const nav = document.getElementById('navbar');
-      const mobile = document.getElementById('navMobile');
-      if (!bar || !nav) return;
-      function adjust() {
-        const h = bar.offsetHeight;
-        nav.style.top = h + 'px';
-        if (mobile) mobile.style.top = (h + nav.offsetHeight) + 'px';
-      }
-      adjust();
-      window.addEventListener('resize', adjust);
-    })();
-  </script>
 
 </body>
 </html>
